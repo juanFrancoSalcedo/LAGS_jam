@@ -21,7 +21,6 @@ public class MovementDeleteMe : MonoBehaviour
     void Update()
     {
         inputActions.FindAction("Attack").WasPressedThisFrame();
-
     }
 
     private void Metodo(InputAction.CallbackContext context)
