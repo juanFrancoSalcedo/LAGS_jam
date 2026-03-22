@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bda778d9b40dd224194c62ad9744b15f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Shaders/Amplify Shader/Shader Functions/Dither
+    Fade.asset
+  uploadId: 663252

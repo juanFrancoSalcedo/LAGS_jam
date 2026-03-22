@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 13e5945e90f6caf4fa6cdac41717f04a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Prefabs/Environment/House.prefab
+  uploadId: 663252

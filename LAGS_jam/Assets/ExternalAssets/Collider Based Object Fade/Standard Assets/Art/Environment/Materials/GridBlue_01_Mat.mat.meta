@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4f6990f7ea172545975a9d779c1f346
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Standard Assets/Art/Environment/Materials/GridBlue_01_Mat.mat
+  uploadId: 663252

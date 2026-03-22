@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b265c612b78dab24384e331175ddaff4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Standard Assets/Art/Character/Animation/StarterAssetsThirdPerson.controller
+  uploadId: 663252

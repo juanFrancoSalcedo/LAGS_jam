@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ffddc747db5fe64abf1119802da8127
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Art/Materials/Light Grey.mat
+  uploadId: 663252

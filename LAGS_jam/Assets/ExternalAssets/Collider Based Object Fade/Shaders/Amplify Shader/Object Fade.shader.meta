@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 15147d0d5acdcc54ba11b961c1555dec
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Shaders/Amplify Shader/Object Fade.shader
+  uploadId: 663252
