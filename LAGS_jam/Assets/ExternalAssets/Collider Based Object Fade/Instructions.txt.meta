@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5e9c876c536a7bb40a8bddf12dc7cd1e
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Instructions.txt
+  uploadId: 663252

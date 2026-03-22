@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 276cfcb5d72fb8e4fb789c49ee4a9ca2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Scripts/Misc/SimpleFollow.cs
+  uploadId: 663252

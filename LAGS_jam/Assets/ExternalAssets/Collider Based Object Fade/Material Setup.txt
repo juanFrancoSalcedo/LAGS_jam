@@ -1,0 +1,32 @@
+
+
+
+    As of Version 1.3, materials using the Standard (Built-In) or Lit (URP + HDRP) shader can convert to the "Ifooboo/Object Fade" shader with most textures and material properties transferring over.
+
+
+
+    Custom shaders must add the "Dither Fade" function via Amplify Shader (Built-In) or Shader Graph (URP + HDRP).
+
+        • View [Graph Examples.pdf] located under the "Resources" folder to see how to connect the "Dither Fade" function to your custom shader graph.
+
+        • If using Shader Graph, you must add a new float property with a reference called "_Fade" and connect it to the "Dither Fade" sub graph input.
+
+
+
+    If you are using the Built-In Render Pipeline and do not have Amplify Shader, you must copy the lines found in [Shader Code.txt] into your own shader.
+
+        • The [Shader Code.txt] file can be found under the "Resources" folder.
+    
+    
+    
+    ** Returning users who updated from Version 1.2 or below may have missing textures on their materials. This is due to the new shader having new property references.
+        
+        • To retrieve older versions of the Object Fade shader, visit Google Drive and download the Shaders folder corresponding to the version you previously had:
+        
+            • https://drive.google.com/drive/folders/1mvdIeg9CbYCwnnqXNMEdEz5RvAmhZtjR?usp=sharing
+        
+        • Please note that Object Fade shaders made before Version 1.3 do not have the ability to inherit textures and material properties from Standard and Lit shaders.
+
+
+
+
