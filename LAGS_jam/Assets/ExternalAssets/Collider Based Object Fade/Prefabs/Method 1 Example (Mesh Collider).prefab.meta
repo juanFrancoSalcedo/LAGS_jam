@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 97e01ebfb96ef64489b8fca8c26860be
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Prefabs/Method 1 Example (Mesh Collider).prefab
+  uploadId: 663252

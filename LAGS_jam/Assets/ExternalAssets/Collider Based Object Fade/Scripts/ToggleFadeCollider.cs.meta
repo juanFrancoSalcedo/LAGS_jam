@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3579baa04d76e1543b9a92b2a2c3b186
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Scripts/ToggleFadeCollider.cs
+  uploadId: 663252

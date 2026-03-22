@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d90e2c9dd783d0f429edbdbfd2d091f0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Shaders/Amplify Shader/Shader Functions/Standard
+    PBR.asset
+  uploadId: 663252

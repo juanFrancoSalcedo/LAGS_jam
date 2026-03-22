@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6b653e5972abe9646b553a8ac07b6584
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 207857
+  packageName: Collider Based Object Fade
+  packageVersion: 1.4
+  assetPath: Assets/Collider Based Object Fade/Standard Assets/Art/Environment/Materials/GridWhite_01_Mat.mat
+  uploadId: 663252
