@@ -258,7 +258,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.951, y: 0.379, z: 2.492}
-  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8762047362673071544}
@@ -296,7 +296,7 @@ Rigidbody:
   m_GameObject: {fileID: 7791315211406108279}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 10
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHandler
   renderSpt: {fileID: 2072738675113110700}
+  speed: 4
 --- !u!136 &8526942686951570150
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,54 +1,49 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.LightTransport;
 
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerHandler : MonoBehaviour
 {
-    InputSystem_Actions inputActions;
-    Rigidbody rb;
     [SerializeField] private SpriteRenderer renderSpt = null;
+    [SerializeField] private float speed = 2;
 
+    InputSystem_Actions inputActions;
+    InputAction action;
+    Rigidbody rb;
     Vector2 direction;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    void OnEnable()
-    {
         inputActions = new InputSystem_Actions();
-        inputActions.Enable();
-        inputActions.FindAction("Move").performed += Movement;
-        inputActions.FindAction("Move").canceled += EndMovement;
+        action = inputActions.FindAction("Move");
     }
+    void OnEnable() => inputActions.Enable();
 
-
-    private void OnDisable()
-    {
-        inputActions.FindAction("Move").performed -= Movement;
-        inputActions.FindAction("Move").canceled -= EndMovement;
-    }
+    private void OnDisable() => inputActions.Disable();
 
     private void FixedUpdate()
     {
         if (direction.x == 0 && direction.y == 0)
             return;
-        rb.linearVelocity = new Vector3(direction.x, 0, direction.y);
+        
+        rb.linearVelocity = new Vector3(
+            direction.x
+            , 0,
+            direction.y) * speed;
 
         // keep direction in x axis
         if (direction.x != 0)
             renderSpt.flipX = rb.linearVelocity.x <= 0;
     }
 
-    private void Movement(InputAction.CallbackContext context)
-    {
-        direction = context.ReadValue<Vector2>();
-    }
-    private void EndMovement(InputAction.CallbackContext context)
-    {
-        direction = Vector2.zero;
-    }
+    private void Update() => direction = action.ReadValue<Vector2>();
+}
+
+public class PlayerToolMovement 
+{
+    Transform tool;
 }
