@@ -52,8 +52,6 @@ namespace Ifooboo
 
             m_collider = GetComponent<Collider>();
 
-            m_collider.isTrigger = true;
-
             // ============================================
 
             Renderer m_renderer = GetComponent<Renderer>();
