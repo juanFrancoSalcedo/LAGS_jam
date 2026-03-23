@@ -21,7 +21,6 @@ public class RockHandler : MonoBehaviour
         if (_maxHP <= 0)
             return;
 
-
         _maxHP--;
         if (_maxHP <= 0)
             DestroyRock();
@@ -32,7 +31,6 @@ public class RockHandler : MonoBehaviour
     public void DestroyRock()
     {
         _maxHP = 0;
-        print("Muero");
         transform.DOScale(0,0.1f).OnComplete(
             () => 
                 {

@@ -6,29 +6,35 @@ using UnityEngine;
 public class ResourceHandler : MonoBehaviour
 { 
     Rigidbody rb;
-    CollisionDetector collisionDetector;
+    
+    public Transform CarryPosition { get; set; }
 
+    bool previouseHasCarry;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        collisionDetector = GetComponent<CollisionDetector>();
         AnimateInstanciate();
     }
 
-    private void OnEnable()
+    private void Update()
     {
-        collisionDetector.OnCollisionEntered += Collect;
+        if (previouseHasCarry && CarryPosition == null)
+        {
+            AnimateInstanciate();
+            previouseHasCarry = false;
+        }
+
+
+        if(CarryPosition != null)
+        { 
+            transform.position = CarryPosition.position;
+            previouseHasCarry = true;
+        }
     }
 
-    private void OnDisable()
+    public void AnimateJump(Transform positionWagon) 
     {
-        collisionDetector.OnCollisionEntered -= Collect;
-    }
-    private void Collect(Collision collision)
-    {
-        gameObject.SetActive(false);
-        MiningMediator.Publish(TypeMiningEvent.CollectResource);
-        InventoryMediator.Publish(TypeResource.EmeraldCristals);
+        transform.DOJump(positionWagon.position, 1, 1, 0.5f);
     }
 
     public void AnimateInstanciate() 
