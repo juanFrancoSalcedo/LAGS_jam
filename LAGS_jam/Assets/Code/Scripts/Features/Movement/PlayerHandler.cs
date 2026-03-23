@@ -6,49 +6,60 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerHandler : MonoBehaviour
 {
-    InputSystem_Actions inputActions;
-    Rigidbody rb;
     [SerializeField] private SpriteRenderer renderSpt = null;
+    [SerializeField] private float speed = 2;
+    PlayerMovementInputs _playerMovement;
+    Rigidbody rb;
+    public event Action<bool> OnXSpriteChanged;
 
     Vector2 direction;
-
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    void OnEnable()
-    {
-        inputActions = new InputSystem_Actions();
-        inputActions.Enable();
-        inputActions.FindAction("Move").performed += Movement;
-        inputActions.FindAction("Move").canceled += EndMovement;
-    }
-
-
-    private void OnDisable()
-    {
-        inputActions.FindAction("Move").performed -= Movement;
-        inputActions.FindAction("Move").canceled -= EndMovement;
+        _playerMovement = new PlayerMovementInputs();
+        _playerMovement.Configure();
     }
 
     private void FixedUpdate()
     {
         if (direction.x == 0 && direction.y == 0)
             return;
-        rb.linearVelocity = new Vector3(direction.x, 0, direction.y);
+        
+        rb.linearVelocity = new Vector3(direction.x, 0,direction.y) * speed;
 
         // keep direction in x axis
         if (direction.x != 0)
+        {
+            bool before = renderSpt.flipX;
             renderSpt.flipX = rb.linearVelocity.x <= 0;
+            if (before != renderSpt.flipX)
+                OnXSpriteChanged?.Invoke(renderSpt.flipX);
+        }
     }
 
-    private void Movement(InputAction.CallbackContext context)
+    private void Update() => direction = _playerMovement.Update();
+}
+
+
+public class PlayerMovementInputs
+{
+    InputSystem_Actions inputActions;
+    InputAction actionMove;
+
+    ~PlayerMovementInputs() 
     {
-        direction = context.ReadValue<Vector2>();
+        inputActions.Disable();
     }
-    private void EndMovement(InputAction.CallbackContext context)
+
+    public void Configure() 
     {
-        direction = Vector2.zero;
+        inputActions = new InputSystem_Actions();
+        actionMove = inputActions.FindAction("Move");
+        inputActions.Enable();
+    }
+
+    public Vector2 Update() 
+    {
+        return actionMove.ReadValue<Vector2>();
     }
 }
