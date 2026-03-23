@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.LightTransport;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -9,27 +8,16 @@ public class PlayerHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer renderSpt = null;
     [SerializeField] private float speed = 2;
-    InputSystem_Actions inputActions;
-    InputAction actionMove;
+    PlayerMovementInputs _playerMovement;
     Rigidbody rb;
-    public event System.Action<bool> OnXSpriteChanged;
+    public event Action<bool> OnXSpriteChanged;
 
     Vector2 direction;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        inputActions = new InputSystem_Actions();
-        actionMove = inputActions.FindAction("Move");
-
-    }
-    void OnEnable()
-    {
-        inputActions.Enable();
-    }
-
-    private void OnDisable()
-    {
-        inputActions.Disable();
+        _playerMovement = new PlayerMovementInputs();
+        _playerMovement.Configure();
     }
 
     private void FixedUpdate()
@@ -37,10 +25,7 @@ public class PlayerHandler : MonoBehaviour
         if (direction.x == 0 && direction.y == 0)
             return;
         
-        rb.linearVelocity = new Vector3(
-            direction.x
-            , 0,
-            direction.y) * speed;
+        rb.linearVelocity = new Vector3(direction.x, 0,direction.y) * speed;
 
         // keep direction in x axis
         if (direction.x != 0)
@@ -52,8 +37,29 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Update() => direction = _playerMovement.Update();
+}
+
+
+public class PlayerMovementInputs
+{
+    InputSystem_Actions inputActions;
+    InputAction actionMove;
+
+    ~PlayerMovementInputs() 
     {
-        direction = actionMove.ReadValue<Vector2>();
+        inputActions.Disable();
+    }
+
+    public void Configure() 
+    {
+        inputActions = new InputSystem_Actions();
+        actionMove = inputActions.FindAction("Move");
+        inputActions.Enable();
+    }
+
+    public Vector2 Update() 
+    {
+        return actionMove.ReadValue<Vector2>();
     }
 }
