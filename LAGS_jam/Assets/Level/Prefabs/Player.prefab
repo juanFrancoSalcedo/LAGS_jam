@@ -94,7 +94,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: BH9X6A9QEOV7
+    UniqueId: X9B00JPT7HV0
     handler: {fileID: 4466040740820832682}
     sceneName: Whitebox Sebastian
 --- !u!1 &1875711846008803020
@@ -125,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 1875711846008803020}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.805, y: -1.043, z: 0}
+  m_LocalPosition: {x: 0.8, y: -1.043, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarryHandler
   triggerDetector: {fileID: 2885048762469975699}
+  playerHandler: {fileID: 5096097019004693041}
 --- !u!114 &2885048762469975699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +554,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7791315211406108279}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 10
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -585,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHandler
   renderSpt: {fileID: 2072738675113110700}
-  speed: 5
+  speed: 10
 --- !u!136 &8526942686951570150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -605,10 +606,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.57
-  m_Height: 2.3323689
+  m_Radius: 0.45
+  m_Height: 1.675381
   m_Direction: 1
-  m_Center: {x: 0, y: -0.4338164, z: 0}
+  m_Center: {x: 0, y: -0.7623104, z: 0}
 --- !u!1 &8287048691126882364
 GameObject:
   m_ObjectHideFlags: 0
