@@ -7,11 +7,7 @@ public class Wagon:MonoBehaviour
     [SerializeField] TriggerDetector triggerDetector;
     PlayerHandler playerHandler;
 
-    private void Start()
-    {
-        playerHandler = GameObject.FindWithTag("Player").GetComponent<PlayerHandler>();
-    }
-
+    private void Start() => playerHandler = GameObject.FindWithTag("Player").GetComponent<PlayerHandler>();
 
     public bool IsNearPlayer() 
     {
@@ -22,8 +18,12 @@ public class Wagon:MonoBehaviour
     private void OnDisable() => triggerDetector.OnTriggerEntered -= Collect;
     private void Collect(Transform _transform)
     {
-        _transform.gameObject.SetActive(false);
-        MiningMediator.Publish(TypeMiningEvent.CollectResource);
-        InventoryMediator.Publish(TypeResource.EmeraldCristals);
+        if(_transform.TryGetComponent<ResourceHandler>(out var compo))
+        {
+            print("TODO Inject this perrito, shutese esto mi socio");
+            _transform.gameObject.SetActive(false);
+            MiningMediator.Publish(TypeMiningEvent.CollectResource);
+            InventoryDataService.AddItem(compo.Sheet.GetModelCopy());
+        }
     }
 }

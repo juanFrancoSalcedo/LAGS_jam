@@ -554,7 +554,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7791315211406108279}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 10
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHandler
   renderSpt: {fileID: 2072738675113110700}
-  speed: 5
+  speed: 10
 --- !u!136 &8526942686951570150
 CapsuleCollider:
   m_ObjectHideFlags: 0
