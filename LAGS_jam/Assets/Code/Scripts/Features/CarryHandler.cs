@@ -8,7 +8,6 @@ public class CarryHandler : MonoBehaviour
     [SerializeField] TriggerDetector triggerDetector;
     [SerializeField] private PlayerHandler playerHandler;
 
-
     List<ResourceHandler> resourceHandlers = new List<ResourceHandler>();
     ResourceHandler carryElement = null;
 
