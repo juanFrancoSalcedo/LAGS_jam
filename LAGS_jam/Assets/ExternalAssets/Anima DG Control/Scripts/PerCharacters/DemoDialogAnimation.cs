@@ -1,31 +1,30 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using System.Collections;
-using System;
+using System.Threading;
 
 public class DemoDialogAnimation : MonoBehaviour
 {
     [SerializeField] TMP_Text textComponent;
     [SerializeField] float timePerChar =0.2f;
     [SerializeField] Ease curve;
-    Coroutine animationRoutine = null;
-#if ANIMA_DOTWEEN_PRO
-    public void AnimateText(ITypingAnimaStrategy animation, string textNew) 
+
+
+    public void ClearText() 
     {
-        if (animationRoutine == null)
-            animationRoutine = StartCoroutine(DoAnimateText(animation, textNew));
-        else
-            StopCoroutine(animationRoutine);
+        textComponent.text = "";
     }
 
-    IEnumerator DoAnimateText(ITypingAnimaStrategy animation,string textNew)
+#if ANIMA_DOTWEEN_PRO
+    public async UniTask AnimateText(ITypingAnimaStrategy animation, string textNew, CancellationToken cancellationToken = default) 
     {
         textComponent.text = textNew;
         DOTweenTMPAnimator animator = new DOTweenTMPAnimator(textComponent);
         animation.PreAnimate(animator);
-        yield return new WaitForSeconds(0.3f);
-        animation.Animate(animator, timePerChar,curve);
+        await UniTask.Delay(System.TimeSpan.FromSeconds(0.3f), cancellationToken: cancellationToken);
+        await UniTask.WhenAll(animation.Animate(animator, timePerChar, curve));
     }
 #endif
 }

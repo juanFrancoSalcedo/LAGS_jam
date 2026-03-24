@@ -1,10 +1,11 @@
-﻿using DG.Tweening;
+﻿using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 
 #if ANIMA_DOTWEEN_PRO
 public class AnimCharDisplayByFall : ITypingAnimaStrategy
 {
-    public void Animate(DOTweenTMPAnimator animator, float timePerChar, Ease curve)
+    public async UniTask Animate(DOTweenTMPAnimator animator, float timePerChar, Ease curve)
     {
         Sequence sequence = DOTween.Sequence();
         Sequence sequence2 = DOTween.Sequence();
@@ -16,7 +17,11 @@ public class AnimCharDisplayByFall : ITypingAnimaStrategy
             sequence.Append(animator.DOOffsetChar(i, currCharOffset - new Vector3(0, 30, 0), timePerChar));
             sequence2.Append(animator.DOFadeChar(i, 1, timePerChar));
         }
+
+        await sequence.AsyncWaitForCompletion();
+        //await UniTask.WaitUntil(()=>sequence.IsComplete());
     }
+
     public void CleanAnimations(DOTweenTMPAnimator animator)
     {
         animator.textInfo.ClearAllMeshInfo();
@@ -39,7 +44,7 @@ public class AnimCharDisplayByFall : ITypingAnimaStrategy
 #if ANIMA_DOTWEEN_PRO
 public class AnimCharFallInvert : ITypingAnimaStrategy
 {
-    public void Animate(DOTweenTMPAnimator animator, float timePerChar, Ease curve)
+    public async UniTask Animate(DOTweenTMPAnimator animator, float timePerChar, Ease curve)
     {
         Sequence sequence = DOTween.Sequence();
         Sequence sequence2 = DOTween.Sequence();
@@ -54,6 +59,8 @@ public class AnimCharFallInvert : ITypingAnimaStrategy
             sequence2.Append(animator.DOFadeChar(i, 0, timePerChar));
             sequence3.Append(animator.DORotateChar(i, new Vector3(0, 0, Random.Range(-90,90)), timePerChar));
         }
+
+        await sequence.AsyncWaitForCompletion();
     }
 
     public void CleanAnimations(DOTweenTMPAnimator animator)

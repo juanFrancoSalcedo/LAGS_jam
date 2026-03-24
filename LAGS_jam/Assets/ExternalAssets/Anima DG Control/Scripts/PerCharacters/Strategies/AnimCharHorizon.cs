@@ -1,9 +1,10 @@
-﻿using DG.Tweening;
+﻿using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 #if ANIMA_DOTWEEN_PRO
 public class AnimCharHorizon : ITypingAnimaStrategy
 {
-    public void Animate(DOTweenTMPAnimator animator, float timePerChar, Ease curve)
+    public async UniTask Animate(DOTweenTMPAnimator animator, float timePerChar, Ease curve)
     {
         Sequence sequence = DOTween.Sequence();
         Sequence sequence2 = DOTween.Sequence();
@@ -15,6 +16,7 @@ public class AnimCharHorizon : ITypingAnimaStrategy
             sequence.Append(animator.DOOffsetChar(i, currCharOffset - new Vector3(30, 00, 0), timePerChar));
             sequence2.Append(animator.DOFadeChar(i, 1, timePerChar));
         }
+        await sequence.AsyncWaitForCompletion();
     }
 
     public void CleanAnimations(DOTweenTMPAnimator animator)
