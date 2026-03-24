@@ -12,12 +12,15 @@ public class InventoryView : MonoBehaviour
     {
         controller = new InventoryCardController();
         var data = InventoryDataService.ReadData();
+        print(data.resources.Count);
+        CreateItems(data);
     }
     public void CreateItems(ResourceWrapper wrapper) 
     {
         wrapper.resources.ForEach(i => { 
             var clone = Instantiate(prototypeCard,container);
-
+            clone.Configure(i);
+            clone.DisplayInfo();
         });
     }
 }
