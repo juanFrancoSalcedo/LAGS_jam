@@ -80,7 +80,6 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
             return;
         }
 
-
         if(actions.FindAction("Interact").WasPressedThisFrame())
             NextDialog();
     }
@@ -94,4 +93,6 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
         dialogManager.TryDialog();
         canvasGroup.interactable = false;
     }
+
+    public void SetInteract(bool interact) => canvasGroup.interactable = interact;
 }

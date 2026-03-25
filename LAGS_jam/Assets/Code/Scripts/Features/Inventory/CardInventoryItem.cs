@@ -22,10 +22,8 @@ public class CardInventoryItem: MonoBehaviour
     }
 
     ResourceModel model;
-    public void Configure(ResourceModel model) 
-    {
-        this.model = model;
-    }
+
+    public void Configure(ResourceModel model) => this.model = model;
 
     public void DisplayInfo() 
     {

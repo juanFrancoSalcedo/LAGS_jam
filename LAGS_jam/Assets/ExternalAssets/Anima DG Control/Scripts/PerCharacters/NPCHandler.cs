@@ -18,23 +18,19 @@ public class NPCHandler : MonoBehaviour,IDialogListener
         triggerDetector.OnTriggerExited += DenyTalk;
         OnDialogComplete += InvokeCustomEvents;
     }
-
-    private void InvokeCustomEvents()
-    {
-        print("Complete");
-    }
-
     private void OnDisable()
     {
         triggerDetector.OnTriggerEntered -= AllowTalk;
         triggerDetector.OnTriggerExited -= DenyTalk;
         OnDialogComplete -= InvokeCustomEvents;
     }
-
-    private void AllowTalk(Transform transform)
+    private void InvokeCustomEvents() => print("Complete");
+    public void AllowTalk(Transform transform)
     {
         InteractIconService.Instance.ShowIcon();
-        DialogManager.Instance.InjectDialogs(dialogs);
+        var dialogSend = new List<DialogModel>();
+        dialogs.ForEach(t =>dialogSend.Add(t.Model.Copy()));
+        DialogManager.Instance.InjectDialogs(dialogSend);
         DialogManager.Instance.InjectListener(this);
     }
 
@@ -42,6 +38,3 @@ public class NPCHandler : MonoBehaviour,IDialogListener
 
     private void Start() => dialogManager = DialogManager.Instance;
 }
-
-
-

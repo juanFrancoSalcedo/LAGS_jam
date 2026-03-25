@@ -12,13 +12,13 @@ using B_Extensions;
 
 public class DialogManager:Singleton<DialogManager>
 {
-    [SerializeField] DemoDialogAnimation dialogDisplayer;
+    [SerializeField] DialogAnimation dialogDisplayer;
     [SerializeField] GameObject container = null;
     [SerializeField] List<string> interfaces = new List<string>();
-    public List<DialogSheet> dialogs = new List<DialogSheet>();
+    public List<DialogModel> dialogs = new List<DialogModel>();
 
-    private int indexDialog;
-    bool animatingDialog = false;
+    public int IndexDialog { get; set; }
+    private bool animatingDialog = false;
 
     private void OnValidate()
     {
@@ -39,7 +39,7 @@ public class DialogManager:Singleton<DialogManager>
 
     List<IDialogListener> dialogsListener = new List<IDialogListener>();
 
-    public void InjectDialogs(List<DialogSheet> sheets) 
+    public void InjectDialogs(List<DialogModel> sheets) 
     {
         dialogs.Clear();
         dialogs.AddRange(sheets);
@@ -47,6 +47,13 @@ public class DialogManager:Singleton<DialogManager>
 
     public void InjectListener(IDialogListener diaologListener) => dialogsListener.Add(diaologListener);
 
+    public async void AddCustomDialog(string dialog) 
+    {
+        DialogModel dialogModel = new DialogModel();
+        dialogModel.Dialog = dialog;
+        dialogs.Add(dialogModel);
+        await Next();
+    }
 
     public async void TryDialog() 
     {
@@ -76,6 +83,15 @@ public class DialogManager:Singleton<DialogManager>
         else
             container.SetActive(true);
 
+        await AnimationDialog();
+
+        dialogsListener.ForEach(d => d.OnDialogUpdate?.Invoke(IndexDialog, dialogs.Count));
+        IndexDialog++;
+
+    }
+
+    private async UniTask AnimationDialog()
+    {
         animatingDialog = true;
         // here get the type of the class by it name, the first of the list
         Type tipo = Type.GetType(interfaces[0]);
@@ -84,26 +100,22 @@ public class DialogManager:Singleton<DialogManager>
         {
             object instancia = Activator.CreateInstance(tipo);
             if (instancia is ITypingAnimaStrategy asInterface)
-                await dialogDisplayer.AnimateText(asInterface, dialogs[indexDialog].Model.Dialog);
+                await dialogDisplayer.AnimateText(asInterface, dialogs[IndexDialog].Dialog);
         }
-
-        dialogsListener.ForEach(d => d.OnDialogUpdate?.Invoke(indexDialog, dialogs.Count));
-
         animatingDialog = false;
-        indexDialog++;
-        
     }
 
     private bool CheckCompleted()
     {
-        if (indexDialog >= dialogs.Count)
+        if (IndexDialog >= dialogs.Count)
         {
-            indexDialog = 0;
+            IndexDialog = 0;
             if (dialogsListener.Count > 0)
             { 
                 dialogsListener.ForEach(dialog => dialog.OnDialogComplete?.Invoke());
                 print("TODO Change this to UnityEvent to wrap UnityActions");
                 dialogDisplayer.ClearText();
+                dialogs.Clear();
             }
             return true;
         }
