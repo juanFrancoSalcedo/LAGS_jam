@@ -20,8 +20,8 @@ public class InventoryDataService
 
     public static void AddItem(ResourceModel model)
     {
-        if(string.IsNullOrEmpty(model.UID))
-            model.UID = Guid.NewGuid().ToString();
+        if (string.IsNullOrEmpty(model.UID))
+            model.InitSettings();
         runTimeData.resources.Add(model);
         SaveData();
     }

@@ -4,4 +4,6 @@ public static class KeyStorage
 {
     public readonly static string Count_emerald = "KEY_EMERALD";
     public readonly static string Inventory_Resources = "INVENTORY_RESOURCES";
+    public readonly static string Money = "MONEY_I";
+
 }
