@@ -55,10 +55,10 @@ public class PickHandler : MonoBehaviour
 
     private void TriggerPick(Transform _transform)
     {
-
         if(_transform.TryGetComponent<RockHandler>(out var compo))
         {
             compo.MakeDamage();
+            playerHandler.DebtStamina(Constants.ActionDebt);
         }
     }
 
@@ -67,4 +67,10 @@ public class PickHandler : MonoBehaviour
         if(action.WasPressedThisFrame())
             _pickMovement.Animate();
     }
+}
+
+
+public static class Constants 
+{
+    public const float ActionDebt = 2.2f;
 }
