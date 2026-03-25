@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarryHandler
   triggerDetector: {fileID: 2885048762469975699}
-  playerHandler: {fileID: 0}
+  playerHandler: {fileID: 5096097019004693041}
 --- !u!114 &2885048762469975699
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,5 @@
 using AssetKits.ParticleImage;
 using B_Extensions;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class UIParticlesService : Singleton<UIParticlesService>
