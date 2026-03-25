@@ -13,6 +13,11 @@ public class TraderHandler : MonoBehaviour
     [SerializeField] private GameObject panelAcceptTrade;
     [SerializeField] private ButtonNextDialog buttonDialog;
 
+    private void Awake()
+    {
+        InventoryDataService.ReadData();
+    }
+
     private void OnEnable()
     {
         CardInventoryItem.OnTryTrade += Trade;
@@ -31,7 +36,7 @@ public class TraderHandler : MonoBehaviour
         if (arg1 == eventIndex)
         { 
             panelTradeInvetory.SetActive(true);
-            buttonDialog.SetInteract(false);
+            buttonDialog.SetInteract(false);   
         }
 
         if (arg1 == eventIndexAccept)
@@ -72,7 +77,7 @@ public class TraderHandler : MonoBehaviour
 
     private void CheckInvetory()
     {
-        if (InventoryDataService.ReadData().resources.Count > 0)
+        if (InventoryDataService.runTimeData.resources.Count > 0)
             npcHandler.AllowTalk(null);
     }
 }

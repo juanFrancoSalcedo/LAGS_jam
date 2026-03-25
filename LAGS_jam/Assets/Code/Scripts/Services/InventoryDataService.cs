@@ -2,9 +2,9 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class InventoryDataService 
+public class InventoryDataService
 {
-    static ResourceWrapper runTimeData = new ResourceWrapper();
+    public static ResourceWrapper runTimeData = new ResourceWrapper();
 
     public static void SaveData() 
     {

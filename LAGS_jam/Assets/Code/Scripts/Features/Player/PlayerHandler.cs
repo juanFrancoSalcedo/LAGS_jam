@@ -12,13 +12,21 @@ public class PlayerHandler : MonoBehaviour
     public event Action<bool> OnXSpriteChanged;
     InputSystem_Actions _actions;
     Vector2 direction;
+    PlayerStamina _playerStamina;
+    public PlayerStamina PlayerStamina => _playerStamina;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         _actions = new InputSystem_Actions();
         _playerMovement = new PlayerMovementInputs(_actions);
+        _playerStamina = new PlayerStamina();
         _playerMovement.Configure();
+
     }
+
+    #region Controller
+    public void DebtStamina(float amount) => PlayerStamina.DebtStamina(amount);
+    #endregion
 
     private void OnEnable() => _actions.Enable();
 
