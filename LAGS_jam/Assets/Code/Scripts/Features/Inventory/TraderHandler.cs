@@ -65,7 +65,7 @@ public class TraderHandler : MonoBehaviour
         }
         else
         { 
-            dialogManager.AddCustomDialog("Está bien, para otra ocación");
+            dialogManager.AddCustomDialog("Está bien, para otra ocasión");
         }
         panelAcceptTrade?.SetActive(false);
     }
