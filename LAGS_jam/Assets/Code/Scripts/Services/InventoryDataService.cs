@@ -14,7 +14,8 @@ public class InventoryDataService
 
     public static ResourceWrapper ReadData() 
     {
-        runTimeData = JsonUtility.FromJson<ResourceWrapper>(PlayerPrefs.GetString(KeyStorage.Inventory_Resources));
+        if (PlayerPrefs.HasKey(KeyStorage.Inventory_Resources))
+            runTimeData = JsonUtility.FromJson<ResourceWrapper>(PlayerPrefs.GetString(KeyStorage.Inventory_Resources));
         return runTimeData;
     }
 

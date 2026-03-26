@@ -3172,7 +3172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   npcHandler: {fileID: 1821229569}
-  eventIndexAccept: 0
+  eventIndexAccept: 1
   dialogManager: {fileID: 1319031614}
   panelAcceptHire: {fileID: 3780348480999230416}
   buttonDialog: {fileID: 1643717014}
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCHandler
   triggerDetector: {fileID: 1821229568}
   dialogs:
-  - {fileID: 11400000, guid: c96b59072a25c554bab9be8bc24ea93e, type: 2}
+  - {fileID: 11400000, guid: bfa6409ec0510ad4abddc6e71d38781c, type: 2}
 --- !u!4 &1821229570
 Transform:
   m_ObjectHideFlags: 0
