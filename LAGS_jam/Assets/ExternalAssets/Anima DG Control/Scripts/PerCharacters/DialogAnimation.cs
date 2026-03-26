@@ -17,6 +17,13 @@ public class DialogAnimation : MonoBehaviour
     }
 
 #if ANIMA_DOTWEEN_PRO
+
+    public async void AnimateDefault(string dialog) 
+    {
+        AnimCharScaleFade animationDefault = new AnimCharScaleFade();
+        await AnimateText(animationDefault, dialog);
+
+    }
     public async UniTask AnimateText(ITypingAnimaStrategy animation, string textNew) 
     {
         textComponent.text = textNew;
@@ -27,6 +34,4 @@ public class DialogAnimation : MonoBehaviour
     }
 #endif
 }
-
-
 

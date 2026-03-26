@@ -19,7 +19,7 @@ public class DialogManager:Singleton<DialogManager>
     [SerializeField] private GameObject panelAcceptHire;
     [SerializeField] private GameObject panelAcceptTrade;
     [SerializeField] private GameObject panelInventory;
-    public List<DialogModel> dialogs = new List<DialogModel>();
+    public List<DialogModel> dialogs { get; private set; } = new List<DialogModel>();
 
     public int IndexDialog { get; set; }
     private bool animatingDialog = false;

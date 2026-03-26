@@ -25,7 +25,6 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
         actions = new InputSystem_Actions();
         DialogManager.Instance.InjectListener(this);
         initPos = transform.localPosition;
-        print(initPos);
     }
 
     private void OnEnable()

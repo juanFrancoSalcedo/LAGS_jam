@@ -7,6 +7,7 @@ public class PlayerHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer renderSpt = null;
     [SerializeField] private float speed = 2;
+    [SerializeField] private bool freeze = true;
     PlayerMovementInputs _playerMovement;
     Rigidbody rb;
     public event Action<bool> OnXSpriteChanged;
@@ -14,7 +15,6 @@ public class PlayerHandler : MonoBehaviour
     Vector2 direction;
     PlayerStamina _playerStamina;
     public PlayerStamina PlayerStamina => _playerStamina;
-    private bool freeze = true;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
