@@ -1,11 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InventoryMediator 
+public class GameStateMediator 
 {
-    private static Dictionary<TypeResource, UnityEvent> dictionary = new Dictionary<TypeResource, UnityEvent>();
-    public static void Subscribe(TypeResource _event, UnityAction action)
+    private static Dictionary<TypeGameState, UnityEvent> dictionary = new Dictionary<TypeGameState, UnityEvent>();
+    public static void Subscribe(TypeGameState _event, UnityAction action)
     {
         if (dictionary.TryGetValue(_event, out var collection))
         {
@@ -20,7 +21,7 @@ public class InventoryMediator
     }
 
 
-    public static void Unsubscribe(TypeResource _event, UnityAction action)
+    public static void Unsubscribe(TypeGameState _event, UnityAction action)
     {
         if (dictionary.TryGetValue(_event, out var collection))
         {
@@ -28,12 +29,21 @@ public class InventoryMediator
         }
     }
 
-    public static void Publish(TypeResource type)
+    public static void Publish(TypeGameState type)
     {
         if (dictionary.TryGetValue(type, out var collection))
         {
             collection.Invoke();
-            Debug.Log("ada:"+type);
+            Debug.Log("ada:" + type);
         }
     }
+}
+
+public enum TypeGameState 
+{
+    None,
+    Welcome,
+    StartDay,
+    EndDay,
+    FinishGame
 }

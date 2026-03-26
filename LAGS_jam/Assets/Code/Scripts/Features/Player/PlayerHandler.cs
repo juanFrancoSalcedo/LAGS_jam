@@ -14,6 +14,7 @@ public class PlayerHandler : MonoBehaviour
     Vector2 direction;
     PlayerStamina _playerStamina;
     public PlayerStamina PlayerStamina => _playerStamina;
+    private bool freeze = true;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -28,12 +29,23 @@ public class PlayerHandler : MonoBehaviour
     public void DebtStamina(float amount) => PlayerStamina.DebtStamina(amount);
     #endregion
 
-    private void OnEnable() => _actions.Enable();
+    private void OnEnable()
+    {
+        _actions.Enable();
+        GameStateMediator.Subscribe(TypeGameState.StartDay,()=> freeze = false);
+    }
 
-    private void OnDisable() => _actions.Disable();
+    private void OnDisable()
+    {
+        _actions.Disable();
+        GameStateMediator.Unsubscribe(TypeGameState.StartDay, () => freeze = false);
+    }
 
     private void FixedUpdate()
     {
+        if (freeze)
+            return;
+
         if (direction.x == 0 && direction.y == 0)
             return;
         

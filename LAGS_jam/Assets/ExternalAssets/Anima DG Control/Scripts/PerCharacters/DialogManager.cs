@@ -13,12 +13,17 @@ using B_Extensions;
 public class DialogManager:Singleton<DialogManager>
 {
     [SerializeField] DialogAnimation dialogDisplayer;
+    [SerializeField] ButtonNextDialog buttonDialog;
     [SerializeField] GameObject container = null;
     [SerializeField] List<string> interfaces = new List<string>();
+    [SerializeField] private GameObject panelAcceptHire;
+    [SerializeField] private GameObject panelAcceptTrade;
+    [SerializeField] private GameObject panelInventory;
     public List<DialogModel> dialogs = new List<DialogModel>();
 
     public int IndexDialog { get; set; }
     private bool animatingDialog = false;
+    List<IDialogListener> dialogsListener = new List<IDialogListener>();
 
     private void OnValidate()
     {
@@ -37,15 +42,26 @@ public class DialogManager:Singleton<DialogManager>
 #endif
     }
 
-    List<IDialogListener> dialogsListener = new List<IDialogListener>();
-
     public void InjectDialogs(List<DialogModel> sheets) 
     {
         dialogs.Clear();
         dialogs.AddRange(sheets);
+        buttonDialog.InitState();
+        IndexDialog = 0;
     }
 
     public void InjectListener(IDialogListener diaologListener) => dialogsListener.Add(diaologListener);
+
+    public void ReleaseChat() 
+    { 
+        container.SetActive(false);
+        dialogs.Clear();
+        buttonDialog.InitState();
+        IndexDialog = 0;
+        panelAcceptHire.SetActive(false);
+        panelAcceptTrade.SetActive(false);
+        panelInventory.SetActive(false);
+    }
 
     public async void AddCustomDialog(string dialog) 
     {

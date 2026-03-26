@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class HireHandler : MonoBehaviour
+public class HireHandler : MonoBehaviour, IDialogListener
 {
     [SerializeField] private NPCHandler npcHandler;
     [SerializeField] private int eventIndexAccept;
@@ -12,15 +12,17 @@ public class HireHandler : MonoBehaviour
     [SerializeField] private EmployeeSheet employeerSheet;
     [SerializeField] private ButtonAcceptHire[] buttonHires;
 
+    public Action OnDialogStarted { get; set; }
+    public Action<int, int> OnDialogUpdate { get; set; }
+    public Action OnDialogComplete { get; set; }
     private void Start()
     {
         if (HireDataService.runTimeData != null)
         {
-            if(HireDataService.runTimeData.employees.Any(e => e.UID ==employeerSheet.Model.UID))
+            if(InDataBase)
                 gameObject.SetActive(false);
         }
     }
-
 
     private void OnEnable()
     {
@@ -28,9 +30,18 @@ public class HireHandler : MonoBehaviour
         npcHandler.OnDialogUpdate += ListenEventIndex;
         npcHandler.OnDialogComplete += ListenComplete;
     }
+    private void OnDisable()
+    {
+        npcHandler.OnDialogStarted -= InsertInfoInDialog;
+        npcHandler.OnDialogUpdate -= ListenEventIndex;
+        npcHandler.OnDialogComplete -= ListenComplete;
+    }
 
     private void InsertInfoInDialog()
     {
+
+        if (InDataBase)
+            return;
         dialogManager.AddCustomDialog(employeerSheet.Model.DialogCV);
         if (buttonHires.Length == 0)
             print("HAY QUE PONER LOS BOTONES VIEJO");
@@ -40,18 +51,10 @@ public class HireHandler : MonoBehaviour
         }
     }
 
+    public bool InDataBase => HireDataService.runTimeData.employees.Any(e => e.UID == employeerSheet.Model.UID);
 
-    private void OnDisable()
-    {
-        npcHandler.OnDialogStarted -= InsertInfoInDialog;
-        npcHandler.OnDialogUpdate -= ListenEventIndex;
-        npcHandler.OnDialogComplete -= ListenComplete;
-    }
 
-    private void ListenComplete()
-    {
-        Invoke(nameof(CheckInvetory), 0.1f);
-    }
+    private void ListenComplete() => Invoke(nameof(CheckInvetory), 0.1f);
 
     private void CheckInvetory()
     {
@@ -72,9 +75,14 @@ public class HireHandler : MonoBehaviour
     {
         if (accept)
         {
-            HireDataService.AddItem(employeerSheet.Model);
-            MoneyDataService.RemoveMoney(employeerSheet.Model.Pricing);
-            dialogManager.AddCustomDialog("Perfecto dame dinero y trabajare duro");
+            if (MoneyDataService.CanPay(employeerSheet.Model.Pricing))
+            { 
+                HireDataService.AddItem(employeerSheet.Model);
+                MoneyDataService.RemoveMoney(employeerSheet.Model.Pricing);
+                dialogManager.AddCustomDialog("Perfecto trabajaré duro");
+            }
+            else
+                dialogManager.AddCustomDialog("Lo siento, no tienes dinero suficiente para pagarme");
         }
         else
         {
