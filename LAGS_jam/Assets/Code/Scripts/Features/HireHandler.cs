@@ -10,6 +10,7 @@ public class HireHandler : MonoBehaviour
     [SerializeField] private GameObject panelAcceptHire;
     [SerializeField] private ButtonNextDialog buttonDialog;
     [SerializeField] private EmployeeSheet employeerSheet;
+    [SerializeField] private ButtonAcceptHire[] buttonHires;
 
     private void Start()
     {
@@ -31,6 +32,12 @@ public class HireHandler : MonoBehaviour
     private void InsertInfoInDialog()
     {
         dialogManager.AddCustomDialog(employeerSheet.Model.DialogCV);
+        if (buttonHires.Length == 0)
+            print("HAY QUE PONER LOS BOTONES VIEJO");
+        foreach (var item  in buttonHires) 
+        {
+            item.npcHandler = this;
+        }
     }
 
 
