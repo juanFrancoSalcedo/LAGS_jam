@@ -90,7 +90,7 @@ public class CarryHandler : MonoBehaviour
         carryElement = resourceHandlers[0];
         resourceHandlers.RemoveAt(0);
         carryElement.CarryPosition = transform;
-        playerHandler.DebtStamina(Constants.ActionDebt);
+        playerHandler.DebtStamina(2.5f);
     }
 
     private void TryDrop()
@@ -98,10 +98,13 @@ public class CarryHandler : MonoBehaviour
         resourceHandlers.Add(carryElement);
         carryElement.CarryPosition = null;
         var wagon = FindAnyObjectByType<Wagon>();
+        if (wagon == null)
+            return;
+
         if (wagon.IsNearPlayer())
         {
             carryElement.AnimateJump(wagon.transform);
-            playerHandler.DebtStamina(Constants.ActionDebt);
+            playerHandler.DebtStamina(2.5f);
         }
         carryElement = null;
     }

@@ -1,24 +1,31 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 using System;
-using UnityEngine.Events;
 using Cysharp.Threading.Tasks;
-using System.Threading;
 using B_Extensions;
 
 
 public class DialogManager:Singleton<DialogManager>
 {
     [SerializeField] DialogAnimation dialogDisplayer;
+    [SerializeField] ButtonNextDialog buttonDialog;
     [SerializeField] GameObject container = null;
     [SerializeField] List<string> interfaces = new List<string>();
-    public List<DialogModel> dialogs = new List<DialogModel>();
-
+    [Header("-- Paneles --")]
+    [SerializeField] private GameObject panelAcceptHire;
+    [SerializeField] private GameObject panelAcceptTrade;
+    [SerializeField] private GameObject panelInventory;
+    public GameObject PanelAcceptHire => panelAcceptHire;
+    public GameObject PanelAcceptTrade => panelAcceptTrade;
+    public GameObject PanelInventory => panelInventory;
+    public ButtonNextDialog ButtonDialog => buttonDialog;
+    //panelInventory
+    public List<DialogModel> dialogs { get; private set; } = new List<DialogModel>();
     public int IndexDialog { get; set; }
     private bool animatingDialog = false;
+    List<IDialogListener> dialogsListener = new List<IDialogListener>();
 
     private void OnValidate()
     {
@@ -37,21 +44,40 @@ public class DialogManager:Singleton<DialogManager>
 #endif
     }
 
-    List<IDialogListener> dialogsListener = new List<IDialogListener>();
+    private void OnEnable()
+    {
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay,ReleaseChat);
+    }
+
+    private void OnDisable()
+    {
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EndDay, ReleaseChat);
+    }
 
     public void InjectDialogs(List<DialogModel> sheets) 
     {
         dialogs.Clear();
         dialogs.AddRange(sheets);
+        buttonDialog.InitState();
+        IndexDialog = 0;
     }
 
     public void InjectListener(IDialogListener diaologListener) => dialogsListener.Add(diaologListener);
 
-    public async void AddCustomDialog(string dialog) 
+    public void ReleaseChat() 
+    { 
+        container.SetActive(false);
+        dialogs.Clear();
+        buttonDialog.InitState();
+        IndexDialog = 0;
+        panelAcceptHire.SetActive(false);
+        panelAcceptTrade.SetActive(false);
+        panelInventory.SetActive(false);
+    }
+
+    public async void AddCustomDialog(DialogModel dialog) 
     {
-        DialogModel dialogModel = new DialogModel();
-        dialogModel.Dialog = dialog;
-        dialogs.Add(dialogModel);
+        dialogs.Add(dialog);
         await Next();
     }
 
@@ -100,7 +126,7 @@ public class DialogManager:Singleton<DialogManager>
         {
             object instancia = Activator.CreateInstance(tipo);
             if (instancia is ITypingAnimaStrategy asInterface)
-                await dialogDisplayer.AnimateText(asInterface, dialogs[IndexDialog].Dialog);
+                await dialogDisplayer.AnimateText(asInterface, dialogs[IndexDialog].GetDialog());
         }
         animatingDialog = false;
     }
@@ -130,3 +156,5 @@ public class Icon
     public Sprite sprite;
     public string TypeInTheFuture;
 }
+
+

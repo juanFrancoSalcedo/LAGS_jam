@@ -8,8 +8,7 @@ public class EmployeeModel:ICopy<EmployeeModel>
     public int levelJob;
     public string UID;
     public int Pricing;
-    [TextArea(1,2)]
-    public string DialogCV;
+    public DialogModel DialogCVModel;
 
     public EmployeeModel Copy()
     {

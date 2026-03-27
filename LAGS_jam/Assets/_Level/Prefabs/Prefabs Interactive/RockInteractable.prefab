@@ -128,9 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd361fe0e86bc8a45a695a7d5e7bb06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RockHandler
-  _detector: {fileID: 0}
   _hitParticles: {fileID: 833985277343887651}
-  _rockVisual: {fileID: 0}
   _maxHP: 3
   resourceHandler:
   - {fileID: 2582788507921228164, guid: 2c65695959ca24943b3f7252939ff22c, type: 3}
@@ -178,7 +176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8191226095711925440
 Transform:
   m_ObjectHideFlags: 0
@@ -5007,15 +5005,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3839593756534961422, guid: 2790aebbf2640ac43b8aa7e5ebf5a538, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3839593756534961422, guid: 2790aebbf2640ac43b8aa7e5ebf5a538, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.071
       objectReference: {fileID: 0}
     - target: {fileID: 3839593756534961422, guid: 2790aebbf2640ac43b8aa7e5ebf5a538, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.81
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3839593756534961422, guid: 2790aebbf2640ac43b8aa7e5ebf5a538, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5048,6 +5046,10 @@ PrefabInstance:
     - target: {fileID: 7365024813532279020, guid: 2790aebbf2640ac43b8aa7e5ebf5a538, type: 3}
       propertyPath: m_Name
       value: Mining_Sparks_Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004882635734960750, guid: 2790aebbf2640ac43b8aa7e5ebf5a538, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

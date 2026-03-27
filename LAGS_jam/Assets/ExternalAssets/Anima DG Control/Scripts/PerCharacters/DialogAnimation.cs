@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Collections;
+using System.Threading;
 
 public class DialogAnimation : MonoBehaviour
 {
@@ -17,7 +18,12 @@ public class DialogAnimation : MonoBehaviour
 
 #if ANIMA_DOTWEEN_PRO
 
-    UniTask task;
+    public async void AnimateDefault(string dialog) 
+    {
+        AnimCharHorizon animationDefault = new AnimCharHorizon();
+        await AnimateText(animationDefault, dialog);
+
+    }
     public async UniTask AnimateText(ITypingAnimaStrategy animation, string textNew) 
     {
         textComponent.text = textNew;
@@ -28,6 +34,4 @@ public class DialogAnimation : MonoBehaviour
     }
 #endif
 }
-
-
 

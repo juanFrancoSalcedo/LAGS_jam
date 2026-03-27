@@ -23,9 +23,6 @@ public class HireDataService
     {
         if (string.IsNullOrEmpty(model.UID))
             model.InitSettings();
-        Debug.Log(runTimeData == null);
-        Debug.Log(runTimeData.employees == null);
-        Debug.Log(model == null);
         runTimeData.employees.Add(model);
         SaveData();
     }

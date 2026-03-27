@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHandler
   renderSpt: {fileID: 2072738675113110700}
-  speed: 10
+  speed: 15
 --- !u!136 &8526942686951570150
 CapsuleCollider:
   m_ObjectHideFlags: 0

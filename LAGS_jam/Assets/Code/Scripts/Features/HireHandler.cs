@@ -1,25 +1,32 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
-public class HireHandler : MonoBehaviour
+public class HireHandler : MonoBehaviour, IDialogListener
 {
     [SerializeField] private NPCHandler npcHandler;
     [SerializeField] private int eventIndexAccept;
-    [SerializeField] private DialogManager dialogManager;
-    [SerializeField] private GameObject panelAcceptHire;
-    [SerializeField] private ButtonNextDialog buttonDialog;
     [SerializeField] private EmployeeSheet employeerSheet;
+    [Inject] private DialogManager dialogManager;
+    [Header("Dialogs")]
 
+    [SerializeField] private DialogSheet dialogAcceptTrade;
+    [SerializeField] private DialogSheet dialogCantPay;
+    [SerializeField] private DialogSheet dialogDeclineTrade;
+    private ButtonAcceptHire[] buttonHires;
+
+    public Action OnDialogStarted { get; set; }
+    public Action<int, int> OnDialogUpdate { get; set; }
+    public Action OnDialogComplete { get; set; }
     private void Start()
     {
         if (HireDataService.runTimeData != null)
         {
-            if(HireDataService.runTimeData.employees.Any(e => e.UID ==employeerSheet.Model.UID))
+            if(InDataBase)
                 gameObject.SetActive(false);
         }
     }
-
 
     private void OnEnable()
     {
@@ -27,13 +34,6 @@ public class HireHandler : MonoBehaviour
         npcHandler.OnDialogUpdate += ListenEventIndex;
         npcHandler.OnDialogComplete += ListenComplete;
     }
-
-    private void InsertInfoInDialog()
-    {
-        dialogManager.AddCustomDialog(employeerSheet.Model.DialogCV);
-    }
-
-
     private void OnDisable()
     {
         npcHandler.OnDialogStarted -= InsertInfoInDialog;
@@ -41,10 +41,22 @@ public class HireHandler : MonoBehaviour
         npcHandler.OnDialogComplete -= ListenComplete;
     }
 
-    private void ListenComplete()
+    private void InsertInfoInDialog()
     {
-        Invoke(nameof(CheckInvetory), 0.1f);
+        if (InDataBase)
+            return;
+        dialogManager.AddCustomDialog(employeerSheet.Model.DialogCVModel);
+        buttonHires = FindObjectsByType<ButtonAcceptHire>(FindObjectsInactive.Include,FindObjectsSortMode.None);
+        foreach (var item  in buttonHires) 
+        {
+            item.npcHandler = this;
+        }
     }
+
+    public bool InDataBase => HireDataService.runTimeData.employees.Any(e => e.UID == employeerSheet.Model.UID);
+
+
+    private void ListenComplete() => Invoke(nameof(CheckInvetory), 0.1f);
 
     private void CheckInvetory()
     {
@@ -56,8 +68,8 @@ public class HireHandler : MonoBehaviour
     {
         if (arg1 == eventIndexAccept)
         {
-            panelAcceptHire.SetActive(true);
-            buttonDialog.SetInteract(false);
+            dialogManager.PanelAcceptHire.SetActive(true);
+            dialogManager.ButtonDialog.SetInteract(false);
         }
     }
 
@@ -65,15 +77,20 @@ public class HireHandler : MonoBehaviour
     {
         if (accept)
         {
-            HireDataService.AddItem(employeerSheet.Model);
-            MoneyDataService.RemoveMoney(employeerSheet.Model.Pricing);
-            dialogManager.AddCustomDialog("Perfecto dame dinero y trabajare duro");
+            if (MoneyDataService.CanPay(employeerSheet.Model.Pricing))
+            { 
+                HireDataService.AddItem(employeerSheet.Model);
+                MoneyDataService.RemoveMoney(employeerSheet.Model.Pricing);
+                dialogManager.AddCustomDialog(dialogAcceptTrade.Model.Copy());
+            }
+            else
+                dialogManager.AddCustomDialog(dialogCantPay.Model.Copy());
         }
         else
         {
-            dialogManager.AddCustomDialog("Tu te lo pierdes");
+            dialogManager.AddCustomDialog(dialogDeclineTrade.Model.Copy());
         }
-        panelAcceptHire?.SetActive(false);
+        dialogManager.PanelAcceptHire?.SetActive(false);
     }
 }
 
