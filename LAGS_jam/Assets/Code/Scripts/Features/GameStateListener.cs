@@ -8,15 +8,14 @@ public class GameStateListener : MonoBehaviour
     [SerializeField] private UnityEvent eventGame;
     private void OnEnable()
     {
-        GameStateMediator.Subscribe(gameState,CallEvent);
+        GameStateContext.GameStateMediator.Subscribe(gameState,CallEvent);
     }
     private void OnDisable()
     {
-        GameStateMediator.Unsubscribe(gameState,CallEvent);
+        GameStateContext.GameStateMediator.Unsubscribe(gameState,CallEvent);
     }
     private void CallEvent()
     {
-        print("Hardaman");
         eventGame?.Invoke();
     }
 }

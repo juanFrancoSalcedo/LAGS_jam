@@ -7,7 +7,7 @@ public class PlayerHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer renderSpt = null;
     [SerializeField] private float speed = 2;
-    [SerializeField] private bool freeze = true;
+    private bool freeze = true;
     PlayerMovementInputs _playerMovement;
     Rigidbody rb;
     public event Action<bool> OnXSpriteChanged;
@@ -22,23 +22,26 @@ public class PlayerHandler : MonoBehaviour
         _playerMovement = new PlayerMovementInputs(_actions);
         _playerStamina = new PlayerStamina();
         _playerMovement.Configure();
+        freeze = !(GameStateContext.State == TypeGameState.StartDay);
 
     }
 
-    #region Controller
+    #region Stamina
     public void DebtStamina(float amount) => PlayerStamina.DebtStamina(amount);
     #endregion
 
     private void OnEnable()
     {
         _actions.Enable();
-        GameStateMediator.Subscribe(TypeGameState.StartDay,()=> freeze = false);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay,()=> freeze = false);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay, () => freeze = true);
     }
 
     private void OnDisable()
     {
         _actions.Disable();
-        GameStateMediator.Unsubscribe(TypeGameState.StartDay, () => freeze = false);
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, () => freeze = false);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay, () => freeze = true);
     }
 
     private void FixedUpdate()

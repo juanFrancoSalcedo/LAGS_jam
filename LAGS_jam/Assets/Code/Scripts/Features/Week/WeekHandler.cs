@@ -3,55 +3,25 @@ using UnityEngine;
 
 public class WeekHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TMP_Text passGameText;
+    [SerializeField] private TMP_Text dontPassGameText;
+    private void OnEnable()
+    {       
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.FinishGame,OpenWeekPanel);
+    }
+    private void OnDisable()
     {
-        
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.FinishGame, OpenWeekPanel);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OpenWeekPanel()
     {
-        
-    }
-}
-
-public class TextWeek : MonoBehaviour
-{
-    [SerializeField] string label = "Día: @";
-    TMP_Text textComponent;
-
-    private void Awake()
-    {
-        textComponent = GetComponent<TMP_Text>();
-        
-    }
-
-    //private void OnEnable()
-    //{
-    //    MoneyDataService.OnMoneyChanged += OnMoneyChanged;
-    //}
-    //private void OnDisable()
-    //{
-    //    MoneyDataService.OnMoneyChanged -= OnMoneyChanged;
-    //}
-
-    private void OnMoneyChanged(int arg1, int arg2)
-    {
-        Invoke(nameof(ShowMoney), 2f);
-    }
-
-    private void ShowMoney()
-    {
-        textComponent.text = label.Replace("@", MoneyDataService.GetMoney().ToString());
-    }
-}
-
-public class DayDataService 
-{
-    int currentDay = 1;
-    public bool IsLastDay()
-    {
-        return currentDay>1;
+        panel.gameObject.SetActive(true);
+        if(MoneyDataService.GetMoney()>=500)
+            passGameText.gameObject.SetActive(true);
+        else
+            dontPassGameText.gameObject.SetActive(true);
+        PlayerPrefs.DeleteAll();
     }
 }

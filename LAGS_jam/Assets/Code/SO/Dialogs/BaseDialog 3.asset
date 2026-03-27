@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: BaseDialog 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   model:
-    Dialog: "\xBFQui\xE9n es ese hombre? que me mira... perd\xF3n"
+    Dialog: 'sss
+
+'
+    DialogEN: 
+    DialogPO: 
+    useWildCards: 0

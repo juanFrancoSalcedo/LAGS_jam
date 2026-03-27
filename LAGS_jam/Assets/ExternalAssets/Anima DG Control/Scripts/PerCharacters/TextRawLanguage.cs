@@ -9,14 +9,24 @@ public class TextRawLanguage : MonoBehaviour
     [SerializeField] private string portuguese;
     TMP_Text _text;
 
-    private void Awake()
+    private void Start()
     {
         _text = GetComponent<TMP_Text>();
+        ReadLanguage(KeyStorage.Constants.CurrentLanguage);
     }
 
     private void OnEnable()
     {
-        switch (KeyStorage.Constants.CurrentLanguage)
+        LanguageService.OnLanguageChanged += ReadLanguage;
+    }
+    private void OnDisable()
+    {
+        LanguageService.OnLanguageChanged -= ReadLanguage;
+    }
+
+    private void ReadLanguage(TypeLanguage language)
+    {
+        switch (language)
         {
             case TypeLanguage.None:
                 break;
@@ -33,4 +43,5 @@ public class TextRawLanguage : MonoBehaviour
                 break;
         }
     }
+
 }

@@ -1,5 +1,4 @@
-﻿using B_Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -14,7 +13,6 @@ public class DialogModel : ICopy<DialogModel>
     [TextArea(0, 4)]
     [SerializeField] private string DialogPO;
     [SerializeField] private bool useWildCards;
-
 
     public DialogModel SetWildCards(Dictionary<string,string> dictoWildcards) 
     {
@@ -67,20 +65,5 @@ public class DialogModel : ICopy<DialogModel>
     public DialogModel Copy()
     {
         return (DialogModel) this.MemberwiseClone();
-    }
-}
-
-
-public class ButtonLanguage : BaseButtonAttendant
-{
-    [SerializeField] TypeLanguage language;
-    private void Start()
-    {
-        buttonComponent.onClick.AddListener(SelectLanguage);
-    }
-
-    private void SelectLanguage()
-    {
-        KeyStorage.Constants.CurrentLanguage = language;
     }
 }
