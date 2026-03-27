@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NPCHandler : MonoBehaviour,IDialogListener
 {
     [SerializeField] private TriggerDetector triggerDetector;
     [SerializeField] private List<DialogSheet> dialogs = new List<DialogSheet>();
+    [SerializeField] private UnityEvent OnCompleteDialog;
     DialogManager dialogManager;
 
     public Action OnDialogComplete { get; set; }
@@ -24,7 +26,7 @@ public class NPCHandler : MonoBehaviour,IDialogListener
         triggerDetector.OnTriggerExited -= DenyTalk;
         OnDialogComplete -= InvokeCustomEvents;
     }
-    private void InvokeCustomEvents() => print("Complete");
+    private void InvokeCustomEvents() => OnCompleteDialog?.Invoke();
     public void AllowTalk(Transform transform)
     {
         InteractIconService.Instance.ShowIcon();

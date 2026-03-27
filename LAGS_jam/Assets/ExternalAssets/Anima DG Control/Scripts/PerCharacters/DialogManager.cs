@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 using System;
-using UnityEngine.Events;
 using Cysharp.Threading.Tasks;
-using System.Threading;
 using B_Extensions;
 
 
@@ -16,6 +13,7 @@ public class DialogManager:Singleton<DialogManager>
     [SerializeField] ButtonNextDialog buttonDialog;
     [SerializeField] GameObject container = null;
     [SerializeField] List<string> interfaces = new List<string>();
+    [Header("-- Paneles --")]
     [SerializeField] private GameObject panelAcceptHire;
     [SerializeField] private GameObject panelAcceptTrade;
     [SerializeField] private GameObject panelInventory;
@@ -28,8 +26,6 @@ public class DialogManager:Singleton<DialogManager>
     public int IndexDialog { get; set; }
     private bool animatingDialog = false;
     List<IDialogListener> dialogsListener = new List<IDialogListener>();
-
-
 
     private void OnValidate()
     {
@@ -46,6 +42,16 @@ public class DialogManager:Singleton<DialogManager>
             }
         }
 #endif
+    }
+
+    private void OnEnable()
+    {
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay,ReleaseChat);
+    }
+
+    private void OnDisable()
+    {
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EndDay, ReleaseChat);
     }
 
     public void InjectDialogs(List<DialogModel> sheets) 
@@ -150,3 +156,5 @@ public class Icon
     public Sprite sprite;
     public string TypeInTheFuture;
 }
+
+

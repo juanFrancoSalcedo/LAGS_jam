@@ -98,6 +98,9 @@ public class CarryHandler : MonoBehaviour
         resourceHandlers.Add(carryElement);
         carryElement.CarryPosition = null;
         var wagon = FindAnyObjectByType<Wagon>();
+        if (wagon == null)
+            return;
+
         if (wagon.IsNearPlayer())
         {
             carryElement.AnimateJump(wagon.transform);

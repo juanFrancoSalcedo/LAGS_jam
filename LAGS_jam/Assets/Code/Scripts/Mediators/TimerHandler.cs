@@ -6,24 +6,21 @@ public class TimerHandler:MonoBehaviour
 
     private void OnEnable()
     {
-        GameStateMediator.Subscribe(TypeGameState.StartDay, StartTimer);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay, StartTimer);
         timer.OnTimeCompleted += StopTimer;
     }
 
-    private void StartTimer()
-    {
-        timer.StartTimer();
-    }
+    private void StartTimer() => timer.StartTimer();
 
     private void StopTimer() 
     {
         timer.StopTimer();
-        GameStateMediator.Publish(TypeGameState.EndDay);
+        GameStateContext.ChangeState(TypeGameState.EndDay);
     }
 
     private void OnDisable()
     {
-        GameStateMediator.Unsubscribe(TypeGameState.StartDay, StartTimer);
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, StartTimer);
         timer.OnTimeCompleted -= StopTimer;
     }
 }
