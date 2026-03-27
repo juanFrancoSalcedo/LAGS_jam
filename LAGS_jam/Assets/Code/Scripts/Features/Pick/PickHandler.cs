@@ -55,10 +55,10 @@ public class PickHandler : MonoBehaviour
 
     private void TriggerPick(Transform _transform)
     {
-
         if(_transform.TryGetComponent<RockHandler>(out var compo))
         {
             compo.MakeDamage();
+            playerHandler.DebtStamina(2.5f);
         }
     }
 

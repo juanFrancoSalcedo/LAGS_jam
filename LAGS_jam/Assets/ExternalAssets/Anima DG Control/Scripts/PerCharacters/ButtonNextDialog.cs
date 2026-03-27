@@ -16,6 +16,7 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
     public Action OnDialogComplete { get; set; }
     public Action OnDialogStarted { get; set; }
     public Action<int, int> OnDialogUpdate { get; set; }
+    private Vector2 initPos;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
         canvasGroup = GetComponent<CanvasGroup>();
         actions = new InputSystem_Actions();
         DialogManager.Instance.InjectListener(this);
+        initPos = transform.localPosition;
     }
 
     private void OnEnable()
@@ -41,17 +43,14 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
     }
 
     private bool Started;
-    private void DetectStart()
-    {
-        Started = true;
-    }
+    private void DetectStart() => Started = true;
 
     private void DetectEnds()
     {
         canvasGroup.alpha = 0;
         canvasGroup.interactable = true;
         Started = false;
-        animaController.ActiveAnimation(3);
+        ResetAnimation();
     }
 
     private void ResetInteractable() 
@@ -63,14 +62,11 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
 
     private void Update()
     {
-
         if (InteractIconService.Instance.ShowingIcon)
         {
             if (!Started)
-            { 
-                canvasGroup.alpha = 1;
-                canvasGroup.interactable = true;
-                textInner.text = "Hablar";
+            {
+                InitState();
             }
         }
         else
@@ -84,6 +80,14 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
             NextDialog();
     }
 
+    public void InitState() 
+    {
+        canvasGroup.alpha = 1;
+        canvasGroup.interactable = true;
+        textInner.text = "Hablar";
+        transform.localPosition = initPos;
+    }
+
     private void Start() => buttonComponent.onClick.AddListener(NextDialog);
 
     private void NextDialog()
@@ -94,5 +98,6 @@ public class ButtonNextDialog : BaseButtonAttendant,IDialogListener
         canvasGroup.interactable = false;
     }
 
+    public void ResetAnimation() => animaController.ActiveAnimation(3);
     public void SetInteract(bool interact) => canvasGroup.interactable = interact;
 }

@@ -36,5 +36,4 @@ public class InventoryMediator
             Debug.Log("ada:"+type);
         }
     }
-
 }

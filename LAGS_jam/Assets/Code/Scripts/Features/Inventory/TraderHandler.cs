@@ -1,17 +1,25 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Zenject;
 
 public class TraderHandler : MonoBehaviour
 {
     [SerializeField] private NPCHandler npcHandler;
     [SerializeField] private int eventIndex;
     [SerializeField] private int eventIndexAccept;
-    [SerializeField] private DialogManager dialogManager;
-    [SerializeField] private GameObject panelTradeInvetory;
-    [SerializeField] private GameObject panelAcceptTrade;
-    [SerializeField] private ButtonNextDialog buttonDialog;
+    [Header("Dialogs")]
+    [SerializeField] private DialogSheet dialogModelSale;
+    [SerializeField] private DialogSheet dialogAcceptTrade;
+    [SerializeField] private DialogSheet dialogDeclineTrade;
+    [Inject] private DialogManager dialogManager;
+
+    private void Awake()
+    {
+        InventoryDataService.ReadData();
+    }
 
     private void OnEnable()
     {
@@ -29,25 +37,29 @@ public class TraderHandler : MonoBehaviour
     private void ListenEventIndex(int arg1, int arg2)
     {
         if (arg1 == eventIndex)
-        { 
-            panelTradeInvetory.SetActive(true);
-            buttonDialog.SetInteract(false);
+        {
+            dialogManager.PanelInventory.SetActive(true);
+            dialogManager.ButtonDialog.SetInteract(false);   
         }
 
         if (arg1 == eventIndexAccept)
-        { 
-            panelAcceptTrade.SetActive(true);
-            buttonDialog.SetInteract(false);
+        {
+            dialogManager.PanelAcceptTrade.SetActive(true);
+            dialogManager.ButtonDialog.SetInteract(false);
         }
     }
     
     ResourceModel bufferModel;
     private void Trade(ResourceModel model)
     {
-        dialogManager.AddCustomDialog($"Te doy {model.Pricing:F0} monedas por tu {model.Name}");
-        panelTradeInvetory.SetActive(false);
+        var wildCards = new Dictionary<string, string>
+        {
+            { "@", model.Pricing.ToString() },
+            { "#", model.Name }
+        };
+        dialogManager.AddCustomDialog(dialogModelSale.Model.Copy().SetWildCards(wildCards));
+        dialogManager.PanelInventory.SetActive(false);
         bufferModel = model.Copy();
-        //print($"Te doy {model.Pricing:F0} monedas por tu {model.Name} ({model.typeResource} - {model.Quality})");
     }
 
     public void AcceptTrade(bool accept) 
@@ -56,13 +68,13 @@ public class TraderHandler : MonoBehaviour
         {
             InventoryDataService.RemoveItem(bufferModel);
             MoneyDataService.AddMoney(bufferModel.Pricing);
-            dialogManager.AddCustomDialog("Perfecto tome su plata");
+            dialogManager.AddCustomDialog(dialogAcceptTrade.Model.Copy());
         }
         else
         { 
-            dialogManager.AddCustomDialog("Está bien, para otra ocación");
+            dialogManager.AddCustomDialog(dialogDeclineTrade.Model.Copy());
         }
-        panelAcceptTrade?.SetActive(false);
+        dialogManager.PanelAcceptTrade?.SetActive(false);
     }
 
     private void ListenComplete()
@@ -72,7 +84,7 @@ public class TraderHandler : MonoBehaviour
 
     private void CheckInvetory()
     {
-        if (InventoryDataService.ReadData().resources.Count > 0)
+        if (InventoryDataService.runTimeData.resources.Count > 0)
             npcHandler.AllowTalk(null);
     }
 }

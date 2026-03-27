@@ -27,6 +27,13 @@ public class CarryHandler : MonoBehaviour
         playerHandler.OnXSpriteChanged += ChangedDirectionPick;
         inputActions.Enable();
     }
+    private void OnDisable()
+    {
+        triggerDetector.OnTriggerEntered -= AddCarryOption;
+        triggerDetector.OnTriggerExited -= RemoveCarryOption;
+        playerHandler.OnXSpriteChanged -= ChangedDirectionPick;
+        inputActions.Disable();
+    }
 
     private void ChangedDirectionPick(bool obj)
     {
@@ -46,14 +53,6 @@ public class CarryHandler : MonoBehaviour
             transform.rotation = Quaternion.Euler(r);
             //_pickMovement.isFliped = false;
         }
-    }
-
-    private void OnDisable()
-    {
-        triggerDetector.OnTriggerEntered -= AddCarryOption;
-        triggerDetector.OnTriggerExited -= RemoveCarryOption;
-        playerHandler.OnXSpriteChanged -= ChangedDirectionPick;
-        inputActions.Disable();
     }
 
     private void Update()
@@ -91,6 +90,7 @@ public class CarryHandler : MonoBehaviour
         carryElement = resourceHandlers[0];
         resourceHandlers.RemoveAt(0);
         carryElement.CarryPosition = transform;
+        playerHandler.DebtStamina(2.5f);
     }
 
     private void TryDrop()
@@ -98,9 +98,13 @@ public class CarryHandler : MonoBehaviour
         resourceHandlers.Add(carryElement);
         carryElement.CarryPosition = null;
         var wagon = FindAnyObjectByType<Wagon>();
+        if (wagon == null)
+            return;
+
         if (wagon.IsNearPlayer())
         {
             carryElement.AnimateJump(wagon.transform);
+            playerHandler.DebtStamina(2.5f);
         }
         carryElement = null;
     }

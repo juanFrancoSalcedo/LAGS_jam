@@ -4,11 +4,15 @@ using DG.Tweening;
 
 public class RockHandler : MonoBehaviour
 {
-    [SerializeField] private TriggerDetector _detector;
-    [SerializeField] private ParticleSystem _hitParticles;
-    [SerializeField] private GameObject _rockVisual;
+    [SerializeField] private ParticleSystem _hitParticles;   
     [SerializeField] private int _maxHP = 3;
     [SerializeField] private ResourceHandler[] resourceHandler;
+    [SerializeField] private int amountResourcesInstanciate = 3;
+
+    private void Start()
+    {
+        _hitParticles.transform.SetParent(null);
+    }
 
     public void Hit()
     {
@@ -34,9 +38,12 @@ public class RockHandler : MonoBehaviour
         transform.DOScale(0,0.1f).OnComplete(
             () => 
                 {
-                    Instantiate(resourceHandler[Random.Range(0,resourceHandler.Length)],transform.position, Quaternion.identity);
-                    Instantiate(resourceHandler[Random.Range(0, resourceHandler.Length)], transform.position, Quaternion.identity);
-                    Instantiate(resourceHandler[Random.Range(0, resourceHandler.Length)], transform.position, Quaternion.identity);
+                    int count = 0;
+                    while (count<amountResourcesInstanciate) 
+                    {
+                        count++;
+                        Instantiate(resourceHandler[Random.Range(0, resourceHandler.Length)], transform.position, Quaternion.identity);
+                    }
                 }
             );
         Destroy(gameObject,2);

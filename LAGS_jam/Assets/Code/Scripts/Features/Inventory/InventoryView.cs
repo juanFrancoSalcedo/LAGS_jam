@@ -6,19 +6,13 @@ public class InventoryView : MonoBehaviour
     [SerializeField] Transform container;
     [SerializeField] Transform scrollViewContent;
 
-    private void OnDisable()
-    {
-        ClearItems();
-    }
+    private void OnDisable() => ClearItems();
 
-    private void OnEnable()
-    {
-        OpenItems();
-    }
+    private void OnEnable() => OpenItems();
 
     public void OpenItems() 
     {
-        var data = InventoryDataService.ReadData();
+        var data = InventoryDataService.runTimeData;
         print(data.resources.Count);
         CreateItems(data);
     }

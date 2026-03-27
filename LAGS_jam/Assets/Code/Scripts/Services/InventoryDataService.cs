@@ -2,9 +2,9 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class InventoryDataService 
+public class InventoryDataService
 {
-    static ResourceWrapper runTimeData = new ResourceWrapper();
+    public static ResourceWrapper runTimeData = new ResourceWrapper();
 
     public static void SaveData() 
     {
@@ -14,7 +14,8 @@ public class InventoryDataService
 
     public static ResourceWrapper ReadData() 
     {
-        runTimeData = JsonUtility.FromJson<ResourceWrapper>(PlayerPrefs.GetString(KeyStorage.Inventory_Resources));
+        if (PlayerPrefs.HasKey(KeyStorage.Inventory_Resources))
+            runTimeData = JsonUtility.FromJson<ResourceWrapper>(PlayerPrefs.GetString(KeyStorage.Inventory_Resources));
         return runTimeData;
     }
 

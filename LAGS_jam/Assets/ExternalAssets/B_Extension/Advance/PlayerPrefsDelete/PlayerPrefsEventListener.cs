@@ -44,6 +44,7 @@ public class PlayerPrefsEventListener : MonoBehaviour
             CheckExist();
         }
     }
+
     public void CheckExist()
     {
         if (PlayerPrefs.HasKey(key))
@@ -52,6 +53,11 @@ public class PlayerPrefsEventListener : MonoBehaviour
             onExistKey?.Invoke();
         }
         else
-            onExistKey?.Invoke();
+            onDoesntExistKey?.Invoke();
+    }
+
+    public void WritePlayerPrefInt(int val) 
+    {
+        PlayerPrefs.SetInt(key, val);
     }
 }
