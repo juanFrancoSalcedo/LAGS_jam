@@ -20,7 +20,7 @@ public class DialogAnimation : MonoBehaviour
 
     public async void AnimateDefault(string dialog) 
     {
-        AnimCharScaleFade animationDefault = new AnimCharScaleFade();
+        AnimCharHorizon animationDefault = new AnimCharHorizon();
         await AnimateText(animationDefault, dialog);
 
     }

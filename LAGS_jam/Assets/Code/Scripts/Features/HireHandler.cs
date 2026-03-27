@@ -1,16 +1,20 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 public class HireHandler : MonoBehaviour, IDialogListener
 {
     [SerializeField] private NPCHandler npcHandler;
     [SerializeField] private int eventIndexAccept;
-    [SerializeField] private DialogManager dialogManager;
-    [SerializeField] private GameObject panelAcceptHire;
-    [SerializeField] private ButtonNextDialog buttonDialog;
     [SerializeField] private EmployeeSheet employeerSheet;
-    [SerializeField] private ButtonAcceptHire[] buttonHires;
+    [Inject] private DialogManager dialogManager;
+    [Header("Dialogs")]
+
+    [SerializeField] private DialogSheet dialogAcceptTrade;
+    [SerializeField] private DialogSheet dialogCantPay;
+    [SerializeField] private DialogSheet dialogDeclineTrade;
+    private ButtonAcceptHire[] buttonHires;
 
     public Action OnDialogStarted { get; set; }
     public Action<int, int> OnDialogUpdate { get; set; }
@@ -39,12 +43,10 @@ public class HireHandler : MonoBehaviour, IDialogListener
 
     private void InsertInfoInDialog()
     {
-
         if (InDataBase)
             return;
-        dialogManager.AddCustomDialog(employeerSheet.Model.DialogCV);
-        if (buttonHires.Length == 0)
-            print("HAY QUE PONER LOS BOTONES VIEJO");
+        dialogManager.AddCustomDialog(employeerSheet.Model.DialogCVModel);
+        buttonHires = FindObjectsByType<ButtonAcceptHire>(FindObjectsInactive.Include,FindObjectsSortMode.None);
         foreach (var item  in buttonHires) 
         {
             item.npcHandler = this;
@@ -66,8 +68,8 @@ public class HireHandler : MonoBehaviour, IDialogListener
     {
         if (arg1 == eventIndexAccept)
         {
-            panelAcceptHire.SetActive(true);
-            buttonDialog.SetInteract(false);
+            dialogManager.PanelAcceptHire.SetActive(true);
+            dialogManager.ButtonDialog.SetInteract(false);
         }
     }
 
@@ -79,16 +81,16 @@ public class HireHandler : MonoBehaviour, IDialogListener
             { 
                 HireDataService.AddItem(employeerSheet.Model);
                 MoneyDataService.RemoveMoney(employeerSheet.Model.Pricing);
-                dialogManager.AddCustomDialog("Perfecto trabajaré duro");
+                dialogManager.AddCustomDialog(dialogAcceptTrade.Model.Copy());
             }
             else
-                dialogManager.AddCustomDialog("Lo siento, no tienes dinero suficiente para pagarme");
+                dialogManager.AddCustomDialog(dialogCantPay.Model.Copy());
         }
         else
         {
-            dialogManager.AddCustomDialog("Tu te lo pierdes");
+            dialogManager.AddCustomDialog(dialogDeclineTrade.Model.Copy());
         }
-        panelAcceptHire?.SetActive(false);
+        dialogManager.PanelAcceptHire?.SetActive(false);
     }
 }
 

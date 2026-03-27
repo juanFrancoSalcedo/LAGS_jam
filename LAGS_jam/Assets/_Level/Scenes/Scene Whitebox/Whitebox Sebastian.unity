@@ -1046,7 +1046,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   npcHandler: {fileID: 837757301}
   eventIndexAccept: 1
-  dialogManager: {fileID: 1319031614}
   panelAcceptHire: {fileID: 3780348480999230416}
   buttonDialog: {fileID: 1643717014}
   employeerSheet: {fileID: 11400000, guid: eb066305933f0ba4d8bbcf10cb243f12, type: 2}
@@ -1476,9 +1475,6 @@ MonoBehaviour:
   panelAcceptHire: {fileID: 3780348480999230416}
   panelAcceptTrade: {fileID: 1501380601}
   panelInventory: {fileID: 88563300}
-  dialogs:
-  - Dialog: 
-  - Dialog: 
 --- !u!114 &1341168509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5096097019004693041, guid: 6fe97414a4a5253428ca8a9cdbc9ed65, type: 3}
@@ -1708,7 +1704,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   npcHandler: {fileID: 1821229569}
   eventIndexAccept: 1
-  dialogManager: {fileID: 1319031614}
   panelAcceptHire: {fileID: 3780348480999230416}
   buttonDialog: {fileID: 1643717014}
   employeerSheet: {fileID: 11400000, guid: 7095a23ab5a1e6c4c829d542ccff1460, type: 2}
@@ -2554,15 +2549,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 846931500704349853, guid: d76d58c2cdaf0b440ae93e4cac8fa245, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.1118565
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 846931500704349853, guid: d76d58c2cdaf0b440ae93e4cac8fa245, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.95
+      value: 3.78
       objectReference: {fileID: 0}
     - target: {fileID: 846931500704349853, guid: d76d58c2cdaf0b440ae93e4cac8fa245, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.50512
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1284460937545579830, guid: d76d58c2cdaf0b440ae93e4cac8fa245, type: 3}
       propertyPath: m_LocalPosition.x

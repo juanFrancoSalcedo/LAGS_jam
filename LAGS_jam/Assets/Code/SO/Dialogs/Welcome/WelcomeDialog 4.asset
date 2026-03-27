@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
-  m_Name: BaseDialog
+  m_Name: WelcomeDialog 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   model:
-    Dialog: que hubo mijo
+    Dialog: y las peores, pues ni para que cogerlas

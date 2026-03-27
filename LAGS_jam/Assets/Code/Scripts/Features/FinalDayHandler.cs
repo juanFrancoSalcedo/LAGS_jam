@@ -8,7 +8,6 @@ public class FinalDayHandler : MonoBehaviour
     [SerializeField] private Transform content;
     [SerializeField] private TMP_Text prototypeTextDay;
 
-
     private void OnEnable()
     {
         GameStateMediator.Subscribe(TypeGameState.EndDay,OpenEndDay);

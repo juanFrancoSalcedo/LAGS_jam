@@ -17,5 +17,9 @@ MonoBehaviour:
     typeTask: 1
     levelJob: 1
     UID: asdasda-+dasdasda-dasd-2312as
-    Pricing: 40
-    DialogCV: Yo soy tu hombre para ese trabajo, solo pagame 40 lucas
+    Pricing: 50
+    DialogCVModel:
+      Dialog: Yo soy tu hombre para ese trabajo, solo pagame 50$
+      DialogEN: 
+      DialogPO: 
+      useWildCards: 0

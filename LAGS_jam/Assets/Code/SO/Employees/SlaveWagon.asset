@@ -17,5 +17,9 @@ MonoBehaviour:
     typeTask: 2
     levelJob: 1
     UID: hjaksjdj12-asdasdasd-123sd43aed-asda122
-    Pricing: 25
-    DialogCV: "Hola mi pez yo te ayudo a mover el vag\xF3n, dame 25 barras"
+    Pricing: 40
+    DialogCVModel:
+      Dialog: "Deacuerdo, movere el vag\xF3n por 40$"
+      DialogEN: 
+      DialogPO: 
+      useWildCards: 0

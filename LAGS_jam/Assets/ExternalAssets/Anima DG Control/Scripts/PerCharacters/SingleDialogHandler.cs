@@ -7,7 +7,7 @@ public class SingleDialogHandler:MonoBehaviour
 
     public void ShowAnimation() 
     {
-        dialogAnima.AnimateDefault(dialogSheet.Model.Dialog);
+        dialogAnima.AnimateDefault(dialogSheet.Model.GetDialog());
     }
 }
 
