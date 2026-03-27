@@ -34,7 +34,11 @@ public class NPCHandler : MonoBehaviour,IDialogListener
         DialogManager.Instance.InjectListener(this);
     }
 
-    private void DenyTalk(Transform transform) => InteractIconService.Instance.HideIcon();
+    private void DenyTalk(Transform transform)
+    {
+        InteractIconService.Instance.HideIcon();
+        DialogManager.Instance.ReleaseChat();
+    }
 
     private void Start() => dialogManager = DialogManager.Instance;
 }

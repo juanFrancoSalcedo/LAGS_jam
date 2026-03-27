@@ -1,9 +1,10 @@
 using B_Extensions;
 using UnityEngine;
+using Zenject;
 
 public class ButtonAcceptTrade:BaseButtonAttendant 
 {
-    [SerializeField] TraderHandler npcHandler;
+    [Inject] TraderHandler npcHandler;
     [SerializeField] private bool Accept;
     private void Start() => buttonComponent.onClick.AddListener(TryAccept);
 

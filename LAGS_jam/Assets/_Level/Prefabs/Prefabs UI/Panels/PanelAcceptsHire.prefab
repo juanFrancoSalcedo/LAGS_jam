@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c530a13d1a6dee40936b7928d23eb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonAcceptHire
-  npcHandler: {fileID: 0}
   Accept: 0
+  npcHandler: {fileID: 0}
 --- !u!1 &2760500793184159203
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: ON07O1QWNAMQ
+    UniqueId: BCPGSIIT4BKE
     handler: {fileID: 1008560013490743843}
     sceneName: Whitebox Sebastian
 --- !u!1 &3935690172121600992
@@ -870,8 +870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c530a13d1a6dee40936b7928d23eb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonAcceptHire
-  npcHandler: {fileID: 0}
   Accept: 1
+  npcHandler: {fileID: 0}
 --- !u!1 &7964924082403147783
 GameObject:
   m_ObjectHideFlags: 0

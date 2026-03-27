@@ -58,7 +58,7 @@ public class PickHandler : MonoBehaviour
         if(_transform.TryGetComponent<RockHandler>(out var compo))
         {
             compo.MakeDamage();
-            playerHandler.DebtStamina(Constants.ActionDebt);
+            playerHandler.DebtStamina(2.5f);
         }
     }
 
@@ -67,10 +67,4 @@ public class PickHandler : MonoBehaviour
         if(action.WasPressedThisFrame())
             _pickMovement.Animate();
     }
-}
-
-
-public static class Constants 
-{
-    public const float ActionDebt = 2.2f;
 }

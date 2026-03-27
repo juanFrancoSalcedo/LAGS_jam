@@ -10,6 +10,12 @@ public class RockHandler : MonoBehaviour
     [SerializeField] private int _maxHP = 3;
     [SerializeField] private ResourceHandler[] resourceHandler;
 
+
+    private void Start()
+    {
+        _hitParticles.transform.SetParent(null);
+    }
+
     public void Hit()
     {
         _hitParticles?.Play();

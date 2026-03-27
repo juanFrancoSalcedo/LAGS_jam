@@ -32,9 +32,14 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
         {
             print("TODO Inject this perrito, shutese esto mi socio");
             _transform.gameObject.SetActive(false);
-            MiningMediator.Publish(TypeMiningEvent.CollectResource);
-            InventoryDataService.AddItem(compo.Sheet.GetModelCopy());
+            AddCollect(compo.Sheet);
         }
+    }
+
+    public void AddCollect(ResourceSheet Sheet) 
+    {
+        MiningMediator.Publish(TypeMiningEvent.CollectResource);
+        InventoryDataService.AddItem(Sheet.GetModelCopy());
     }
 
     private void Update()
