@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader Sale 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: Te doy @ por esta #
-    DialogEN: 
-    DialogPO: 
+    Dialog: "Esta es una @. Buena pieza. Te doy $#. \xBFTrato?"
+    DialogEN: This is an @. Good piece. I'll give you $#. Deal?
+    DialogPO: "Esta \xE9 uma @. Boa pe\xE7a. Eu te dou $#. Trato?"
     useWildCards: 1

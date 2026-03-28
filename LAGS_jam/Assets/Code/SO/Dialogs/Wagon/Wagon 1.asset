@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Wagon 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 5
   model:
-    Dialog: "\xBFCu\xE1les son tus macros?"
-    DialogEN: 
-    DialogPO: 
+    Dialog: "\xBFBuscas a alguien que mueva el vag\xF3n? Pues ya me encontraste.\nSoy
+      Fausto. No hablo mucho, pero trabajo el doble."
+    DialogEN: Looking for someone to move the cart? Well, you found me. I'm Fausto.
+      I don't talk much, but I work twice as hard.
+    DialogPO: "Voc\xEA est\xE1 procurando algu\xE9m para empurrar o vag\xE3o? Voc\xEA
+      j\xE1 me encontrou. Sou Fausto. N\xE3o falo muito, mas dobro o trabalho."
     useWildCards: 0

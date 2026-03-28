@@ -28,7 +28,7 @@ namespace B_Extensions.HierarchyStates
                 reference.UpdateElementScene();
                 reference.UpdateElementHandler(this);
                 
-                    EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+                //EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
             }
             #endif
         }

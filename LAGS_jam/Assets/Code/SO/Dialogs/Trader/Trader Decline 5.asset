@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader Decline 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: "Ser\xE1 para otra ocasi\xF3n"
-    DialogEN: 
-    DialogPO: 
-    useWildCards: 1
+    Dialog: "Sin problema. Cuando est\xE9s listo, aqu\xED estar\xE9."
+    DialogEN: No problem. When you're ready, I'll be here.
+    DialogPO: "Sem problema. Quando voc\xEA estiver pronto, aqui estarei"
+    useWildCards: 0
