@@ -9,13 +9,13 @@ public class PlayerStaminaView : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerStamina.OnStaminaDrain += DisplayDrain;
+        PlayerStamina.OnStaminaChanged += DisplayDrain;
     }
 
 
     private void OnDisable()
     {
-        PlayerStamina.OnStaminaDrain -= DisplayDrain;
+        PlayerStamina.OnStaminaChanged -= DisplayDrain;
     }
 
     private void DisplayDrain(float arg1, float arg2)

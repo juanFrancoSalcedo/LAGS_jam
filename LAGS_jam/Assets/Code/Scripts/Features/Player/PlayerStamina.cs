@@ -5,6 +5,7 @@ public class PlayerStamina
 {
     public float Stamina { get; private set; } = 0;
     private float maxStamina =0;
+    public static event Action<float,float> OnStaminaChanged;
     public PlayerStamina()
     {
         if(maxStamina != 80)
@@ -14,8 +15,14 @@ public class PlayerStamina
     public void DebtStamina(float amount) 
     {
         Stamina -= amount;
-        OnStaminaDrain?.Invoke(Stamina, maxStamina);
+        OnStaminaChanged?.Invoke(Stamina, maxStamina);
     }
 
-    public static event Action<float,float> OnStaminaDrain;
+    public void RestoreStamina(float amount)
+    {
+        Stamina += amount;
+        if (Stamina > maxStamina)
+            Stamina = maxStamina;
+        OnStaminaChanged?.Invoke(Stamina, maxStamina);
+    }
 }     

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -26,7 +27,15 @@ public class PlayerHandler : MonoBehaviour
         _playerStamina = new PlayerStamina();
         _playerMovement.Configure();
         freeze = !(GameStateContext.State == TypeGameState.StartDay);
+    }
 
+    private IEnumerator Start()
+    {
+        while (true) 
+        {
+            yield return new WaitForSeconds(0.1f);
+            _playerStamina.RestoreStamina(0.025f);
+        }
     }
 
     #region Stamina
@@ -52,7 +61,12 @@ public class PlayerHandler : MonoBehaviour
         if (freeze || animator.GetBool("Mining"))
             return;
         if (direction.x == 0 && direction.y == 0)
+        {
+            AudioManager.Instance.StopCaveSteps();
             return;
+        }
+        else
+            AudioManager.Instance.PlayCaveSteps();
         rb.linearVelocity = new Vector3(direction.x, -0.98f,direction.y) * speed;
 
 
@@ -71,6 +85,7 @@ public class PlayerHandler : MonoBehaviour
 
     private void Update()
     {
+
         direction = _playerMovement.Update();
 
         animator.SetBool("Right", direction.x > 0);
@@ -80,5 +95,6 @@ public class PlayerHandler : MonoBehaviour
 
         animator.SetFloat("AxisX", direction.x);
         animator.SetFloat("AxisY", direction.y);
+        
     }
 }

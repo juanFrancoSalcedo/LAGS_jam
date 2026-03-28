@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 184614288116935433}
   - component: {fileID: 2211571345141679895}
   - component: {fileID: 2585249139727742710}
+  - component: {fileID: 738268628692861976}
   m_Layer: 0
   m_Name: Wagon
   m_TagString: Untagged
@@ -166,7 +167,10 @@ MonoBehaviour:
   maxFollowDistance: 3
   followSpeed: 2
   triggerDetector: {fileID: 4773514102205748590}
-  collisionDetector: {fileID: 0}
+  collisionDetectors:
+  - {fileID: 8263812165787861379}
+  - {fileID: 866250764136897310}
+  - {fileID: 738268628692861976}
   spriteRenderer: {fileID: 5837797362051743375}
 --- !u!54 &2585249139727742710
 Rigidbody:
@@ -195,6 +199,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &738268628692861976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136589280314292718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f108ce90b389c0045806c57214d32dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionDetector
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2936047711897638127
 GameObject:
   m_ObjectHideFlags: 0
