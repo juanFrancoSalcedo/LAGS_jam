@@ -7,29 +7,57 @@ public class PlayerHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer renderSpt = null;
     [SerializeField] private float speed = 2;
+    [SerializeField] private Animator animator = null;
+    private bool freeze = true;
     PlayerMovementInputs _playerMovement;
     Rigidbody rb;
     public event Action<bool> OnXSpriteChanged;
     InputSystem_Actions _actions;
     Vector2 direction;
+    PlayerStamina _playerStamina;
+    public PlayerStamina PlayerStamina => _playerStamina;
+
+    public bool CarryWagon = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         _actions = new InputSystem_Actions();
         _playerMovement = new PlayerMovementInputs(_actions);
+        _playerStamina = new PlayerStamina();
         _playerMovement.Configure();
+        freeze = !(GameStateContext.State == TypeGameState.StartDay);
+
     }
 
-    private void OnEnable() => _actions.Enable();
+    #region Stamina
+    public void DebtStamina(float amount) => PlayerStamina.DebtStamina(amount);
+    #endregion
 
-    private void OnDisable() => _actions.Disable();
+    private void OnEnable()
+    {
+        _actions.Enable();
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay,()=> freeze = false);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay, () => freeze = true);
+    }
+
+    private void OnDisable()
+    {
+        _actions.Disable();
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, () => freeze = false);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay, () => freeze = true);
+    }
 
     private void FixedUpdate()
     {
+        if (freeze || animator.GetBool("Mining"))
+            return;
         if (direction.x == 0 && direction.y == 0)
             return;
-        
         rb.linearVelocity = new Vector3(direction.x, -0.98f,direction.y) * speed;
+
+
+        if (CarryWagon)
+            DebtStamina(0.02f);
 
         // keep direction in x axis
         if (direction.x != 0)
@@ -41,5 +69,16 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    private void Update() => direction = _playerMovement.Update();
+    private void Update()
+    {
+        direction = _playerMovement.Update();
+
+        animator.SetBool("Right", direction.x > 0);
+        animator.SetBool("Left", direction.x < 0);
+        animator.SetBool("Up", direction.y > 0);
+        animator.SetBool("Down", direction.y < 0);
+
+        animator.SetFloat("AxisX", direction.x);
+        animator.SetFloat("AxisY", direction.y);
+    }
 }

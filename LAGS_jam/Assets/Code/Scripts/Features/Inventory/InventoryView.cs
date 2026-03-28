@@ -1,53 +1,37 @@
-using TMPro;
 using UnityEngine;
 
 public class InventoryView : MonoBehaviour
 {
     [SerializeField] private CardInventoryItem prototypeCard;
     [SerializeField] Transform container;
+    [SerializeField] Transform scrollViewContent;
 
+    private void OnDisable() => ClearItems();
 
-    private InventoryCardController controller;
+    private void OnEnable() => OpenItems();
 
-    private void Awake()
+    public void OpenItems() 
     {
-        controller = new InventoryCardController();
-        var data = InventoryDataService.ReadData();
+        var data = InventoryDataService.runTimeData;
+        print(data.resources.Count);
+        CreateItems(data);
     }
+
     public void CreateItems(ResourceWrapper wrapper) 
     {
         wrapper.resources.ForEach(i => { 
-            var clone = Instantiate(prototypeCard,container);
-
+            var clone = Instantiate(prototypeCard, scrollViewContent);
+            clone.Configure(i);
+            clone.DisplayInfo();
         });
     }
-}
 
-
-public class InventoryCardPresenter
-{ 
-    
-}
-
-public class InventoryCardController
-{
-    
-
-}
-
-public class CardInventoryItem: MonoBehaviour
-{
-
-    [SerializeField] private TMP_Text textName;
-
-    ResourceModel model;
-    private void Configure(ResourceModel model) 
+    public void ClearItems() 
     {
-        this.model = model;
-    }
-
-    private void DisplayInfo() 
-    {
-        
+        for (int i = 0; i < scrollViewContent.childCount; i++) 
+        {
+            Destroy(scrollViewContent.GetChild(i).gameObject);
+        }
     }
 }
+

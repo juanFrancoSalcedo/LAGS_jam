@@ -7,13 +7,15 @@ public class PickHandler : MonoBehaviour
 {
     [SerializeField] private TriggerDetector triggerDetector;
     [SerializeField] private PlayerHandler playerHandler;
+    [SerializeField] private Animator _animator;
+
     PickMovement _pickMovement;
     InputSystem_Actions inputActions;
     InputAction action;
 
     private void Awake()
     {
-        _pickMovement = new PickMovement(transform,triggerDetector);
+        _pickMovement = new PickMovement(transform,triggerDetector,_animator);
         inputActions = new InputSystem_Actions();
         action = inputActions.FindAction("Jump");
         ChangedDirectionPick(false);
@@ -55,10 +57,10 @@ public class PickHandler : MonoBehaviour
 
     private void TriggerPick(Transform _transform)
     {
-
         if(_transform.TryGetComponent<RockHandler>(out var compo))
         {
             compo.MakeDamage();
+            playerHandler.DebtStamina(2.5f);
         }
     }
 

@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarryHandler
   triggerDetector: {fileID: 2885048762469975699}
-  playerHandler: {fileID: 0}
+  playerHandler: {fileID: 5096097019004693041}
 --- !u!114 &2885048762469975699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,9 +290,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3287195754634092117}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0636511101ae3e441ae095924eb5470b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 204b07f216a061b41bf8a1143bc1d2db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -495,7 +495,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5577021861000719788}
-  - component: {fileID: 9203131186359111763}
   - component: {fileID: 2430594328537045375}
   - component: {fileID: 5096097019004693041}
   - component: {fileID: 8526942686951570150}
@@ -524,28 +523,6 @@ Transform:
   - {fileID: 7325444140593402280}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &9203131186359111763
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7791315211406108279}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0636511101ae3e441ae095924eb5470b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &2430594328537045375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -586,7 +563,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHandler
   renderSpt: {fileID: 2072738675113110700}
-  speed: 10
+  speed: 15
+  animator: {fileID: 2529310747024159779}
+  CarryWagon: 0
 --- !u!136 &8526942686951570150
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -659,3 +638,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickHandler
   triggerDetector: {fileID: 9002964610265790947}
   playerHandler: {fileID: 5096097019004693041}
+  _animator: {fileID: 2529310747024159779}

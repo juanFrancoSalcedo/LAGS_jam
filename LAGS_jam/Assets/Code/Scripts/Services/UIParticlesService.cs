@@ -1,19 +1,32 @@
 using AssetKits.ParticleImage;
 using B_Extensions;
-using UnityEditor.PackageManager;
+using System;
 using UnityEngine;
 
 public class UIParticlesService : Singleton<UIParticlesService>
 {
-    [SerializeField] private ParticleImage particleone;
+    [SerializeField] private ParticleImage particleGems;
+    [SerializeField] private ParticleImage particleMoney;
 
-    private void OnEnable() => MiningMediator.Subscribe(TypeMiningEvent.CollectResource, Collect);
+    private void OnEnable()
+    {
+        MiningMediator.Subscribe(TypeMiningEvent.CollectResource, Collect);
+        MoneyDataService.OnMoneyChanged += CollectMoney;
+    }
 
-    private void OnDisable() => MiningMediator.Unsubscribe(TypeMiningEvent.CollectResource, Collect);
+
+    private void OnDisable()
+    {
+        MiningMediator.Unsubscribe(TypeMiningEvent.CollectResource, Collect);
+        MoneyDataService.OnMoneyChanged -= CollectMoney;
+    }
+    private void CollectMoney(int arg1, int arg2)
+    {
+        particleMoney.gameObject.SetActive(true);
+    }
 
     public void Collect() 
     {
-        print("ParticlePool Particles Here");
-        particleone.gameObject.SetActive(true);
+        particleGems.gameObject.SetActive(true);
     }
 }
