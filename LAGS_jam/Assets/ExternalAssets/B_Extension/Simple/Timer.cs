@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private UnityEvent onStartTimer;
     [SerializeField] private UnityEvent onStopTimer;
     [SerializeField] private UnityEvent onTimeCompleted;
+    public float TimeRemaing => timeRemaing;
 
     public void StopTimer()
     {

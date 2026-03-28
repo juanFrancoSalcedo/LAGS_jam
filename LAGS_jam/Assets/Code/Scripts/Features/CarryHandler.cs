@@ -59,7 +59,13 @@ public class CarryHandler : MonoBehaviour
     {
         if (actionCarry.WasPressedThisFrame())
         {
-            if(carryElement)
+            if (playerHandler.IsExhausted(3f))
+            { 
+                AudioManager.Instance.PlaySigh();
+                NotificationManager.Instance.ShowNotification("No tienes suficiente energía para cargar o soltar el recurso", 4f);
+                return;
+            }
+            if (carryElement)
                 TryDrop();
             else
                 TryCarry();
@@ -90,7 +96,7 @@ public class CarryHandler : MonoBehaviour
         carryElement = resourceHandlers[0];
         resourceHandlers.RemoveAt(0);
         carryElement.CarryPosition = transform;
-        playerHandler.DebtStamina(2.5f);
+        playerHandler.DebtStamina(3f);
     }
 
     private void TryDrop()
@@ -104,7 +110,7 @@ public class CarryHandler : MonoBehaviour
         if (wagon.IsNearPlayer())
         {
             carryElement.AnimateJump(wagon.transform);
-            playerHandler.DebtStamina(2.5f);
+            playerHandler.DebtStamina(3f);
         }
         carryElement = null;
     }
