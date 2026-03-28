@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Miner 4 Decline
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 6
   model:
-    Dialog: "si no te parece sera para otra ocasi\xF3n"
-    DialogEN: 
-    DialogPO: 
+    Dialog: "Est\xE1 bien, t\xFA decides. Aqu\xED estar\xE9 si cambias de opini\xF3n."
+    DialogEN: "Alright, your call. I\u2019ll be here if you change your mind."
+    DialogPO: "Tudo bem, voc\xEA decide. Estarei aqui se mudar de ideia."
     useWildCards: 0
