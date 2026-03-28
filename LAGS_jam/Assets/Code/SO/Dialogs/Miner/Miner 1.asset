@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Miner 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 6
   model:
-    Dialog: "Se minar, \xBFquieres que te ayude?"
-    DialogEN: 
-    DialogPO: 
+    Dialog: "S\xE9 de miner\xEDa...\xBFQuieres que te eche una mano por $50?"
+    DialogEN: "I know a thing or two about mining\u2026 want me to give you a hand
+      for $50?"
+    DialogPO: "Entendo de minera\xE7\xE3o\u2026 quer que eu te d\xEA uma m\xE3o por
+      $50?"
     useWildCards: 0

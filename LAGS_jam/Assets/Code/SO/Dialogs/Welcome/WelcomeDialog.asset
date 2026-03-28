@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 0
   model:
-    Dialog: "Buen d\xEDa. As\xED que t\xFA eres el nuevo"
-    DialogEN: Good day. So you're the new guy.
-    DialogPO: " Bom dia. Ent\xE3o voc\xEA \xE9 o novo."
+    Dialog: "Buen d\xEDa! As\xED que t\xFA eres el nuevo"
+    DialogEN: Good day! So you're the new guy.
+    DialogPO: " Bom dia! Ent\xE3o voc\xEA \xE9 o novo."
     useWildCards: 0
