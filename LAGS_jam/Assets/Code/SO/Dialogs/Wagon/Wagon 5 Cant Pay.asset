@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 5
   model:
-    Dialog: No me convence la oferta
-    DialogEN: The offer doesn't convince me
-    DialogPO: "A oferta n\xE3o me convence"
+    Dialog: "Sin monedas no hay empuje. Vuelve cuando est\xE9s listo.\nFausto. As\xED
+      de simple."
+    DialogEN: "No coin, no push. Come back when you\u2019re ready.\nFausto. Simple
+      as that."
+    DialogPO: "Sem moedas, sem empurr\xE3o. Volte quando estiver pronto.\nFausto.
+      Simples assim."
     useWildCards: 0
