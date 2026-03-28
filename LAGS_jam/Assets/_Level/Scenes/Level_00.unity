@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 77da741fa064b6a489d6e28cbb15353c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1779,71 +1779,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ede9a691f146b949aadafbb72142626, type: 3}
---- !u!1001 &980575307
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 965979248059332723, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_Name
-      value: '[Scenary]Cave'
-      objectReference: {fileID: 0}
-    - target: {fileID: 965979248059332723, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4377129309057421239, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8632835109822652813, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 323e95a864f6bf94183f303bbd19f859, type: 3}
 --- !u!1 &1043678271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4176,7 +4111,6 @@ SceneRoots:
   - {fileID: 476236571}
   - {fileID: 541811359}
   - {fileID: 480743585}
-  - {fileID: 980575307}
   - {fileID: 195015918}
   - {fileID: 1982609016}
   - {fileID: 2132018317}
