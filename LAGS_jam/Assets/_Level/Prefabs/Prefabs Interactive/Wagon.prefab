@@ -166,6 +166,7 @@ MonoBehaviour:
   maxFollowDistance: 3
   followSpeed: 2
   triggerDetector: {fileID: 4773514102205748590}
+  collisionDetector: {fileID: 0}
   spriteRenderer: {fileID: 5837797362051743375}
 --- !u!54 &2585249139727742710
 Rigidbody:
@@ -206,6 +207,7 @@ GameObject:
   - component: {fileID: 7909732153479550087}
   - component: {fileID: 151678616440355810}
   - component: {fileID: 2443232361711694901}
+  - component: {fileID: 866250764136897310}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -306,6 +308,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &866250764136897310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2936047711897638127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f108ce90b389c0045806c57214d32dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionDetector
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5435231199551169015
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +344,7 @@ GameObject:
   - component: {fileID: 3187181178646096268}
   - component: {fileID: 1822869396837246536}
   - component: {fileID: 254221297445956505}
+  - component: {fileID: 8263812165787861379}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -418,6 +445,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8263812165787861379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5435231199551169015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f108ce90b389c0045806c57214d32dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionDetector
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5705092674793648451
 GameObject:
   m_ObjectHideFlags: 0

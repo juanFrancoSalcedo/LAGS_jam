@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 5570283707248281787}
   - component: {fileID: 1470235704686765653}
   - component: {fileID: 5792586042802198327}
+  - component: {fileID: 2031614179052575086}
   m_Layer: 0
   m_Name: 'Lamp_02_Idle_Point Light '
   m_TagString: Untagged
@@ -382,10 +383,24 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: c8874863008203a48825e12f0062fd67, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_UpdateMode: 0
   m_CullingType: 0
+--- !u!114 &2031614179052575086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993146253127500866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3936712adf9f4149a00f895b5abe99b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationRandomDelay
+  minDelay: 0.1
+  maxDelay: 0.5
 --- !u!1001 &7694769236075502872
 PrefabInstance:
   m_ObjectHideFlags: 0

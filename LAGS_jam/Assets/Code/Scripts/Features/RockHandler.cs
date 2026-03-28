@@ -8,26 +8,33 @@ public class RockHandler : MonoBehaviour
     [SerializeField] private int _maxHP = 3;
     [SerializeField] private ResourceHandler[] resourceHandler;
     [SerializeField] private int amountResourcesInstanciate = 3;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
         _hitParticles.transform.SetParent(null);
     }
 
-    public void Hit()
+    public void Hit(bool applyAnimation = true)
     {
         _hitParticles?.Play();
-        transform.DOShakeScale(0.2f, strength: 0.2f);
+        if(applyAnimation)
+            transform.DOShakeScale(0.2f, strength: 0.2f);
+        animator.SetTrigger("Mining");
     }
 
     public void MakeDamage() 
     {
         if (_maxHP <= 0)
             return;
-
         _maxHP--;
+        print(_maxHP);
+        animator.SetInteger("Life", _maxHP);
         if (_maxHP <= 0)
+        {
+            Hit(false);
             DestroyRock();
+        }
         else
             Hit();
     }
@@ -35,17 +42,17 @@ public class RockHandler : MonoBehaviour
     public void DestroyRock()
     {
         _maxHP = 0;
-        transform.DOScale(0,0.1f).OnComplete(
+        transform.DOScale(1,0.3f).OnComplete(
             () => 
                 {
                     int count = 0;
                     while (count<amountResourcesInstanciate) 
                     {
                         count++;
-                        Instantiate(resourceHandler[Random.Range(0, resourceHandler.Length)], transform.position, Quaternion.identity);
+                        Instantiate(resourceHandler[UnityEngine.Random.Range(0, resourceHandler.Length)], transform.position, Quaternion.identity);
                     }
                 }
             );
-        Destroy(gameObject,2);
+        Destroy(gameObject,0.6f);
     }
 }

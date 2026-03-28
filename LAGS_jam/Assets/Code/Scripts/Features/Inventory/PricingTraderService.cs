@@ -38,7 +38,6 @@ public class PricingTraderService
         if (matchingRule.Key != null)
         {
             int finalPrice = UnityEngine.Random.Range(matchingRule.Value.min, matchingRule.Value.max);
-            Debug.Log($"Te doy {finalPrice:F0} monedas por tu {model.Name} ({model.typeResource} - {model.Quality})");
             return finalPrice;
         }
         else
