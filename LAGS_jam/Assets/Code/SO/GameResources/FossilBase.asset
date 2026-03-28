@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b33a1957376d54548b6df432da1149d5, type: 3}
-  m_Name: EmeraldBase
+  m_Name: FossilBase
   m_EditorClassIdentifier: Assembly-CSharp::ResourceSheet
   spt: {fileID: 603984352, guid: 45edb64d9cc56bf43bf8e9177b536eeb, type: 3}
   model:

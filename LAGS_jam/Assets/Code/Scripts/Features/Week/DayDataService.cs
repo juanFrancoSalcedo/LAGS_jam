@@ -16,9 +16,7 @@ public static class DayDataService
     {
         currentDay = PlayerPrefs.GetInt(KeyStorage.Day, 1);
         var buffer = currentDay;
-        Debug.Log($"Before: {currentDay}");
         currentDay++;
-        Debug.Log($"After: {currentDay}");
         OnDayChanged?.Invoke(buffer,currentDay);
         SaveData();
     }
