@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: WelcomeDialog
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: "Buen d\xEDa joven"
+    Dialog: "Buen d\xEDa. As\xED que t\xFA eres el nuevo"
+    DialogEN: Good day. So you're the new guy.
+    DialogPO: " Bom dia. Ent\xE3o voc\xEA \xE9 o novo."
+    useWildCards: 0

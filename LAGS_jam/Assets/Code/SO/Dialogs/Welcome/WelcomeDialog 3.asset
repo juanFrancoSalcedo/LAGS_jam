@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: WelcomeDialog 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: "M\xE1s dinero ganar\xE1. Las de mejor calidad dan m\xE1s dinero"
+    Dialog: "S\xE9 lo que buscas y por qu\xE9. Espero que lo consigas"
+    DialogEN: I know what you're looking for and why. I hope you succeed
+    DialogPO: "Eu sei o que voc\xEA procura e por qu\xEA. Espero que consiga"
+    useWildCards: 0

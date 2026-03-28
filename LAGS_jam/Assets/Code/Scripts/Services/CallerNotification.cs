@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class CallerNotification : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] DialogSheet dialog;
+    NotificationManager notifyManager;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        notifyManager  = NotificationManager.Instance;
+    }
+    public void CallNotification() 
+    {
+        notifyManager.ShowNotification(dialog.Model.GetDialog(),dialog.TimeReading);
     }
 }

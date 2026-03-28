@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Practice 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: "Usa la roca de atr\xE1s para practicar"
-    DialogEN: 
-    DialogPO: 
+    Dialog: Antes de que entres a la mina real... necesito saber que sabes lo que
+      haces.
+    DialogEN: Before you enter the real mine... I need to know you know what you're
+      doing.
+    DialogPO: "Antes de voc\xEA entrar na mina real... preciso saber que voc\xEA
+      sabe o que faz."
     useWildCards: 0

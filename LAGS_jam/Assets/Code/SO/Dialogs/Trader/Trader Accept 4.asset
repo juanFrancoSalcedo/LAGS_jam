@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader Accept 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: Un placer hacer negocios contigo
-    DialogEN: 
-    DialogPO: 
-    useWildCards: 1
+    Dialog: "Un placer hacer negocios contigo. Vuelve pronto con m\xE1s."
+    DialogEN: Pleasure doing business with you. Come back soon with more.
+    DialogPO: "Prazer em negociar com voc\xEA. Volte logo com mais."
+    useWildCards: 0
