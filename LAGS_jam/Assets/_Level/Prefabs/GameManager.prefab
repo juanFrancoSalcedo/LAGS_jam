@@ -1416,7 +1416,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: PENPIX7FFQ7M
+    UniqueId: NSWPOOUKPBXV
     handler: {fileID: 4361543604302639183}
     sceneName: 0_Camp
 --- !u!1 &764065680489852681
@@ -1568,6 +1568,8 @@ GameObject:
   - component: {fileID: 6411153130709437533}
   - component: {fileID: 6216166076038438276}
   - component: {fileID: 1482616385804868180}
+  - component: {fileID: 534670052533553761}
+  - component: {fileID: 5251820069412575338}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1677,6 +1679,33 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &534670052533553761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794037306183268216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ed5d3c1142b3d4f8adf4906070b277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::B_Extensions.SceneLoader.CallerSceneLoader
+  sceneName: Level_00
+--- !u!114 &5251820069412575338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794037306183268216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f410e4d71fc80a24da0bf63e04b3b459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonLoaderScene
+  pauseOnClick: 0
+  unpauseOnClick: 0
 --- !u!1 &910436210321718406
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,7 +2166,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: EL6OYMQ6K991
+    UniqueId: AVYNXFJHYILC
     handler: {fileID: 5996292282278644472}
     sceneName: 0_Camp
 --- !u!1 &1094815544158893440
@@ -3216,7 +3245,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: T5DECT6WL2QH
+    UniqueId: RYL3SLOZZQ29
     handler: {fileID: 6698664729242739183}
     sceneName: Whitebox Sebastian
 --- !u!1 &1814899273790511243
@@ -3643,7 +3672,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: GADAZDUY42JZ
+    UniqueId: 15TNVHNG76HN
     handler: {fileID: 3633846540431030990}
     sceneName: 0_Camp
 --- !u!1 &1926214684156377537
@@ -8099,7 +8128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8bb12c83935084682650501b161bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
-  targetTime: 240
+  targetTime: 10
   reduce: 1
   onStartTimer:
     m_PersistentCalls:
@@ -8333,7 +8362,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: AQC7UM9DDOLT
+    UniqueId: WBZJ5PCE6V3G
     handler: {fileID: 5997891192587618190}
     sceneName: 0_Camp
 --- !u!114 &775848705063904994
@@ -10374,7 +10403,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 0G4TANJ107U4
+    UniqueId: I5BWFASTAMAT
     handler: {fileID: 2000106498207288983}
     sceneName: 0_Camp
 --- !u!1 &5952492836972887403
@@ -10532,7 +10561,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: FSXYQG8UDPLJ
+    UniqueId: K5GMU659N93M
     handler: {fileID: 4420542623581018636}
     sceneName: Whitebox Sebastian
 --- !u!1 &5984068079998604472
@@ -14399,7 +14428,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: M77KAU6THG2N
+    UniqueId: 9O72J4YO3U5F
     handler: {fileID: 8090632364145615540}
     sceneName: Whitebox Sebastian
 --- !u!1 &8167101978121696211
@@ -14815,7 +14844,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: KRQJCNWLPBIK
+    UniqueId: EF7DZY9Q6J1Y
     handler: {fileID: 5323049881315162449}
     sceneName: 0_Camp
 --- !u!114 &5504051595753136218
@@ -16052,7 +16081,7 @@ MonoBehaviour:
   stateEnable: 1
   timeDelay: 0
   reference:
-    UniqueId: DCZONGSNPGWY
+    UniqueId: 953NWLN2J3F8
     handler: {fileID: 5672092810206793748}
     sceneName: Whitebox Sebastian
 --- !u!114 &37201564129872317
@@ -16566,7 +16595,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 9KYZEJNZS7T3
+    UniqueId: W8YSSLSV3B7T
     handler: {fileID: 3420722397513658395}
     sceneName: 0_Camp
 --- !u!224 &3722375242113786195 stripped
@@ -16717,7 +16746,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 328885144743328142, guid: 13cffcdd492e9da4e980c25d8cd364a9, type: 3}
       propertyPath: reference.UniqueId
-      value: MYOHZLRAM1BV
+      value: 6F8OXIPPTDMP
       objectReference: {fileID: 0}
     - target: {fileID: 1323582420097133875, guid: 13cffcdd492e9da4e980c25d8cd364a9, type: 3}
       propertyPath: m_Name
@@ -16948,7 +16977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008560013490743843, guid: 2fbceeea969a5394f9716a335335e0b9, type: 3}
       propertyPath: reference.UniqueId
-      value: WBCD8ZHS2G40
+      value: J2OEKBHSNBSN
       objectReference: {fileID: 0}
     - target: {fileID: 3545185813404814032, guid: 2fbceeea969a5394f9716a335335e0b9, type: 3}
       propertyPath: m_Name

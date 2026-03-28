@@ -7,6 +7,11 @@ public class ButtonStartGame:BaseButtonAttendant
 {
     [SerializeField] private AnimationUIController animaUI;
     [SerializeField] private TMP_Text textComponent;
+    [Header("-- Paneles Externos --")]
+    [SerializeField] private GameObject panelInitGame;
+    [SerializeField] private BaseDoAnimationController logo;
+    [SerializeField] private AnimationUIController panelLanguage;
+    [SerializeField] private AnimationUIController panelIdioma;
     private void Start()
     {
         buttonComponent.onClick.AddListener(StartGame);
