@@ -35,7 +35,7 @@ namespace B_Extensions.HierarchyStates
                 {
                     item.reference.UpdateElementToken();
                     #region UNITY_EDITOR
-                    EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+                    //EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                     #endregion
                 }
             }

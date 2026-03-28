@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: WelcomeDialog 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: "Bienvenido a la mina m\xE1s grande de esmeraldas"
+    Dialog: "Esto funciona as\xED: entras, extraes, vendes. Entre mejor sea la piedra
+      que le lleves al mercader, m\xE1s dinero recibir\xE1s. Una esmeralda de primera
+      calidad vale mucho. Una de mala calidad... ni te molestes."
+    DialogEN: "Here's how it works: enter, extract, sell. The better quality the
+      gemstone you bring the merchant, the more money you'll earn. A first-quality
+      emerald is worth a lot. A low-quality one\u2026 don't bother."
+    DialogPO: "Assim funciona: entra, extrae e vende. Quanto melhor a pedra que leva
+      ao comerciante, mais dinheiro voc\xEA receber\xE1. Um esmeralda de primeira
+      qualidade vale muito. Uma de baixa qualidade\u2026 n\xE3o se preocupe"
+    useWildCards: 0

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: Que tienes para mi
-    DialogEN: 
-    DialogPO: 
+    Dialog: "\xBFQu\xE9 tienes para m\xED?"
+    DialogEN: What do you have for me?
+    DialogPO: "O que voc\xEA tem para mim?"
     useWildCards: 0

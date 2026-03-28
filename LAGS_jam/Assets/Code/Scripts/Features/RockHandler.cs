@@ -21,6 +21,7 @@ public class RockHandler : MonoBehaviour
         if(applyAnimation)
             transform.DOShakeScale(0.2f, strength: 0.2f);
         animator.SetTrigger("Mining");
+        AudioManager.Instance.PlayHitRock();
     }
 
     public void MakeDamage() 

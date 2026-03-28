@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Wagon 6 Accept
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 5
   model:
-    Dialog: "Este trabajo ser\xE1 pan comido"
-    DialogEN: 
-    DialogPO: 
+    Dialog: "Bien. Este trabajo ser\xE1 pan comido"
+    DialogEN: Well. This job will be a piece of cake.
+    DialogPO: "Bem. Este trabalho ser\xE1 f\xE1cil."
     useWildCards: 0
