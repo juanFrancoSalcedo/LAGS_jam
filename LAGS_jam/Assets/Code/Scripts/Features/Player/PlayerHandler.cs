@@ -7,6 +7,7 @@ public class PlayerHandler : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer renderSpt = null;
     [SerializeField] private float speed = 2;
+    [SerializeField] private Animator animator = null;
     private bool freeze = true;
     PlayerMovementInputs _playerMovement;
     Rigidbody rb;
@@ -15,6 +16,8 @@ public class PlayerHandler : MonoBehaviour
     Vector2 direction;
     PlayerStamina _playerStamina;
     public PlayerStamina PlayerStamina => _playerStamina;
+
+    public bool CarryWagon = false;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -46,13 +49,15 @@ public class PlayerHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (freeze)
+        if (freeze || animator.GetBool("Mining"))
             return;
-
         if (direction.x == 0 && direction.y == 0)
             return;
-        
         rb.linearVelocity = new Vector3(direction.x, -0.98f,direction.y) * speed;
+
+
+        if (CarryWagon)
+            DebtStamina(0.02f);
 
         // keep direction in x axis
         if (direction.x != 0)
@@ -64,5 +69,16 @@ public class PlayerHandler : MonoBehaviour
         }
     }
 
-    private void Update() => direction = _playerMovement.Update();
+    private void Update()
+    {
+        direction = _playerMovement.Update();
+
+        animator.SetBool("Right", direction.x > 0);
+        animator.SetBool("Left", direction.x < 0);
+        animator.SetBool("Up", direction.y > 0);
+        animator.SetBool("Down", direction.y < 0);
+
+        animator.SetFloat("AxisX", direction.x);
+        animator.SetFloat("AxisY", direction.y);
+    }
 }

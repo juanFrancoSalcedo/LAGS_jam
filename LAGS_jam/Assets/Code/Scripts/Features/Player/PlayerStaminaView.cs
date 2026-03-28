@@ -20,7 +20,6 @@ public class PlayerStaminaView : MonoBehaviour
 
     private void DisplayDrain(float arg1, float arg2)
     {
-        print((float)arg1/arg2);
         imageFill.fillAmount = (arg1/arg2);
     }
 }

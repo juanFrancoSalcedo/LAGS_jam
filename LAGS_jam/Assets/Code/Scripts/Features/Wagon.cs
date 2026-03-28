@@ -8,6 +8,7 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
     [SerializeField] private float maxFollowDistance = 10f;
     [SerializeField] private float followSpeed = 3f;
     [SerializeField] TriggerDetector triggerDetector;
+    [SerializeField] CollisionDetector[] collisionDetectors;
     [SerializeField] private SpriteRenderer spriteRenderer;
     PlayerHandler playerHandler;
     Rigidbody rb;
@@ -23,14 +24,56 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
         return Vector3.Distance(playerHandler.transform.position,transform.position) < distanceCollect;
     }
 
-    private void OnEnable() => triggerDetector.OnTriggerEntered += Collect;
-    private void OnDisable() => triggerDetector.OnTriggerEntered -= Collect;
-    
+    private void OnEnable()
+    {
+        triggerDetector.OnTriggerEntered += Collect;
+        
+        // Suscribir a cada detector de colisión en el array
+        foreach (var detector in collisionDetectors)
+        {
+            if (detector != null)
+            {
+                detector.OnCollisionEntered += CollisionEnter;
+                detector.OnCollisionExited += CollisionExit;
+            }
+        }
+    }
+
+    private void OnDisable()
+    {
+        triggerDetector.OnTriggerEntered -= Collect;
+        
+        // Desuscribir de cada detector de colisión en el array
+        foreach (var detector in collisionDetectors)
+        {
+            if (detector != null)
+            {
+                detector.OnCollisionEntered -= CollisionEnter;
+                detector.OnCollisionExited -= CollisionExit;
+            }
+        }
+    }
+
+    private void CollisionExit(Collision collision)
+    {
+        if (collision.transform.TryGetComponent<PlayerHandler>(out var compo))
+        { 
+            compo.CarryWagon = true;
+        }
+    }
+
+    private void CollisionEnter(Collision collision)
+    {
+        if (collision.transform.TryGetComponent<PlayerHandler>(out var compo))
+        {
+            compo.CarryWagon = false;
+        }
+    }
+
     private void Collect(Transform _transform)
     {
         if(_transform.TryGetComponent<ResourceHandler>(out var compo))
         {
-            print("TODO Inject this perrito, shutese esto mi socio");
             _transform.gameObject.SetActive(false);
             AddCollect(compo.Sheet);
         }
@@ -68,7 +111,6 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
     public void AssignEmployee(EmployeeSheet employee)
     {
         this.employee = employee;
-        //spriteRenderer.sprite = employee.Sprite;
         spriteRenderer.gameObject.SetActive(true);
     }
 }

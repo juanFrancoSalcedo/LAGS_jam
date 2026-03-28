@@ -17,8 +17,27 @@ public class ButtonStartGame:BaseButtonAttendant
     {
         while (true)
         {
-            textComponent.text =
-                PlayerPrefs.HasKey(KeyStorage.Day)?"Continuar":"Juego Nuevo";
+            switch (KeyStorage.Constants.CurrentLanguage)
+            {
+                case TypeLanguage.None:
+                    break;
+                case TypeLanguage.Spanish:
+                    textComponent.text =
+                        PlayerPrefs.HasKey(KeyStorage.Day)?"Continuar":"Juego Nuevo";
+                    break;
+                case TypeLanguage.English:
+                    textComponent.text =
+                    PlayerPrefs.HasKey(KeyStorage.Day) ? "Continue" : "New Game";
+                    break;
+                case TypeLanguage.Portuguese:
+                    textComponent.text =
+                    PlayerPrefs.HasKey(KeyStorage.Day) ? "Continuar" : "Novo Jogo";
+                    break;
+                default:
+                    break;
+            }
+
+
             yield return new WaitForSeconds(1f);
         }
     }

@@ -7,18 +7,21 @@ public class PickMovement
     TriggerDetector detector;
     public bool isFliped;
     public bool animating;
+    Animator _animator;
 
-    public PickMovement(Transform tool, TriggerDetector detector)
+    public PickMovement(Transform tool, TriggerDetector detector, Animator animator)
     {
         this.tool = tool;
         this.detector = detector;
+        _animator = animator;
     }
 
     public void Animate() 
     {
         if (animating == true)
             return;
-
+        _animator.SetBool("Mining",true);
+        _animator.SetTrigger("MiningTrigger");
         Sequence sequence = DOTween.Sequence();
 
         animating = true;
@@ -27,8 +30,8 @@ public class PickMovement
         );
 
         sequence.Append(
-            tool.DOLocalRotate(new Vector3(0,isFliped?-180:0, 0), 0.2f).OnComplete(DeactivePickCollision)
-        );
+            tool.DOLocalRotate(new Vector3(0, isFliped ? -180 : 0, 0), 0.2f).OnComplete(DeactivePickCollision)
+        ).OnComplete(()=>_animator.SetBool("Mining", false));
     }
 
     private void ActivePickCollision()
