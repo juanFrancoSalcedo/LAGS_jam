@@ -32,14 +32,18 @@ namespace B_Extensions.HierarchyStates
             { 
                 item.EnableOnHierarchy();
                 EditorUtility.SetDirty(item);
-                EditorSceneManager.MarkSceneDirty(item.gameObject.scene);
+                //EditorSceneManager.MarkSceneDirty(item.gameObject.scene);
             }
         }
 
         static void HierarchyItemCB(int instanceID, Rect selectionRect)
         {
             DrawHierarchyColor(instanceID, selectionRect);
+#if UNITY_6000_1_OR_NEWER
+            GameObject obj= EditorUtility.EntityIdToObject(instanceID) as GameObject;
+#else
             GameObject obj = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
+#endif
             DrawDisabledCompo(selectionRect,obj);
             DrawEnabledCompo( selectionRect, obj);
             DrawEnablerRemains(instanceID, selectionRect);
@@ -190,5 +194,5 @@ namespace B_Extensions.HierarchyStates
                 return true;
         }
 #endif
-    }
+        }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 
@@ -39,7 +40,13 @@ public class PlayerHandler : MonoBehaviour
     }
 
     #region Stamina
-    public void DebtStamina(float amount) => PlayerStamina.DebtStamina(amount);
+    public void DebtStamina(float amount)
+    {
+        if(!PlayerStamina.IsExhausted(amount))
+            PlayerStamina.DebtStamina(amount);
+        else
+            AudioManager.Instance.PlaySigh();
+    }
     #endregion
 
     private void OnEnable()
@@ -68,10 +75,6 @@ public class PlayerHandler : MonoBehaviour
         else
             AudioManager.Instance.PlayCaveSteps();
         rb.linearVelocity = new Vector3(direction.x, -0.98f,direction.y) * speed;
-
-
-        if (CarryWagon)
-            DebtStamina(0.02f);
 
         // keep direction in x axis
         if (direction.x != 0)

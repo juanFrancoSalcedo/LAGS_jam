@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: WelcomeDialog 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: "La regla es simple entre m\xE1s recurs le traiga al mercader"
+    Dialog: ' El tiempo corre y el mercader no espera a nadie'
+    DialogEN: Time is running out, and the merchant doesn't wait for anyone
+    DialogPO: "O tempo passa e o comerciante n\xE3o espera ningu\xE9m."
+    useWildCards: 0

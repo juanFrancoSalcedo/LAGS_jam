@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Wagon 5 Cant Pay
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 5
   model:
-    Dialog: Llo siento, es imposible hacer negocios sin dinero
-    DialogEN: 
-    DialogPO: 
+    Dialog: No me convence la oferta
+    DialogEN: The offer doesn't convince me
+    DialogPO: "A oferta n\xE3o me convence"
     useWildCards: 0

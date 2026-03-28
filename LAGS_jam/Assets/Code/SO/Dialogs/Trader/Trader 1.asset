@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader 1
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 0
   model:
-    Dialog: Hola soy el mercader del campamento
-    DialogEN: 
-    DialogPO: 
+    Dialog: "Aqu\xED no se regala nada, pero tampoco se estafa a nadie."
+    DialogEN: Nothing is given away for free here, but no one is cheated either.
+    DialogPO: "Nada \xE9 dado gratuitamente aqui, mas ningu\xE9m \xE9 enganado tamb\xE9m."
     useWildCards: 0

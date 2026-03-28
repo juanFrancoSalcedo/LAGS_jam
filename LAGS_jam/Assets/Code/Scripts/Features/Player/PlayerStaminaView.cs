@@ -1,26 +1,28 @@
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerStaminaView : MonoBehaviour
 {
     [SerializeField] Image imageFill;
+    [SerializeField] Image imageAnimation;
     [SerializeField] PlayerHandler playerHandler;
 
+    private void Start() => playerHandler = FindFirstObjectByType<PlayerHandler>();
 
-    private void OnEnable()
+    private void OnEnable() => PlayerStamina.OnStaminaChanged += DisplayDrain;
+    private void OnDisable() => PlayerStamina.OnStaminaChanged -= DisplayDrain;
+
+    private void DisplayDrain(float arg1, float arg2, float maxStamina)
     {
-        PlayerStamina.OnStaminaChanged += DisplayDrain;
+        imageFill.fillAmount = (arg1/ maxStamina);
+        StartAnimation((arg1 / maxStamina), arg2/maxStamina);
     }
 
-
-    private void OnDisable()
+    private void StartAnimation(float now, float before) 
     {
-        PlayerStamina.OnStaminaChanged -= DisplayDrain;
-    }
-
-    private void DisplayDrain(float arg1, float arg2)
-    {
-        imageFill.fillAmount = (arg1/arg2);
+        DOTween.To(() => imageAnimation.fillAmount, juu => imageAnimation.fillAmount = juu, now,
+                0.4f);
     }
 }
      

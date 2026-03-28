@@ -22,6 +22,7 @@ public class PickMovement
             return;
         _animator.SetBool("Mining",true);
         _animator.SetTrigger("MiningTrigger");
+        AudioManager.Instance.PlaySwingPickAxe();
         Sequence sequence = DOTween.Sequence();
 
         animating = true;

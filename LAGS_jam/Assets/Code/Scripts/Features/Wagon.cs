@@ -33,8 +33,7 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
         {
             if (detector != null)
             {
-                detector.OnCollisionEntered += CollisionEnter;
-                detector.OnCollisionExited += CollisionExit;
+                detector.OnCollisionStayed += CollisionStayed;
             }
         }
     }
@@ -48,25 +47,17 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
         {
             if (detector != null)
             {
-                detector.OnCollisionEntered -= CollisionEnter;
-                detector.OnCollisionExited -= CollisionExit;
+                detector.OnCollisionStayed -= CollisionStayed;
             }
         }
     }
 
-    private void CollisionExit(Collision collision)
-    {
-        if (collision.transform.TryGetComponent<PlayerHandler>(out var compo))
-        { 
-            compo.CarryWagon = true;
-        }
-    }
 
-    private void CollisionEnter(Collision collision)
+    private void CollisionStayed(Collision collision)
     {
         if (collision.transform.TryGetComponent<PlayerHandler>(out var compo))
         {
-            compo.CarryWagon = false;
+            compo.DebtStamina(0.02f);
         }
     }
 
@@ -83,6 +74,7 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
     {
         MiningMediator.Publish(TypeMiningEvent.CollectResource);
         InventoryDataService.AddItem(Sheet.GetModelCopy());
+        AudioManager.Instance.PlayCollectResource();
     }
 
     private void Update()
