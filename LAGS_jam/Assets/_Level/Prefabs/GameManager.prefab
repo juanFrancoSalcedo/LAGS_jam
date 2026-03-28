@@ -813,6 +813,7 @@ MonoBehaviour:
   panel: {fileID: 1924158749439608024}
   passGameText: {fileID: 8865829094835627870}
   dontPassGameText: {fileID: 4248834030274269088}
+  buttonStartGame: {fileID: 254351809222955598}
 --- !u!1 &506591880972249239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,7 +1417,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: NSWPOOUKPBXV
+    UniqueId: TBQZG9MA59Q1
     handler: {fileID: 4361543604302639183}
     sceneName: 0_Camp
 --- !u!1 &764065680489852681
@@ -2166,7 +2167,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: AVYNXFJHYILC
+    UniqueId: 2AUMVSFHPYE3
     handler: {fileID: 5996292282278644472}
     sceneName: 0_Camp
 --- !u!1 &1094815544158893440
@@ -3245,7 +3246,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: RYL3SLOZZQ29
+    UniqueId: MWY8LDMNIO7B
     handler: {fileID: 6698664729242739183}
     sceneName: Whitebox Sebastian
 --- !u!1 &1814899273790511243
@@ -3672,7 +3673,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 15TNVHNG76HN
+    UniqueId: I8EF9SUFLQP3
     handler: {fileID: 3633846540431030990}
     sceneName: 0_Camp
 --- !u!1 &1926214684156377537
@@ -7626,6 +7627,47 @@ MonoBehaviour:
     displayTextOutlineColor: 0
     displayTextChange: 0
     newText: 
+  - onStarts:
+      m_PersistentCalls:
+        m_Calls: []
+    onEnds:
+      m_PersistentCalls:
+        m_Calls: []
+    targetPosition: {x: 0, y: 0, z: 0}
+    targetScale: {x: 0, y: 0, z: 0}
+    targetRotation: {x: 0, y: 0, z: 0}
+    targetSizeDelta: {x: 0, y: 0}
+    timeAnimation: 0.3
+    delay: 0
+    coldTime: 0
+    animationCurve: 0
+    playOnAwake: 0
+    atractor: {fileID: 0}
+    colorTarget: {r: 0, g: 0, b: 0, a: 0}
+    display: 0
+    loops: 0
+    spriteShift: {fileID: 0}
+    pixelMultiplier: 0
+    fadeTarget: 1
+    rotationType: 0
+    applyOnCanvasGroup: 0
+    displayPosition: 0
+    displayScale: 0
+    displayTexture: 0
+    displayRotation: 0
+    displayColor: 0
+    displayPixelMultiplier: 0
+    displaySizeDelta: 0
+    displayFade: 1
+    displayTextCharaterSplit: 0
+    displayTextWordSplit: 0
+    displayTextLineSplit: 0
+    charSplittTarget: 0
+    wordSplitTarget: 0
+    lineSplitTarget: 0
+    displayTextOutlineColor: 0
+    displayTextChange: 0
+    newText: 
   useTimeScale: 1
   inLoop: 0
   rewindOnDisable: 0
@@ -8128,7 +8170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8bb12c83935084682650501b161bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
-  targetTime: 10
+  targetTime: 240
   reduce: 1
   onStartTimer:
     m_PersistentCalls:
@@ -8362,7 +8404,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: WBZJ5PCE6V3G
+    UniqueId: 51YPPDA9ROLL
     handler: {fileID: 5997891192587618190}
     sceneName: 0_Camp
 --- !u!114 &775848705063904994
@@ -8395,7 +8437,7 @@ MonoBehaviour:
     playOnAwake: 0
     atractor: {fileID: 0}
     colorTarget: {r: 0, g: 0, b: 0, a: 0}
-    display: 0
+    display: 1
     loops: 0
     spriteShift: {fileID: 0}
     pixelMultiplier: 0
@@ -8436,7 +8478,7 @@ MonoBehaviour:
     playOnAwake: 0
     atractor: {fileID: 0}
     colorTarget: {r: 0, g: 0, b: 0, a: 0}
-    display: 0
+    display: 1
     loops: 0
     spriteShift: {fileID: 0}
     pixelMultiplier: 0
@@ -10403,7 +10445,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: I5BWFASTAMAT
+    UniqueId: 34IVCUDO3TXN
     handler: {fileID: 2000106498207288983}
     sceneName: 0_Camp
 --- !u!1 &5952492836972887403
@@ -10561,7 +10603,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: K5GMU659N93M
+    UniqueId: EVE8379UO4NR
     handler: {fileID: 4420542623581018636}
     sceneName: Whitebox Sebastian
 --- !u!1 &5984068079998604472
@@ -12343,6 +12385,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonStartGame
   animaUI: {fileID: 9024530236906268851}
   textComponent: {fileID: 3727191505524555717}
+  panelInitGame: {fileID: 8738305858957482835}
+  logo: {fileID: 7229808028682540532}
+  panelLanguage: {fileID: 5504051595753136218}
+  panelIdioma: {fileID: 775848705063904994}
 --- !u!1 &7723671430620191534
 GameObject:
   m_ObjectHideFlags: 0
@@ -14428,7 +14474,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 9O72J4YO3U5F
+    UniqueId: NBKWBJJLIGAP
     handler: {fileID: 8090632364145615540}
     sceneName: Whitebox Sebastian
 --- !u!1 &8167101978121696211
@@ -14844,7 +14890,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: EF7DZY9Q6J1Y
+    UniqueId: YFKJQ7XNYUZD
     handler: {fileID: 5323049881315162449}
     sceneName: 0_Camp
 --- !u!114 &5504051595753136218
@@ -14918,7 +14964,7 @@ MonoBehaviour:
     playOnAwake: 0
     atractor: {fileID: 0}
     colorTarget: {r: 0, g: 0, b: 0, a: 0}
-    display: 1
+    display: 0
     loops: 0
     spriteShift: {fileID: 0}
     pixelMultiplier: 0
@@ -16081,7 +16127,7 @@ MonoBehaviour:
   stateEnable: 1
   timeDelay: 0
   reference:
-    UniqueId: 953NWLN2J3F8
+    UniqueId: FH36E411SBIB
     handler: {fileID: 5672092810206793748}
     sceneName: Whitebox Sebastian
 --- !u!114 &37201564129872317
@@ -16595,7 +16641,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: W8YSSLSV3B7T
+    UniqueId: HP25XJ4YEK38
     handler: {fileID: 3420722397513658395}
     sceneName: 0_Camp
 --- !u!224 &3722375242113786195 stripped
@@ -16746,7 +16792,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 328885144743328142, guid: 13cffcdd492e9da4e980c25d8cd364a9, type: 3}
       propertyPath: reference.UniqueId
-      value: 6F8OXIPPTDMP
+      value: LL9A17SAPZ2Q
       objectReference: {fileID: 0}
     - target: {fileID: 1323582420097133875, guid: 13cffcdd492e9da4e980c25d8cd364a9, type: 3}
       propertyPath: m_Name
@@ -16977,7 +17023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1008560013490743843, guid: 2fbceeea969a5394f9716a335335e0b9, type: 3}
       propertyPath: reference.UniqueId
-      value: J2OEKBHSNBSN
+      value: IDVGO9AKFI9Q
       objectReference: {fileID: 0}
     - target: {fileID: 3545185813404814032, guid: 2fbceeea969a5394f9716a335335e0b9, type: 3}
       propertyPath: m_Name
