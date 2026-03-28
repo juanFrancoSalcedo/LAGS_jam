@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class PlayerStamina
 {
-    public float Stamina { get; private set; }
-    private float maxStamina;
+    public float Stamina { get; private set; } = 0;
+    private float maxStamina =0;
     public PlayerStamina()
     {
-        maxStamina = Stamina = 80;
-        Debug.Log("Shutarse esto");
+        if(maxStamina != 80)
+            maxStamina = Stamina = 80;
     }
 
     public void DebtStamina(float amount) 

@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 2295287650358058728}
   - component: {fileID: 691831040359803484}
   - component: {fileID: 2402061105720088197}
+  - component: {fileID: 6487882677646180426}
   m_Layer: 0
   m_Name: Firefly_Particles
   m_TagString: Untagged
@@ -4963,6 +4964,21 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
+--- !u!114 &6487882677646180426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8988824353308635855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab76c7f665746c499747a5dde11ec7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleRandomDelay
+  _particleSystem: {fileID: 691831040359803484}
+  minDelay: 0.1
+  maxDelay: 0.5
 --- !u!1001 &1252124357602494146
 PrefabInstance:
   m_ObjectHideFlags: 0

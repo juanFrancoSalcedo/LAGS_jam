@@ -9,7 +9,6 @@ public class ResourceHandler : MonoBehaviour
     public ResourceSheet Sheet { get; private set; }
     Rigidbody rb;
     public Transform CarryPosition { get; set; }
-
     bool previouseHasCarry;
     private void Awake()
     {
@@ -27,7 +26,7 @@ public class ResourceHandler : MonoBehaviour
     {
         if (previouseHasCarry && CarryPosition == null)
         {
-            AnimateInstanciate();
+            transform.position = transform.position + Vector3.up*0.5f;
             previouseHasCarry = false;
         }
 

@@ -31,7 +31,7 @@ public class ExitHandler : MonoBehaviour
     int sum = 0;
     private void CheckLoad() 
     {
-        if (sum > 60 && !loaded)
+        if (sum > 3 && !loaded)
         {
             callerSceneLoader.LoadScene();
             loaded = true;
