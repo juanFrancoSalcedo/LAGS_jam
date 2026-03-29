@@ -19,7 +19,7 @@ MonoBehaviour:
     UID: asdasda-+dasdasda-dasd-2312as
     Pricing: 50
     DialogCVModel:
-      Dialog: Son 40$
+      Dialog: Son 50$
       DialogEN: 
       DialogPO: 
       useWildCards: 0

@@ -46,6 +46,7 @@ public class InventoryDataService
     public static void RemoveAll() 
     {
         runTimeData.resources.Clear();
+        PlayerPrefs.DeleteKey(KeyStorage.Inventory_Resources);
         SaveData();
     }
 }

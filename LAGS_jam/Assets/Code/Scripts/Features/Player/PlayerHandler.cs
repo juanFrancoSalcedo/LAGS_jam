@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 
@@ -29,7 +28,10 @@ public class PlayerHandler : MonoBehaviour
         _playerMovement = new PlayerMovementInputs(_actions);
         _playerStamina = new PlayerStamina();
         _playerMovement.Configure();
-        freeze = !(GameStateContext.State == TypeGameState.EnterCave || GameStateContext.State == TypeGameState.StartDay);
+        freeze = !(GameStateContext.State == TypeGameState.EnterCave ||
+            GameStateContext.State == TypeGameState.StartDay||
+            GameStateContext.State == TypeGameState.OutCave 
+            );
     }
 
     public void FreezePlayer(bool _freeze) => freeze = _freeze;

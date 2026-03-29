@@ -28,9 +28,11 @@ public class MoneyDataService
     
     public static bool CanPay(int money) => GetMoney() >= money;
 
+#if UNITY_EDITOR
     [MenuItem("Tools/600")]
     private static void Quinientos() 
     {
         PlayerPrefs.SetInt(KeyStorage.Money, 600);
-    } 
+    }
+#endif
 }

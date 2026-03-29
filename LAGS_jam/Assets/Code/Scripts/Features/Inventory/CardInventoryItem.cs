@@ -34,9 +34,10 @@ public class CardInventoryItem: MonoBehaviour
         imageIcon.sprite = ResourcesRepository.Instance.GetSpriteByNameAndQuality(model.Name, model.Quality);
         
         var compo = ResourcesRepository.Instance.GetResourcesRandom();
-        
+
         // Usar Path.Combine para unir paths de manera multiplataforma
-        string resourcePath = Path.Combine("Prototypes", compo.Path);
+        string resourcePath = compo.Path;//Path.Combine("Prototypes/Icons_UI", compo.Path);
+        print(resourcePath);
         
         // Resources.Load solo acepta forward slashes, así que normalizamos el path
         resourcePath = resourcePath.Replace(Path.DirectorySeparatorChar, '/');
@@ -47,5 +48,7 @@ public class CardInventoryItem: MonoBehaviour
         {
             Debug.LogWarning($"No se pudo cargar el recurso en: {resourcePath}");
         }
+        var clone = Instantiate(reference, containerIcon);
+        clone.transform.localScale = Vector3.one*0.5f;
     }
 }
