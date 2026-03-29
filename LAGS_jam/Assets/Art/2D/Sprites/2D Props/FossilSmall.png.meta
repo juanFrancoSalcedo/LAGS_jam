@@ -324,6 +324,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FossilSmall_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa060c4be561d24999747d7545ce1b6
+      internalID: 260880002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FossilSmall_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8de9abb02e33d4eae5025e726fd8e3
+      internalID: -932557290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -348,6 +392,8 @@ TextureImporter:
       FossilSmall_5: -338440233
       FossilSmall_6: -675183547
       FossilSmall_7: -620133502
+      FossilSmall_8: 260880002
+      FossilSmall_9: -932557290
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
