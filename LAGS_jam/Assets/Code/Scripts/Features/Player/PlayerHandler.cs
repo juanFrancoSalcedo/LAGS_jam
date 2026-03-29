@@ -41,7 +41,7 @@ public class PlayerHandler : MonoBehaviour
         while (true) 
         {
             yield return new WaitForSeconds(0.1f);
-            _playerStamina.RestoreStamina(0.04f);
+            _playerStamina.RestoreStamina(0.1f);
         }
     }
 

@@ -77,10 +77,14 @@ public class AudioManager : Singleton<AudioManager>
         swingPickAxe[randomIndex].Play();
     }
 
-    public void PlayHitRock()
+    public void PlayHitRock(Transform trans = null)
     {
         int randomIndex = Random.Range(0, hitRock.Length);
-        hitRock[randomIndex].Play();
+        var first = System.Array.Find(hitRock, t => !t.isPlaying);
+        if (first != null)
+            first.Play();
+        if(trans != null)
+            first.transform.position = trans.position;
     }
 
     public void PlayAmbientCave() => AmbientCave.Play();

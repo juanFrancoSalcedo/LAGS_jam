@@ -5121,6 +5121,18 @@ PrefabInstance:
       propertyPath: timeMiniforWagon
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8455399772219485204, guid: 4128ced526541a147ae6d11958cbecfb, type: 3}
+      propertyPath: 'sheets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: eacc5cd53da8bf540910ad53b837e3b4, type: 2}
+    - target: {fileID: 8455399772219485204, guid: 4128ced526541a147ae6d11958cbecfb, type: 3}
+      propertyPath: 'sheets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3917bc4da072008458c2ded0d2623f6f, type: 2}
+    - target: {fileID: 8455399772219485204, guid: 4128ced526541a147ae6d11958cbecfb, type: 3}
+      propertyPath: 'sheets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 706f32fc10da741439f04a8e38eea5aa, type: 2}
     - target: {fileID: 8631277939185202434, guid: 4128ced526541a147ae6d11958cbecfb, type: 3}
       propertyPath: m_Controller
       value: 
