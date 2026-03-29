@@ -17,6 +17,7 @@ public class PlayerHandler : MonoBehaviour
     public event Action<bool> OnYSpriteChanged;
     InputSystem_Actions _actions;
     Vector2 direction;
+    Vector2 lastDirection;
     PlayerStamina _playerStamina;
     public PlayerStamina PlayerStamina => _playerStamina;
     bool hasFlipX;
@@ -87,7 +88,7 @@ public class PlayerHandler : MonoBehaviour
         if (direction.x != 0)
         {
             bool before = hasFlipX;
-            hasFlipX = rb.linearVelocity.x <= 0;
+            hasFlipX = lastDirection.x <= 0;
             if (before != hasFlipX)
                 OnXSpriteChanged?.Invoke(hasFlipX);
         }
@@ -109,6 +110,6 @@ public class PlayerHandler : MonoBehaviour
 
         animator.SetFloat("AxisX", direction.x);
         animator.SetFloat("AxisY", direction.y);
-        
+        lastDirection = direction;
     }
 }

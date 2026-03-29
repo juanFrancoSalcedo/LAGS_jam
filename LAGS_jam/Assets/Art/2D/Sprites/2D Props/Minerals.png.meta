@@ -174,7 +174,7 @@ TextureImporter:
       name: Minerals_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 15
         y: 48
         width: 16
         height: 16
@@ -196,7 +196,7 @@ TextureImporter:
       name: Minerals_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 31
         y: 48
         width: 16
         height: 16
@@ -240,7 +240,7 @@ TextureImporter:
       name: Minerals_4
       rect:
         serializedVersion: 2
-        x: 16
+        x: 15
         y: 32
         width: 16
         height: 16

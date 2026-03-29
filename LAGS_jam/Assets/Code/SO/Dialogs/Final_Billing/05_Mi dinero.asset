@@ -15,7 +15,7 @@ MonoBehaviour:
   sptFace: {fileID: 0}
   timeReading: 0
   model:
-    Dialog: Mi dinero :$#
-    DialogEN: My money :$#
-    DialogPO: Meu Dinheiro :$#
+    Dialog: Mi dinero
+    DialogEN: My money
+    DialogPO: Meu Dinheiro
     useWildCards: 0
