@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader Accept 4
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
-  sptFace: {fileID: 435168469, guid: c08cdc75cac5fd44fafb08fdac94a659, type: 3}
+  sptFace: {fileID: 21300000, guid: d2feff498a7df304294de4e7bece2856, type: 3}
   timeReading: 0
   model:
     Dialog: "Bien. Trato hecho. Vuelve cuando tengas m\xE1s."

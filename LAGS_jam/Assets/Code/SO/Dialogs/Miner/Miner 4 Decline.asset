@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Miner 4 Decline
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
-  sptFace: {fileID: -1089782718, guid: 586f6842412e17c469297343a916ab15, type: 3}
+  sptFace: {fileID: 21300000, guid: 66bc22c7bac0e4a488e541fc1f0e4d0d, type: 3}
   timeReading: 6
   model:
     Dialog: "Est\xE1 bien, t\xFA decides. Aqu\xED estar\xE9 si cambias de opini\xF3n."
