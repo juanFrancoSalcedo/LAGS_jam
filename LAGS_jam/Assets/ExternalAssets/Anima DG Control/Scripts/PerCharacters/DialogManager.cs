@@ -5,10 +5,12 @@ using System.Linq;
 using System;
 using Cysharp.Threading.Tasks;
 using B_Extensions;
+using UnityEngine.UI;
 
 
 public class DialogManager:Singleton<DialogManager>
 {
+    [SerializeField] private Image imageCharacter;
     [SerializeField] DialogAnimation dialogDisplayer;
     [SerializeField] ButtonNextDialog buttonDialog;
     [SerializeField] GameObject container = null;
@@ -54,12 +56,13 @@ public class DialogManager:Singleton<DialogManager>
         GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EndDay, ReleaseChat);
     }
 
-    public void InjectDialogs(List<DialogModel> sheets) 
+    public void InjectDialogs(List<DialogSheet> sheets) 
     {
         dialogs.Clear();
-        dialogs.AddRange(sheets);
+        sheets.ForEach(t => dialogs.Add(t.Model));
         buttonDialog.InitState();
         IndexDialog = 0;
+        imageCharacter.sprite = sheets[0].SptFace;
     }
 
     public void InjectListener(IDialogListener diaologListener) => dialogsListener.Add(diaologListener);

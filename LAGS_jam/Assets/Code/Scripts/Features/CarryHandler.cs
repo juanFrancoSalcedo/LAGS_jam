@@ -34,17 +34,17 @@ public class CarryHandler : MonoBehaviour
     {
         if (obj)
         {
-            transform.localPosition = new Vector3(transform.localPosition.z,-0.8f);
+            transform.localPosition = new Vector3(0, transform.localPosition.y, 0.8f);
             var r = transform.localRotation.eulerAngles;
-            r.y = -180;
             transform.rotation = Quaternion.Euler(r);
+            r.y = -90;
             //_pickMovement.isFliped = true;
         }
         else
         {
-            transform.localPosition = new Vector3(0.8f, transform.localPosition.y);
+            transform.localPosition = new Vector3(0, transform.localPosition.y, -0.8f);
             var r = transform.localRotation.eulerAngles;
-            r.y = 0;
+            r.y = 270;
             transform.rotation = Quaternion.Euler(r);
             //_pickMovement.isFliped = false;
         }
@@ -83,8 +83,6 @@ public class CarryHandler : MonoBehaviour
     {
         if (actionCarry.WasPressedThisFrame())
         {
-            playerHandler.FreezePlayer(true);
-            Invoke(nameof(RestoreFreeze), 0.2f);
             if (playerHandler.IsExhausted(3f))
             { 
                 AudioManager.Instance.PlaySigh();
