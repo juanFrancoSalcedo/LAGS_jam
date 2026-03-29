@@ -1,8 +1,10 @@
 using B_Extensions.SceneLoader;
+using DG.Tweening;
 using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinalDayHandler : MonoBehaviour
 {
@@ -11,6 +13,15 @@ public class FinalDayHandler : MonoBehaviour
     [SerializeField] private TMP_Text prototypeTextDay;
     [SerializeField] private AnimationUIController animationUIController;
     [SerializeField] private CallerSceneLoader callerSceneLoader;
+    [SerializeField] private Button buttonLoad;
+    [Header("-Texts-")]
+    [SerializeField] private TMP_Text textRenta;
+    [SerializeField] private TMP_Text textEscuela;
+    [SerializeField] private TMP_Text textTransporte;
+    [SerializeField] private TMP_Text textMercado;
+    [SerializeField] private TMP_Text textDeudaTotal;
+    [SerializeField] private TMP_Text textMiDinero;
+    [SerializeField] private TMP_Text textResult;
     [Header("-Dialogs-")]
     [SerializeField] private DialogSheet dialogRenta;
     [SerializeField] private DialogSheet dialogEscuela;
@@ -18,6 +29,11 @@ public class FinalDayHandler : MonoBehaviour
     [SerializeField] private DialogSheet dialogMercado;
     [SerializeField] private DialogSheet dialogDeudatotal;
     [SerializeField] private DialogSheet dialogMiDinero;
+
+    private void Start()
+    {
+        buttonLoad.onClick.AddListener(Open);
+    }
 
     private void OnEnable() => GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay, OpenEndDay);
 
@@ -29,50 +45,47 @@ public class FinalDayHandler : MonoBehaviour
     private IEnumerator EndDay() 
     {
         panel.SetActive(true);
-        ClearTexts();
         yield return new WaitForSeconds(1.2f);
-        var clone = Instantiate(prototypeTextDay, content);
-        clone.text = dialogRenta.Model.GetDialog().Replace("#", "-10");//$"Renta:{-10}$";
-        clone.transform.SetAsLastSibling();
+        textRenta.text = dialogRenta.Model.GetDialog();
+        textRenta.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(1.2f);
-        var clone2 = Instantiate(prototypeTextDay, content);
-        clone2.text = dialogEscuela.Model.GetDialog().Replace("#", "-10");
-        clone2.transform.SetAsLastSibling();
+        textEscuela.text = dialogEscuela.Model.GetDialog();
+        textEscuela.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(1.2f);
-        var clone3 = Instantiate(prototypeTextDay, content);
-        clone3.text = dialogTransporte.Model.GetDialog().Replace("#", "-10");
-        clone3.transform.SetAsLastSibling();
+        textTransporte.text = dialogTransporte.Model.GetDialog();
+        textTransporte.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(1.2f);
-        var clone4 = Instantiate(prototypeTextDay, content);
-        clone4.text = dialogMercado.Model.GetDialog().Replace("#", "-10");
-        clone4.transform.SetAsLastSibling();
+        textMercado.text = dialogMercado.Model.GetDialog();
+        textMercado.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(1.2f);
-        var clone5 = Instantiate(prototypeTextDay, content);
-        clone5.text = dialogDeudatotal.Model.GetDialog().Replace("#","-40");
-        clone5.transform.SetAsLastSibling();
+        textDeudaTotal.text = dialogDeudatotal.Model.GetDialog();
+        textDeudaTotal.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         yield return new WaitForSeconds(1.2f);
-        var clone6 = Instantiate(prototypeTextDay, content);
-        clone6.text = dialogMiDinero.Model.GetDialog().Replace("#",$"{MoneyDataService.GetMoney()} {-40} = {MoneyDataService.GetMoney() - 40}");
-        clone6.transform.SetAsLastSibling();
+        textMiDinero.text = dialogMiDinero.Model.GetDialog();
+        textMiDinero.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         MoneyDataService.RemoveMoney(40);
         yield return new WaitForSeconds(1.2f);
+        textResult.text = MoneyDataService.GetMoney().ToString();
         DayDataService.AddDay();
-        animationUIController.gameObject.SetActive(true);
+    }
+
+    public void Open()
+    {
+        StartCoroutine(LoadNextscene());
+    }
+
+    private IEnumerator LoadNextscene() 
+    {
         yield return new WaitForSeconds(1f);
+        animationUIController.gameObject.SetActive(true);
         callerSceneLoader.LoadScene();
         panel.SetActive(false);
         yield return new WaitForSeconds(1f);
-        if(DayDataService.IsLastDay())
+        if (DayDataService.IsLastDay())
             GameStateContext.ChangeState(TypeGameState.FinishGame);
         else
             GameStateContext.ChangeState(TypeGameState.StartDay);
     }
 
-    private void ClearTexts()
-    {
-        for (int i = 0; i < content.childCount; i++)
-        {
-            Destroy(content.GetChild(i).gameObject);
-        }
-    }
+
 }
