@@ -10,7 +10,7 @@ public class MoneyDataService
     {
         int before = 0;
         var buffer = before = PlayerPrefs.GetInt(KeyStorage.Money,0);
-        buffer+= plus;
+        buffer += plus;
         PlayerPrefs.SetInt(KeyStorage.Money, buffer);
         OnMoneyChanged?.Invoke(before,buffer);
     }

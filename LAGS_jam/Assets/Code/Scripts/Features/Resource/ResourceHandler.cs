@@ -43,7 +43,7 @@ public class ResourceHandler : MonoBehaviour
 
     public void AnimateInstanciate()
     {
-        transform.position = transform.position + Vector3.up * 2f;
-        rb.AddForce((Vector3.up * 4) + (Vector3.right * Random.Range(-2, 2)), ForceMode.Impulse);
+        //transform.position = transform.position + Vector3.up;
+        rb.AddForce((Vector3.up * 3) + (Vector3.right * Random.Range(-2, 2)), ForceMode.Impulse);
     }
 }

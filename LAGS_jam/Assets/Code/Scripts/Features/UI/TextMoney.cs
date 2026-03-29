@@ -15,14 +15,8 @@ public class TextMoney : MonoBehaviour
         OnMoneyChanged(0, MoneyDataService.GetMoney());
     }
 
-    private void OnEnable()
-    {
-        MoneyDataService.OnMoneyChanged += OnMoneyChanged;
-    }
-    private void OnDisable()
-    {
-        MoneyDataService.OnMoneyChanged -= OnMoneyChanged;
-    }
+    private void OnEnable() => MoneyDataService.OnMoneyChanged += OnMoneyChanged;
+    private void OnDisable() => MoneyDataService.OnMoneyChanged -= OnMoneyChanged;
 
     private void OnMoneyChanged(int arg1, int arg2)
     {
