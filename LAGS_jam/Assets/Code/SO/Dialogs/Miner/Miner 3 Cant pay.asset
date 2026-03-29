@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Miner 3 Cant pay
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 6
   model:
-    Dialog: "tienes que pagarme bien, no es un trabajo fac\xEDl"
-    DialogEN: 
-    DialogPO: 
+    Dialog: "Hmm\u2026 parece que no tienes suficiente. Vuelve cuando puedas pagar."
+    DialogEN: "Hmm\u2026 looks like you don\u2019t have enough. Come back when you
+      can pay."
+    DialogPO: "Hmm\u2026 parece que voc\xEA n\xE3o tem o suficiente. Volte quando
+      puder pagar."
     useWildCards: 0

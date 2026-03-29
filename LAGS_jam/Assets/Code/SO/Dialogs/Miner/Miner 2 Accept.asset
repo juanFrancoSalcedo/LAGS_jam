@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Miner 2 Accept
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  timeReading: 6
   model:
-    Dialog: a trabajar se dijo
-    DialogEN: 
-    DialogPO: 
+    Dialog: "\xA1A trabajar se dijo!"
+    DialogEN: "Alright, let\u2019s get to work!"
+    DialogPO: "Certo, m\xE3os \xE0 obra!"
     useWildCards: 0

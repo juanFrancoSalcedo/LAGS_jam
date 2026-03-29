@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 5
   model:
-    Dialog: "\xBFBuscas a alguien que mueva el vag\xF3n? Pues ya me encontraste.\nSoy
-      Fausto. No hablo mucho, pero trabajo el doble."
-    DialogEN: Looking for someone to move the cart? Well, you found me. I'm Fausto.
-      I don't talk much, but I work twice as hard.
-    DialogPO: "Voc\xEA est\xE1 procurando algu\xE9m para empurrar o vag\xE3o? Voc\xEA
-      j\xE1 me encontrou. Sou Fausto. N\xE3o falo muito, mas dobro o trabalho."
+    Dialog: "Y esa vagoneta qu\xE9? Yo la pongo en marcha.\nSoy Fausto. Menos palabras\u2026
+      m\xE1s acci\xF3n."
+    DialogEN: "What about that mine cart? I\u2019ll get it moving.\nI\u2019m Fausto.
+      Fewer words\u2026 more action."
+    DialogPO: "E esse carrinho de mina? Eu fa\xE7o ele andar.\nSou o Fausto. Menos
+      palavras\u2026 mais a\xE7\xE3o."
     useWildCards: 0

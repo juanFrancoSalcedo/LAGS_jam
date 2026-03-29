@@ -11,6 +11,9 @@ public class DistanceCheckHandler : MonoBehaviour
     bool onNearAlready = false;
     void Update()
     {
+        if (point1 == null || point2 == null)
+            return;
+
         if (Vector3.Distance(point1.position, point2.position) < distance && !onNearAlready)
         {
             onNear?.Invoke();

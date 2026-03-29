@@ -7,10 +7,25 @@ public class ButtonStartGame:BaseButtonAttendant
 {
     [SerializeField] private AnimationUIController animaUI;
     [SerializeField] private TMP_Text textComponent;
+    [Header("-- Paneles Externos --")]
+    [SerializeField] private GameObject panelInitGame;
+    [SerializeField] private BaseDoAnimationController logo;
+    [SerializeField] private AnimationUIController panelLanguage;
+    [SerializeField] private AnimationUIController panelIdioma;
+
     private void Start()
     {
         buttonComponent.onClick.AddListener(StartGame);
         StartCoroutine(ReadText());
+    }
+
+    public void ResetUI()
+    {
+        logo.gameObject.SetActive(false);
+        panelLanguage.ActiveAnimation(1);
+        panelIdioma.ActiveAnimation(1);
+        logo.ActiveAnimation(1);
+        panelInitGame.gameObject.SetActive(true);
     }
 
     private IEnumerator ReadText() 
@@ -47,6 +62,10 @@ public class ButtonStartGame:BaseButtonAttendant
         if (PlayerPrefs.HasKey(KeyStorage.Presentation_1))
         {
             GameStateContext.ChangeState(TypeGameState.StartDay);
+            panelLanguage.ActiveAnimation(1);
+            panelIdioma.ActiveAnimation(1);
+            logo.ActiveAnimation(0);
+            panelInitGame.gameObject.SetActive(false);
         }
         else
         {

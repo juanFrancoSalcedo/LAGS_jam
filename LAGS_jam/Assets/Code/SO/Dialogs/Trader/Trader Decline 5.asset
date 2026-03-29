@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 0
   model:
-    Dialog: "Sin problema. Cuando est\xE9s listo, aqu\xED estar\xE9."
-    DialogEN: No problem. When you're ready, I'll be here.
-    DialogPO: "Sem problema. Quando voc\xEA estiver pronto, aqui estarei"
+    Dialog: "Hmm\u2026 as\xED no me cuadra. Pero tr\xE1eme algo mejor y lo revisamos."
+    DialogEN: "Hmm\u2026 that doesn\u2019t work for me. Bring something better and
+      we\u2019ll take another look."
+    DialogPO: "Hmm\u2026 assim n\xE3o me serve. Mas traga algo melhor que a gente
+      v\xEA de novo."
     useWildCards: 0

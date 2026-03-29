@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 5
   model:
-    Dialog: Ehh quieres contratarme?
-    DialogEN: 
-    DialogPO: 
+    Dialog: 'Si esa vagoneta se queda corta, yo la llevo hasta el final.
+
+      Fausto.
+      Puro empuje.'
+    DialogEN: "If that mine cart falls short, I\u2019ll take it all the way.\nFausto.
+      All push."
+    DialogPO: "Se essa vagoneta n\xE3o chega, eu levo at\xE9 o fim.\nFausto. S\xF3
+      na for\xE7a."
     useWildCards: 0
