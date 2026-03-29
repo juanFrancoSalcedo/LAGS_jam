@@ -15,7 +15,7 @@ MonoBehaviour:
   sptFace: {fileID: 0}
   timeReading: 0
   model:
-    Dialog: Deuda Total
-    DialogEN: Total Debt
-    DialogPO: "D\xEDvida Total"
+    Dialog: Deuda Total :$#
+    DialogEN: Total Debt :$#
+    DialogPO: "D\xEDvida Total :$#"
     useWildCards: 0
