@@ -54,8 +54,8 @@ public class TraderHandler : MonoBehaviour
     {
         var wildCards = new Dictionary<string, string>
         {
-            { "@", model.Pricing.ToString() },
-            { "#", model.Name }
+            { "#", model.Pricing.ToString() },
+            { "@", model.Name }
         };
         dialogManager.AddCustomDialog(dialogModelSale.Model.Copy().SetWildCards(wildCards));
         dialogManager.PanelInventory.SetActive(false);

@@ -6,23 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Level/Scenes/Level_00.unity
+    guid: 8cc081771b57ff9439ec83bda4a5f715
+  - enabled: 1
+    path: Assets/_Level/Scenes/Level_01.unity
+    guid: 6069f687e1e38ee4683c652bc88c25d1
+  - enabled: 1
+    path: Assets/_Level/Scenes/Level_02.unity
+    guid: 2271e46afac76e74ea865f7836a5310e
+  - enabled: 1
+    path: Assets/_Level/Scenes/1_Cave.unity
+    guid: d2b9c3440d442b84595da5925ab5d761
+  - enabled: 1
     path: Assets/_Level/Scenes/Scene Whitebox/Whitebox Sebastian.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/_Level/Scenes/Scene Whitebox/White_Box_Juancho_00.unity
     guid: 18dad4d07dfacb340ae30b8b4c2f59ce
-  - enabled: 0
-    path: Assets/_Level/Scenes/Tienda_Pueblo.unity
-    guid: 7610f93aab69a484fb259e30ccc4a9bd
-  - enabled: 1
-    path: Assets/_Level/Scenes/Level_00.unity
-    guid: 8cc081771b57ff9439ec83bda4a5f715
-  - enabled: 1
-    path: Assets/_Level/Scenes/1_Cave.unity
-    guid: d2b9c3440d442b84595da5925ab5d761
-  - enabled: 1
-    path: Assets/_Level/Scenes/Level_01.unity
-    guid: 6069f687e1e38ee4683c652bc88c25d1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
