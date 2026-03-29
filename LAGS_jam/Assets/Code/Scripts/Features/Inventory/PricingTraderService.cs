@@ -17,7 +17,6 @@ public class PricingTraderService
         { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.Medium, (4, 7) },
         { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.Low, (1, 3) },
 
-
         // Fossil - All qualities
         { t => t.Item1 == TypeResource.Fossil && t.Item2 == QualityResource.High, (15, 25) },
         { t => t.Item1 == TypeResource.Fossil && t.Item2 == QualityResource.Medium, (7, 13) },

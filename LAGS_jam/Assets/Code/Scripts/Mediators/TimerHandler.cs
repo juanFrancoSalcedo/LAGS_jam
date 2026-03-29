@@ -12,6 +12,7 @@ public class TimerHandler:MonoBehaviour
     private void OnEnable()
     {
         GameStateContext.GameStateMediator.Subscribe(TypeGameState.EnterCave, StartTimer);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.OutCave, PauseTime);
         timer.OnTimeCompleted += StopTimer;
         timer.OnUpdateTime += CheckTimerEvents;
     }
@@ -27,9 +28,15 @@ public class TimerHandler:MonoBehaviour
         AudioManager.Instance.StopTickTackTwo();
     }
 
+    private void PauseTime() 
+    {
+        timer.PauseTime();
+    }
+
     private void OnDisable()
     {
         GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EnterCave, StartTimer);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.OutCave, PauseTime);
         timer.OnTimeCompleted -= StopTimer;
         timer.OnUpdateTime -= CheckTimerEvents;
     }

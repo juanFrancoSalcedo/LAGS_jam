@@ -2288,6 +2288,7 @@ GameObject:
   - component: {fileID: 7772265731744176683}
   - component: {fileID: 4168890426874245002}
   - component: {fileID: 7465781276345326233}
+  - component: {fileID: 3866005876459185587}
   m_Layer: 0
   m_Name: Gate_End
   m_TagString: Untagged
@@ -2418,6 +2419,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3866005876459185587}
+        m_TargetAssemblyTypeName: CallerGameState, Assembly-CSharp
+        m_MethodName: CallState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
@@ -2450,7 +2463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ed5d3c1142b3d4f8adf4906070b277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::B_Extensions.SceneLoader.CallerSceneLoader
-  sceneName: Level_00
+  sceneName: Level_02
 --- !u!114 &7465781276345326233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,6 +2476,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123606a0e2a921142964bf66dd252a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CallInventorySave
+--- !u!114 &3866005876459185587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5640963575653605740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498dd468e97ce18438d5945658942712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CallerGameState
+  gameState: 6
 --- !u!1 &5744549561292431353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,7 +3953,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 5VZ0OFZQQPC5
+    UniqueId: U9QSO3RGKCV5
     handler: {fileID: 1432000822625938109}
     sceneName: Level_01
 --- !u!1001 &77320126076180264
@@ -6079,7 +6105,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: HLUPDK7QMTWF
+    UniqueId: P661CLSD3E79
     handler: {fileID: 5584668891289164111}
     sceneName: Level_01
 --- !u!1001 &345239312309527664
@@ -6967,7 +6993,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: PK5MFWYT8XB1
+    UniqueId: VH2Z0QCHJZX8
     handler: {fileID: 5972314059455754232}
     sceneName: Level_01
 --- !u!1001 &494415246436204944
@@ -7920,7 +7946,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 42OCIT5GA029
+    UniqueId: 802JDAXOWII1
     handler: {fileID: 2555503941265713935}
     sceneName: Level_01
 --- !u!4 &4164265232049821488 stripped
@@ -8816,7 +8842,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: I20WEU056YDA
+    UniqueId: OBIPQQ34K1L9
     handler: {fileID: 8841234412397881534}
     sceneName: Level_01
 --- !u!4 &4293793661842394169 stripped
@@ -8970,7 +8996,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 6L40LXEGCNR1
+    UniqueId: F2JH20JFZ254
     handler: {fileID: 3519786216784653535}
     sceneName: Level_01
 --- !u!4 &4345754347154127067 stripped
@@ -10584,7 +10610,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: HM8PS830OMWM
+    UniqueId: WDVPWU8VY30P
     handler: {fileID: 6606752307566626857}
     sceneName: Level_01
 --- !u!4 &4517634326898620902 stripped
@@ -10812,7 +10838,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 9V14E0A13GFF
+    UniqueId: T7CM37ZUHWJZ
     handler: {fileID: 1370764429144330565}
     sceneName: Level_01
 --- !u!4 &4553309524145927163 stripped
@@ -12309,7 +12335,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: R5URE92SOVEC
+    UniqueId: 0AEZBUU95I9D
     handler: {fileID: 1039027686843649477}
     sceneName: Level_01
 --- !u!1001 &1386506993952397394
@@ -12401,7 +12427,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 318SK5LS6IZ3
+    UniqueId: 1W9XN27R3H4F
     handler: {fileID: 6364769660442134010}
     sceneName: Level_01
 --- !u!1001 &1407847695330607896
@@ -12687,7 +12713,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: GGYE28TR59Y9
+    UniqueId: Q2ZK4BDL8I5V
     handler: {fileID: 8833008814817773216}
     sceneName: Level_01
 --- !u!1001 &1457995622139447984
@@ -14221,7 +14247,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: NO5D2T59DBQL
+    UniqueId: W7W64JF13UP6
     handler: {fileID: 4821967825941766139}
     sceneName: Level_01
 --- !u!1001 &1722400262066406492
@@ -16214,7 +16240,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 15DFT6PJLHNU
+    UniqueId: Q3MMTGH1OZW9
     handler: {fileID: 8750582190195459362}
     sceneName: Level_01
 --- !u!4 &3221930748978862290 stripped
@@ -17891,7 +17917,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: HN3X92Y93PKP
+    UniqueId: G8SIGSH6VN6A
     handler: {fileID: 5257096244119498001}
     sceneName: Level_01
 --- !u!1001 &2370831982411433421
@@ -18231,7 +18257,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: OYV8OQHWGO6K
+    UniqueId: 1TLO9OE2RGHY
     handler: {fileID: 8695135933889206342}
     sceneName: Level_01
 --- !u!1001 &2440544259742971651
@@ -18323,7 +18349,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: ZV37L15Y5VAY
+    UniqueId: 70LJ6TBJ4GNU
     handler: {fileID: 1326250610762523995}
     sceneName: Level_01
 --- !u!1001 &2458865448196766173
@@ -20950,7 +20976,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: RC4Y71I79HG3
+    UniqueId: MR8LXXJXKF4B
     handler: {fileID: 3677312491012535077}
     sceneName: Level_01
 --- !u!4 &1742160023145999038 stripped
@@ -21314,7 +21340,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: PUDEQDM4H6WS
+    UniqueId: ISC2L89KHY01
     handler: {fileID: 1434816043863394059}
     sceneName: Level_01
 --- !u!4 &1819326169552298413 stripped
@@ -21710,7 +21736,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: B34CETIN4O34
+    UniqueId: RU36ZNRJHQ9E
     handler: {fileID: 1193525005819259098}
     sceneName: Level_01
 --- !u!4 &1934187104931079457 stripped
@@ -22276,7 +22302,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: MBVDK1VA1G8O
+    UniqueId: 2CTLF7XOFS2T
     handler: {fileID: 2918618895709764431}
     sceneName: Level_01
 --- !u!4 &2042631462064949859 stripped
@@ -27258,7 +27284,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: UIHBTVT7EZB3
+    UniqueId: U87JLSFCKWM5
     handler: {fileID: 4916593952664730262}
     sceneName: Level_01
 --- !u!4 &824130040911472860 stripped
@@ -28930,7 +28956,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: D9ZBHF2MOWVX
+    UniqueId: JE1BP5GBRCZ6
     handler: {fileID: 2296777327395745860}
     sceneName: Level_01
 --- !u!4 &1082213642090062092 stripped
@@ -30267,7 +30293,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 2OH2FN1GSMKP
+    UniqueId: D97U3HI9RCBL
     handler: {fileID: 2056127299256366172}
     sceneName: Level_01
 --- !u!1001 &4779703855993618806
@@ -31303,7 +31329,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 9AFGNWQGHXP3
+    UniqueId: P4G0EZE945QN
     handler: {fileID: 7523435993592285657}
     sceneName: Level_01
 --- !u!1001 &4974597984905478106
@@ -31663,7 +31689,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: MN9LU3TL07CU
+    UniqueId: MQPZZP9G96WC
     handler: {fileID: 8379486545243774024}
     sceneName: Level_01
 --- !u!1001 &5049288128390943212
@@ -32250,9 +32276,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2078953446078291932}
     m_Modifications:
+    - target: {fileID: 5912409412235910263, guid: 4bab3ae935e43274086772c1f63f4bfa, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: a323aea9fbe2c654f87f2ecedef79d6e, type: 2}
     - target: {fileID: 5912777907601731223, guid: 4bab3ae935e43274086772c1f63f4bfa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.31
+      value: 5.394
       objectReference: {fileID: 0}
     - target: {fileID: 5912777907601731223, guid: 4bab3ae935e43274086772c1f63f4bfa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32260,7 +32290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5912777907601731223, guid: 4bab3ae935e43274086772c1f63f4bfa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.68
+      value: 3.395
       objectReference: {fileID: 0}
     - target: {fileID: 5912777907601731223, guid: 4bab3ae935e43274086772c1f63f4bfa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32529,7 +32559,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: W9SFHJXOB9V1
+    UniqueId: HM8G593EEZKQ
     handler: {fileID: 288572494300795837}
     sceneName: Level_01
 --- !u!1001 &5135886046585390923
@@ -32745,7 +32775,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 78HBOO6O3BJ8
+    UniqueId: RX1SXGER9B0U
     handler: {fileID: 692640959443333779}
     sceneName: Level_01
 --- !u!1001 &5159824350772394643
@@ -33598,7 +33628,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: ZAMNZFY9DCG7
+    UniqueId: AUF038MVT260
     handler: {fileID: 141236260708102045}
     sceneName: Level_01
 --- !u!4 &8804000345549067881 stripped
@@ -34598,7 +34628,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 0B19GQ3FLOO9
+    UniqueId: 09XRO7KA179P
     handler: {fileID: 6173424514487856428}
     sceneName: Level_01
 --- !u!4 &9040244343686358809 stripped
@@ -34690,7 +34720,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: NOMJANVGF0H7
+    UniqueId: ZXV4ULHHV47H
     handler: {fileID: 962930680851323282}
     sceneName: Level_01
 --- !u!4 &9039432329106496675 stripped
@@ -35870,7 +35900,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: VH784NOMJCM4
+    UniqueId: NBSJ76CR0LLE
     handler: {fileID: 7567713218089182231}
     sceneName: Level_01
 --- !u!4 &9152276019700162844 stripped
@@ -37439,7 +37469,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: TWYMH28E7XAL
+    UniqueId: OGOEVYNS2OIS
     handler: {fileID: 700809528381732687}
     sceneName: Level_01
 --- !u!1001 &6017917544218227779
@@ -37531,7 +37561,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: UX6T8HEUXC6W
+    UniqueId: H8QVNGBYJ0YL
     handler: {fileID: 4065678808117335562}
     sceneName: Level_01
 --- !u!1001 &6034218857498016665
@@ -41562,7 +41592,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: PJ2W2E4N9IDG
+    UniqueId: 7LZK1T5V38V8
     handler: {fileID: 7617207769872718915}
     sceneName: Level_01
 --- !u!4 &8026980735482014967 stripped
@@ -43275,7 +43305,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: WOQUDNDLYIS9
+    UniqueId: GZG1BVUH8E5V
     handler: {fileID: 6029933275679670325}
     sceneName: Level_01
 --- !u!1001 &7296227278117760014
@@ -46554,7 +46584,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 14FO0D5K3QS9
+    UniqueId: 1U1F02TEA3TX
     handler: {fileID: 2733272027383993017}
     sceneName: Level_01
 --- !u!4 &6770494845104858843 stripped
@@ -48635,7 +48665,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: MD8G0XWEXXZP
+    UniqueId: YHWIDMQWOL5K
     handler: {fileID: 8805606878278531011}
     sceneName: Level_01
 --- !u!1001 &8416751078583228595
@@ -51300,7 +51330,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 28HFNQUW6AV2
+    UniqueId: 87WCEUSTAK0B
     handler: {fileID: 8349849454878637343}
     sceneName: Level_01
 --- !u!4 &5482833522882533799 stripped
@@ -52086,7 +52116,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 508JGBSWI8KO
+    UniqueId: QU9JGHCM29E2
     handler: {fileID: 177148671383730070}
     sceneName: Level_01
 --- !u!4 &5714369349608732394 stripped

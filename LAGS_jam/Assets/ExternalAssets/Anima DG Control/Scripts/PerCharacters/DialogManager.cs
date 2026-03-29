@@ -7,7 +7,6 @@ using Cysharp.Threading.Tasks;
 using B_Extensions;
 using UnityEngine.UI;
 
-
 public class DialogManager:Singleton<DialogManager>
 {
     [SerializeField] private Image imageCharacter;
@@ -116,9 +115,16 @@ public class DialogManager:Singleton<DialogManager>
         IndexDialog++;
 
     }
-
+    //try 
+    //    {
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        Debug.Log(ex.Message);
+    //    }
     private async UniTask AnimationDialog()
     {
+        
         animatingDialog = true;
         // here get the type of the class by it name, the first of the list
         Type tipo = Type.GetType(interfaces[0]);

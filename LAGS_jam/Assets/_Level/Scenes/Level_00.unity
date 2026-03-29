@@ -806,6 +806,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ede9a691f146b949aadafbb72142626, type: 3}
+--- !u!114 &1025661958 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 775848705063904994, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+  m_PrefabInstance: {fileID: 743425843393095874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2191305b5e3b4845801f038844238ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationUIController
 --- !u!1 &1089918005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1713,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: 56.342, z: 0}
+--- !u!114 &2097391727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5504051595753136218, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+  m_PrefabInstance: {fileID: 743425843393095874}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2191305b5e3b4845801f038844238ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationUIController
 --- !u!1001 &743425843393095874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2121,6 +2143,26 @@ PrefabInstance:
     - target: {fileID: 2912798591131814051, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355218257344057634, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355218257344057634, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2097391727}
+    - target: {fileID: 3355218257344057634, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1025661958}
+    - target: {fileID: 3355218257344057634, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AnimationUIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355218257344057634, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3377002395985448591, guid: ac04fc546a026754694af1c25f2a4dbe, type: 3}
       propertyPath: m_AnchorMax.y

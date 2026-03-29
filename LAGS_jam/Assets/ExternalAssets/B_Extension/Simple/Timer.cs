@@ -26,15 +26,20 @@ public class Timer : MonoBehaviour
 
     public void StartTimer() 
     {
+        pause = false;
         if (reduce)
             timeRemaing = targetTime;
         else
             timeRemaing = 0;
-
         if (coroutineTimer == null)
             coroutineTimer = StartCoroutine(DoTimer());
         onStartTimer?.Invoke();
     }
+
+    public void PauseTime() => pause = true;
+    public void UnpauseTime() => pause = false;
+
+    bool pause = false;
 
     public void RestartTimer() 
     {
@@ -47,7 +52,9 @@ public class Timer : MonoBehaviour
         float amount = (reduce) ? -1 : 1;
 
         while (!ReachTime())
-        { 
+        {
+            if (pause)
+                amount = 0;
             var secs = TimeSpan.FromSeconds(timeRemaing);
             timeRemaing += (amount *Time.deltaTime);
             OnUpdateTime?.Invoke(secs.ToString("mm\\:ss"));
