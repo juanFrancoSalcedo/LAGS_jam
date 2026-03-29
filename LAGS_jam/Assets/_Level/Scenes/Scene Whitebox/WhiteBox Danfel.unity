@@ -949,11 +949,72 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rails x10
       objectReference: {fileID: 0}
+    - target: {fileID: 5537370677925348684, guid: f575b143c06dc6f45850fb1ed2c68288, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f575b143c06dc6f45850fb1ed2c68288, type: 3}
+--- !u!1001 &935215237914383949
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7981423740040757594, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_Name
+      value: Pila Rocas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266253409304725640, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ff9f290cc903ab4f9896a5f00d1d609, type: 3}
 --- !u!1001 &1736733574010083059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1094,3 +1155,4 @@ SceneRoots:
   - {fileID: 1262911936}
   - {fileID: 1761080679}
   - {fileID: 21422829}
+  - {fileID: 935215237914383949}
