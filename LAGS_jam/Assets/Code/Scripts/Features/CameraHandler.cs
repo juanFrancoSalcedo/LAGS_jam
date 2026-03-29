@@ -42,7 +42,6 @@ public class CameraHandler : MonoBehaviour
         GameStateContext.GameStateMediator.Subscribe(TypeGameState.OutCave, StartFollowCam);
     }
 
-
     private void OnDisable()
     {
         GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.Welcome, WelcomeCamera);
