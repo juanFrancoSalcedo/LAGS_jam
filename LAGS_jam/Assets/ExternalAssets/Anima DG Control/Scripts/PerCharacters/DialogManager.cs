@@ -62,6 +62,7 @@ public class DialogManager:Singleton<DialogManager>
         sheets.ForEach(t => dialogs.Add(t.Model));
         buttonDialog.InitState();
         IndexDialog = 0;
+        imageCharacter.gameObject.SetActive(true);
         imageCharacter.sprite = sheets[0].SptFace;
     }
 
@@ -76,6 +77,7 @@ public class DialogManager:Singleton<DialogManager>
         panelAcceptHire.SetActive(false);
         panelAcceptTrade.SetActive(false);
         panelInventory.SetActive(false);
+        imageCharacter.gameObject.SetActive(false);
     }
 
     public async void AddCustomDialog(DialogModel dialog) 
