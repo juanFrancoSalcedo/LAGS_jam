@@ -14,6 +14,7 @@ public class PlayerHandler : MonoBehaviour
     PlayerMovementInputs _playerMovement;
     Rigidbody rb;
     public event Action<bool> OnXSpriteChanged;
+    public event Action<bool> OnYSpriteChanged;
     InputSystem_Actions _actions;
     Vector2 direction;
     PlayerStamina _playerStamina;
@@ -29,6 +30,8 @@ public class PlayerHandler : MonoBehaviour
         _playerMovement.Configure();
         freeze = !(GameStateContext.State == TypeGameState.StartDay);
     }
+
+    public void FreezePlayer(bool _freeze) => freeze = _freeze;
 
     private IEnumerator Start()
     {
@@ -85,6 +88,10 @@ public class PlayerHandler : MonoBehaviour
             renderSpt.flipX = rb.linearVelocity.x <= 0;
             if (before != renderSpt.flipX)
                 OnXSpriteChanged?.Invoke(renderSpt.flipX);
+        }
+        else if (direction.y != 0)
+        {
+            OnYSpriteChanged?.Invoke(rb.linearVelocity.y > 0);
         }
     }
 

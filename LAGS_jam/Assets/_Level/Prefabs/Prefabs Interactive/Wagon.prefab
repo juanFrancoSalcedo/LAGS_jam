@@ -169,9 +169,9 @@ MonoBehaviour:
   followSpeed: 2
   triggerDetector: {fileID: 4773514102205748590}
   collisionDetectors:
+  - {fileID: 738268628692861976}
   - {fileID: 8263812165787861379}
   - {fileID: 866250764136897310}
-  - {fileID: 738268628692861976}
   spriteRenderer: {fileID: 5837797362051743375}
 --- !u!54 &2585249139727742710
 Rigidbody:
@@ -335,7 +335,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.67, z: 1}
+  m_Size: {x: 0.85, y: 0.4, z: 0.58}
   m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!114 &866250764136897310
 MonoBehaviour:
@@ -472,7 +472,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.67, z: 1}
+  m_Size: {x: 0.85, y: 0.4, z: 0.58}
   m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!114 &8263812165787861379
 MonoBehaviour:
@@ -605,7 +605,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 6LT6IVRY3U06
+    UniqueId: 2XA4G8BL09P2
     handler: {fileID: 4791896956906129955}
     sceneName: Whitebox Sebastian
 --- !u!1 &6703640843447338258
