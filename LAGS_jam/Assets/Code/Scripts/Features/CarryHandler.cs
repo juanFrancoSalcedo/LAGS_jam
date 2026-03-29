@@ -26,13 +26,36 @@ public class CarryHandler : MonoBehaviour
         triggerDetector.OnTriggerEntered += AddCarryOption;
         triggerDetector.OnTriggerExited += RemoveCarryOption;
         playerHandler.OnXSpriteChanged += ChangedDirectionPick;
+        playerHandler.OnYSpriteChanged += ChangedDirectionPickY;
         inputActions.Enable();
     }
+
+    private void ChangedDirectionPickY(bool obj)
+    {
+        if (obj)
+        {
+            transform.localPosition = new Vector3(transform.localPosition.z,-0.8f);
+            var r = transform.localRotation.eulerAngles;
+            r.y = -180;
+            transform.rotation = Quaternion.Euler(r);
+            //_pickMovement.isFliped = true;
+        }
+        else
+        {
+            transform.localPosition = new Vector3(0.8f, transform.localPosition.y);
+            var r = transform.localRotation.eulerAngles;
+            r.y = 0;
+            transform.rotation = Quaternion.Euler(r);
+            //_pickMovement.isFliped = false;
+        }
+    }
+
     private void OnDisable()
     {
         triggerDetector.OnTriggerEntered -= AddCarryOption;
         triggerDetector.OnTriggerExited -= RemoveCarryOption;
         playerHandler.OnXSpriteChanged -= ChangedDirectionPick;
+        playerHandler.OnYSpriteChanged -= ChangedDirectionPickY;
         inputActions.Disable();
     }
 
@@ -60,6 +83,8 @@ public class CarryHandler : MonoBehaviour
     {
         if (actionCarry.WasPressedThisFrame())
         {
+            playerHandler.FreezePlayer(true);
+            Invoke(nameof(RestoreFreeze), 0.2f);
             if (playerHandler.IsExhausted(3f))
             { 
                 AudioManager.Instance.PlaySigh();
@@ -71,6 +96,10 @@ public class CarryHandler : MonoBehaviour
             else
                 TryCarry();
         }
+    }
+    private void RestoreFreeze() 
+    {
+        playerHandler.FreezePlayer(false);
     }
 
     private void RemoveCarryOption(Transform _transform)

@@ -9,7 +9,7 @@ public class PlayerStaminaView : MonoBehaviour
     [SerializeField] Image imageFill;
     [SerializeField] Image imageAnimation;
     [SerializeField] PlayerHandler playerHandler;
-
+    [SerializeField] private AnimationUIController controller;
 
     private void Start()
     {
@@ -19,13 +19,13 @@ public class PlayerStaminaView : MonoBehaviour
     private void OnEnable()
     {
         PlayerStamina.OnStaminaChanged += DisplayDrain;
-        //GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay, Animate);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay, ()=>controller.ActiveAnimation(1));
     }
 
     private void OnDisable()
     {
         PlayerStamina.OnStaminaChanged -= DisplayDrain;
-        //GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, Animate);
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, () => controller.ActiveAnimation(1));
     }
 
 
