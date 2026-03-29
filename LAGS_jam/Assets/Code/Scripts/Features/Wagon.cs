@@ -24,33 +24,33 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
         return Vector3.Distance(playerHandler.transform.position,transform.position) < distanceCollect;
     }
 
-    //private void OnEnable()
-    //{
-    //    triggerDetector.OnTriggerEntered += Collect;
-        
-    //    // Suscribir a cada detector de colisión en el array
-    //    foreach (var detector in collisionDetectors)
-    //    {
-    //        if (detector != null)
-    //        {
-    //            detector.OnCollisionStayed += CollisionStayed;
-    //        }
-    //    }
-    //}
+    private void OnEnable()
+    {
+        triggerDetector.OnTriggerEntered += Collect;
 
-    //private void OnDisable()
-    //{
-    //    triggerDetector.OnTriggerEntered -= Collect;
-        
-    //    // Desuscribir de cada detector de colisión en el array
-    //    foreach (var detector in collisionDetectors)
-    //    {
-    //        if (detector != null)
-    //        {
-    //            detector.OnCollisionStayed -= CollisionStayed;
-    //        }
-    //    }
-    //}
+        // Suscribir a cada detector de colisión en el array
+        //foreach (var detector in collisionDetectors)
+        //{
+        //    if (detector != null)
+        //    {
+        //        detector.OnCollisionStayed += CollisionStayed;
+        //    }
+        //}
+    }
+
+    private void OnDisable()
+    {
+        triggerDetector.OnTriggerEntered -= Collect;
+
+        // Desuscribir de cada detector de colisión en el array
+        //foreach (var detector in collisionDetectors)
+        //{
+        //    if (detector != null)
+        //    {
+        //        detector.OnCollisionStayed -= CollisionStayed;
+        //    }
+        //}
+    }
 
 
     private void CollisionStayed(Collision collision)

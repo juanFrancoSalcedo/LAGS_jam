@@ -82,9 +82,11 @@ public class AudioManager : Singleton<AudioManager>
         int randomIndex = Random.Range(0, hitRock.Length);
         var first = System.Array.Find(hitRock, t => !t.isPlaying);
         if (first != null)
+        { 
             first.Play();
-        if(trans != null)
-            first.transform.position = trans.position;
+            if(trans != null)
+                first.transform.position = trans.position;
+        }
     }
 
     public void PlayAmbientCave() => AmbientCave.Play();
