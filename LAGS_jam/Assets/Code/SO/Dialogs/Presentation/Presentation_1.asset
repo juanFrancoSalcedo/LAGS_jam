@@ -15,19 +15,19 @@ MonoBehaviour:
   timeReading: 5
   model:
     Dialog: "Eres Marco, un padre trabajador que vive en un peque\xF1o pueblo minero.
-      Tu familia depende de ti, y cada semana el dinero alcanza justo para lo necesario.
+      Tu familia depende de ti y cada semana el dinero alcanza justo para lo necesario.
       Pero esta semana es diferente: tu hija Valeria cumple a\xF1os el viernes. Ella
       no pide mucho, nunca lo hace. Solo una bicicleta de $500 que vio en la vitrina
       del centro. Esa sonrisa que imaginas en su cara lo vale todo."
     DialogEN: 'You are Marco, a hardworking father living in a small mining town.
-      Your family depends on you, and each week your money barely stretches to cover
+      Your family depends on you and each week your money barely stretches to cover
       necessities. But this week is different: your daughter Valeria''s birthday
       is this Friday. She never asks for much. Just a $500 bicycle she saw in the
       downtown display window. The smile you imagine on her face is worth every penny.'
     DialogPO: "Voc\xEA \xE9 Marco, um pai trabalhador que vive em uma pequena cidade
-      mineira. Sua fam\xEDlia depende de voc\xEA, e cada semana o dinheiro chega
-      apenas para o necess\xE1rio. Mas essa semana \xE9 diferente: sua filha Valeria
-      faz anivers\xE1rio nesta sexta-feira. Ela nunca pede muito, nunca pede. Apenas
+      mineira. Sua fam\xEDlia depende de voc\xEA e cada semana o dinheiro chega apenas
+      para o necess\xE1rio. Mas essa semana \xE9 diferente: sua filha Valeria faz
+      anivers\xE1rio nesta sexta-feira. Ela nunca pede muito, nunca pede. Apenas
       uma bicicleta de $500 que ela viu na vitrine do centro. aquele sorriso que
       voc\xEA imagina em seu rosto vale cada centa"
     useWildCards: 0
