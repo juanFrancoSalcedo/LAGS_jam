@@ -68,6 +68,7 @@ public class HireHandler : MonoBehaviour, IDialogListener
     {
         if (arg1 == eventIndexAccept)
         {
+            print("index event"+eventIndexAccept);
             dialogManager.PanelAcceptHire.SetActive(true);
             dialogManager.ButtonDialog.SetInteract(false);
         }

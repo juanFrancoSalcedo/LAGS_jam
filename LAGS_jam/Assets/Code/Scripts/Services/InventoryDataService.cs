@@ -42,4 +42,10 @@ public class InventoryDataService
             SaveData();
         }
     }
+
+    public static void RemoveAll() 
+    {
+        runTimeData.resources.Clear();
+        SaveData();
+    }
 }
