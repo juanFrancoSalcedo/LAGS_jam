@@ -15,7 +15,7 @@ MonoBehaviour:
   sptFace: {fileID: 0}
   timeReading: 0
   model:
-    Dialog: Escuela
-    DialogEN: School
-    DialogPO: Escola
+    Dialog: Escuela :$#
+    DialogEN: School :$#
+    DialogPO: Escola :$#
     useWildCards: 0
