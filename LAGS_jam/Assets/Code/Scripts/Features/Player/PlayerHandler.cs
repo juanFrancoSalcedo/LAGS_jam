@@ -19,16 +19,18 @@ public class PlayerHandler : MonoBehaviour
     Vector2 direction;
     PlayerStamina _playerStamina;
     public PlayerStamina PlayerStamina => _playerStamina;
+    bool hasFlipX;
 
     public bool CarryWagon = false;
     private void Awake()
     {
+        hasFlipX = renderSpt.flipX;
         rb = GetComponent<Rigidbody>();
         _actions = new InputSystem_Actions();
         _playerMovement = new PlayerMovementInputs(_actions);
         _playerStamina = new PlayerStamina();
         _playerMovement.Configure();
-        freeze = !(GameStateContext.State == TypeGameState.StartDay);
+        freeze = !(GameStateContext.State == TypeGameState.EnterCave || GameStateContext.State == TypeGameState.StartDay);
     }
 
     public void FreezePlayer(bool _freeze) => freeze = _freeze;
@@ -84,10 +86,10 @@ public class PlayerHandler : MonoBehaviour
         // keep direction in x axis
         if (direction.x != 0)
         {
-            bool before = renderSpt.flipX;
-            renderSpt.flipX = rb.linearVelocity.x <= 0;
-            if (before != renderSpt.flipX)
-                OnXSpriteChanged?.Invoke(renderSpt.flipX);
+            bool before = hasFlipX;
+            hasFlipX = rb.linearVelocity.x <= 0;
+            if (before != hasFlipX)
+                OnXSpriteChanged?.Invoke(hasFlipX);
         }
         if (direction.y != 0)
         {
