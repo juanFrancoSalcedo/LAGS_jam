@@ -39,5 +39,5 @@ public class ResourceHandler : MonoBehaviour
 
     public void AnimateJump(Transform positionWagon) => transform.DOJump(positionWagon.position, 1, 1, 0.5f);
 
-    public void AnimateInstanciate() => rb.AddForce((Vector3.up * 5) + (Vector3.right * Random.Range(-2, 2)), ForceMode.Impulse);
+    public void AnimateInstanciate() => rb.AddForce((Vector3.up * 4) + (Vector3.right * Random.Range(-2, 2)), ForceMode.Impulse);
 }

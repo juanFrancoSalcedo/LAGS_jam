@@ -20,6 +20,8 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] AudioSource AmbientNight;
     [SerializeField] AudioSource AmbientCave;
     [SerializeField] AudioSource caveSteps;
+    [SerializeField] AudioSource TickTackOne;
+    [SerializeField] AudioSource TickTackTwo;
 
     protected override void Awake()
     {
@@ -34,9 +36,7 @@ public class AudioManager : Singleton<AudioManager>
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        
         StopAllAmbients();
-        
         HandleSceneAudio(scene.name);
     }
 
@@ -92,6 +92,17 @@ public class AudioManager : Singleton<AudioManager>
     }
     public void StopCaveSteps() => caveSteps.Stop();
     public void PlayCollectResource() => collectResource.Play();
-
     public void PlaySigh() => sigh.Play();
+
+    public void PlayTickTackOne()
+    {
+        if (!TickTackOne.isPlaying)
+            TickTackOne.Play();
+    }
+
+    public void PlayTickTackTwo()
+    {
+        if (!TickTackTwo.isPlaying)
+            TickTackTwo.Play();
+    }
 }

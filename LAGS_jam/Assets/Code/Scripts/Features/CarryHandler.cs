@@ -7,6 +7,7 @@ public class CarryHandler : MonoBehaviour
 {
     [SerializeField] TriggerDetector triggerDetector;
     [SerializeField] private PlayerHandler playerHandler;
+    [SerializeField] private DialogSheet dialogSheetCarry;
 
     List<ResourceHandler> resourceHandlers = new List<ResourceHandler>();
     ResourceHandler carryElement = null;
@@ -59,7 +60,13 @@ public class CarryHandler : MonoBehaviour
     {
         if (actionCarry.WasPressedThisFrame())
         {
-            if(carryElement)
+            if (playerHandler.IsExhausted(3f))
+            { 
+                AudioManager.Instance.PlaySigh();
+                NotificationManager.Instance.ShowNotification(dialogSheetCarry.Model.GetDialog(), 4f);
+                return;
+            }
+            if (carryElement)
                 TryDrop();
             else
                 TryCarry();
@@ -90,7 +97,7 @@ public class CarryHandler : MonoBehaviour
         carryElement = resourceHandlers[0];
         resourceHandlers.RemoveAt(0);
         carryElement.CarryPosition = transform;
-        playerHandler.DebtStamina(2.5f);
+        playerHandler.DebtStamina(3f);
     }
 
     private void TryDrop()
@@ -104,7 +111,7 @@ public class CarryHandler : MonoBehaviour
         if (wagon.IsNearPlayer())
         {
             carryElement.AnimateJump(wagon.transform);
-            playerHandler.DebtStamina(2.5f);
+            playerHandler.DebtStamina(3f);
         }
         carryElement = null;
     }

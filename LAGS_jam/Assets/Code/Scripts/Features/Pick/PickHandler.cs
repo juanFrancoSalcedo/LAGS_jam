@@ -66,7 +66,12 @@ public class PickHandler : MonoBehaviour
 
     private void Update()
     {
-        if(action.WasPressedThisFrame())
-            _pickMovement.Animate();
+        if (action.WasPressedThisFrame())
+        {
+            if(!playerHandler.PlayerStamina.IsExhausted(2.5f))
+                _pickMovement.Animate();
+            else
+                AudioManager.Instance.PlaySigh();
+        }
     }
 }

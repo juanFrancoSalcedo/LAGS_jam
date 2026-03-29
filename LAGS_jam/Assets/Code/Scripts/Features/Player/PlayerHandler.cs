@@ -47,6 +47,8 @@ public class PlayerHandler : MonoBehaviour
         else
             AudioManager.Instance.PlaySigh();
     }
+
+    public bool IsExhausted(float amount) => PlayerStamina.IsExhausted(amount);
     #endregion
 
     private void OnEnable()

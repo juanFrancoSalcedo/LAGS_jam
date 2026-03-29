@@ -24,7 +24,6 @@ public class InventoryDataService
         if (string.IsNullOrEmpty(model.UID))
             model.InitSettings();
         runTimeData.resources.Add(model);
-        SaveData();
     }
 
     public static void RemoveItem(ResourceModel model)
