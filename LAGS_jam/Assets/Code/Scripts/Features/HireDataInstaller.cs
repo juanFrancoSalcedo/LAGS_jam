@@ -36,6 +36,5 @@ public class HireDataInstaller: MonoBehaviour
             Miner = mDrivableMiner.GetComponent<IEmployeeDrivable>();
             Miner.AssignEmployee(minerData);
         }
-
     }
 }

@@ -89,9 +89,9 @@ public class PlayerHandler : MonoBehaviour
             if (before != renderSpt.flipX)
                 OnXSpriteChanged?.Invoke(renderSpt.flipX);
         }
-        else if (direction.y != 0)
+        if (direction.y != 0)
         {
-            OnYSpriteChanged?.Invoke(rb.linearVelocity.y > 0);
+            OnYSpriteChanged?.Invoke(rb.linearVelocity.z >= 0);
         }
     }
 
