@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: WelcomeDialog 3
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
-  sptFace: {fileID: -1631016208, guid: 257da1e7a0320b14e84691d5f08dac1e, type: 3}
+  sptFace: {fileID: 21300000, guid: bf97e16cf05179e4aafef56a97f5e6b3, type: 3}
   timeReading: 0
   model:
     Dialog: "S\xE9 lo que buscas y por qu\xE9. Espero que lo consigas"
