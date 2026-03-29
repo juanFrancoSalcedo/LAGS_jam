@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ResourceHandler : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer _spriteRender;
     public ResourceSheet Sheet { get; private set; }
     Rigidbody rb;
     public Transform CarryPosition { get; set; }
@@ -14,6 +15,7 @@ public class ResourceHandler : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         Sheet = ResourcesRepository.Instance.GetResourcesRandom();
+        _spriteRender.sprite = Sheet.Spt;
         AnimateInstanciate();
     }
 

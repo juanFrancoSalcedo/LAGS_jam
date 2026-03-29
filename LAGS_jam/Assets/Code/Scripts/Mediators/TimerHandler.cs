@@ -23,6 +23,8 @@ public class TimerHandler:MonoBehaviour
         timer.StopTimer();
         GameStateContext.ChangeState(TypeGameState.EndDay);
         showWarningTwo = showWarningOne = false;
+        AudioManager.Instance.StopTickTackOne();
+        AudioManager.Instance.StopTickTackTwo();
     }
 
     private void OnDisable()
