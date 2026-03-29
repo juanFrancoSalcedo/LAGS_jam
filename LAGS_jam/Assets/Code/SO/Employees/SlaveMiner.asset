@@ -19,7 +19,7 @@ MonoBehaviour:
     UID: asdasda-+dasdasda-dasd-2312as
     Pricing: 50
     DialogCVModel:
-      Dialog: Yo soy tu hombre para ese trabajo, solo pagame 50$
+      Dialog: Son 40$
       DialogEN: 
       DialogPO: 
       useWildCards: 0
