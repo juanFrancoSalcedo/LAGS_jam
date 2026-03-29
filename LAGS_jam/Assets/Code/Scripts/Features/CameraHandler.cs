@@ -19,9 +19,15 @@ public class CameraHandler : MonoBehaviour
             case TypeGameState.StartDay:
                 StartFollowCam();
                 break;
+            case TypeGameState.EnterCave:
+                StartFollowCam();
+                break;
             case TypeGameState.EndDay:
                 break;
             case TypeGameState.FinishGame:
+                break;
+            case TypeGameState.OutCave:
+                StartFollowCam();
                 break;
             default:
                 break;
@@ -32,6 +38,8 @@ public class CameraHandler : MonoBehaviour
     {
         GameStateContext.GameStateMediator.Subscribe(TypeGameState.Welcome, WelcomeCamera);
         GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay, StartFollowCam);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EnterCave, StartFollowCam);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.OutCave, StartFollowCam);
     }
 
 
@@ -39,6 +47,8 @@ public class CameraHandler : MonoBehaviour
     {
         GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.Welcome, WelcomeCamera);
         GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, StartFollowCam);
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EnterCave, StartFollowCam);
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.OutCave, StartFollowCam);
     }
 
     private void StartFollowCam()

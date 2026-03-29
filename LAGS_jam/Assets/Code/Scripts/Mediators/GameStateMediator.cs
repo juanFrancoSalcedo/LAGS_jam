@@ -61,5 +61,7 @@ public enum TypeGameState
     Welcome,
     StartDay,
     EndDay,
-    FinishGame
+    FinishGame,
+    EnterCave,
+    OutCave
 }

@@ -11,7 +11,7 @@ public class TimerHandler:MonoBehaviour
 
     private void OnEnable()
     {
-        GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay, StartTimer);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EnterCave, StartTimer);
         timer.OnTimeCompleted += StopTimer;
         timer.OnUpdateTime += CheckTimerEvents;
     }
@@ -29,7 +29,7 @@ public class TimerHandler:MonoBehaviour
 
     private void OnDisable()
     {
-        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, StartTimer);
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EnterCave, StartTimer);
         timer.OnTimeCompleted -= StopTimer;
         timer.OnUpdateTime -= CheckTimerEvents;
     }
