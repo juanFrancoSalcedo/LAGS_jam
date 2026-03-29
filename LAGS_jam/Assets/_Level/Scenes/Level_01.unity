@@ -5192,6 +5192,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 22.269
       objectReference: {fileID: 0}
+    - target: {fileID: 2984611191991328243, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
+      propertyPath: m_Center.x
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2984611191991328243, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3181465041795946533, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.497
@@ -5798,12 +5806,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5330241456329179014, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6966361836708594705}
-    - targetCorrespondingSourceObject: {fileID: 5330241456329179014, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6966361836708594704}
-    - targetCorrespondingSourceObject: {fileID: 5330241456329179014, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6966361836708594703}
     - targetCorrespondingSourceObject: {fileID: 5640963575653605740, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
       insertIndex: -1
@@ -5814,6 +5816,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5640963575653605740, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6966361836708594708}
+    - targetCorrespondingSourceObject: {fileID: 5640963575653605740, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6966361836708594714}
   m_SourcePrefab: {fileID: 100100000, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
 --- !u!1 &6966361836708594702 stripped
 GameObject:
@@ -5833,44 +5838,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::B_Extensions.SceneLoader.CallerSceneLoader
   sceneName: Level_00
---- !u!114 &6966361836708594704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6966361836708594702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92aecceae0931d4995b22c73a07fea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerDetector
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerStay:
-    m_PersistentCalls:
-      m_Calls: []
-  onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6966361836708594705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6966361836708594702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84aed5041d6f7d44bb2eea586c7de3ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExitHandler
-  triggerDetector: {fileID: 6966361836708594704}
-  callerSceneLoader: {fileID: 6966361836708594703}
 --- !u!1 &6966361836708594706 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5640963575653605740, guid: 527a943a0c13381489245f92c45cc56a, type: 3}
@@ -5893,7 +5860,19 @@ MonoBehaviour:
     m_Bits: 64
   onTriggerEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6966361836708594714}
+        m_TargetAssemblyTypeName: CallInventorySave, Assembly-CSharp
+        m_MethodName: SaveInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTriggerStay:
     m_PersistentCalls:
       m_Calls: []
@@ -5927,6 +5906,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExitHandler
   triggerDetector: {fileID: 6966361836708594707}
   callerSceneLoader: {fileID: 6966361836708594708}
+--- !u!114 &6966361836708594714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966361836708594706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123606a0e2a921142964bf66dd252a70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CallInventorySave
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
