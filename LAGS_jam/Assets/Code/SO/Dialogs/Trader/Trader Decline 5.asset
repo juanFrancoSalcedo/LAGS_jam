@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Trader Decline 5
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  sptFace: {fileID: 435168469, guid: c08cdc75cac5fd44fafb08fdac94a659, type: 3}
   timeReading: 0
   model:
     Dialog: "Hmm\u2026 as\xED no me cuadra. Pero tr\xE1eme algo mejor y lo revisamos."
