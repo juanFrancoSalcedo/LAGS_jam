@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Practice 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  sptFace: {fileID: 329080995, guid: 066226fc86241cd4d96bf60873135217, type: 3}
   timeReading: 0
   model:
     Dialog: "\xBFVes esa roca al fondo? \xDAsala para practicar. No muerde... Te

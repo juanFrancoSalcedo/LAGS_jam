@@ -7,20 +7,26 @@ public class PricingTraderService
 {
     public readonly static Dictionary<Predicate<(TypeResource, QualityResource)>, (int min, int max)> tradingRules = new Dictionary<Predicate<(TypeResource, QualityResource)>, (int, int)>()
     {
-        // Cristals - All qualities
-        { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.High, (8, 12) },
-        { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.Medium, (4, 7) },
-        { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.Low, (1, 3) },
-
         // EmeraldCristals - All qualities
         { t => t.Item1 == TypeResource.EmeraldCristals && t.Item2 == QualityResource.High, (20, 30) },
         { t => t.Item1 == TypeResource.EmeraldCristals && t.Item2 == QualityResource.Medium, (10, 18) },
         { t => t.Item1 == TypeResource.EmeraldCristals && t.Item2 == QualityResource.Low, (5, 9) },
 
+        // Cristals - All qualities
+        { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.High, (8, 12) },
+        { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.Medium, (4, 7) },
+        { t => t.Item1 == TypeResource.Cristals && t.Item2 == QualityResource.Low, (1, 3) },
+
+
         // Fossil - All qualities
         { t => t.Item1 == TypeResource.Fossil && t.Item2 == QualityResource.High, (15, 25) },
         { t => t.Item1 == TypeResource.Fossil && t.Item2 == QualityResource.Medium, (7, 13) },
-        { t => t.Item1 == TypeResource.Fossil && t.Item2 == QualityResource.Low, (3, 6) }
+        { t => t.Item1 == TypeResource.Fossil && t.Item2 == QualityResource.Low, (3, 6) },
+
+        // Fossil - All qualities
+        { t => t.Item1 == TypeResource.Charcoal && t.Item2 == QualityResource.High, (4, 5) },
+        { t => t.Item1 == TypeResource.Charcoal && t.Item2 == QualityResource.Medium, (3, 4) },
+        { t => t.Item1 == TypeResource.Charcoal && t.Item2 == QualityResource.Low, (1, 2) }
     };
 
 

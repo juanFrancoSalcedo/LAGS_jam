@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: WelcomeDialog
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  sptFace: {fileID: -1631016208, guid: 257da1e7a0320b14e84691d5f08dac1e, type: 3}
   timeReading: 0
   model:
     Dialog: "Buen d\xEDa! As\xED que t\xFA eres el nuevo"

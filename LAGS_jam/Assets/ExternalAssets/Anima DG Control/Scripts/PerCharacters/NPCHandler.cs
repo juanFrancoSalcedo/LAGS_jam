@@ -22,6 +22,9 @@ public class NPCHandler : MonoBehaviour,IDialogListener
         OnDialogComplete += InvokeCustomEvents;
         if(GameStateContext.State != TypeGameState.StartDay)
             ActiveDeco(false);
+
+        if (GameStateContext.State == TypeGameState.OutCave)
+            ActiveDeco(true);
         GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay,()=>ActiveDeco(true));
     }
 

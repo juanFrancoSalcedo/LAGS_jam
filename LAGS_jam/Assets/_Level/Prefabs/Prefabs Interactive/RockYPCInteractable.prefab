@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8716399079666868857}
   - component: {fileID: 5550738241503453814}
   - component: {fileID: 5454963743266625978}
-  - component: {fileID: 8680301498862048147}
   m_Layer: 7
   m_Name: RockYPCInteractable
   m_TagString: Untagged
@@ -134,34 +133,7 @@ MonoBehaviour:
   resourceHandler:
   - {fileID: 2582788507921228164, guid: 2c65695959ca24943b3f7252939ff22c, type: 3}
   amountResourcesInstanciate: 3
-  animator: {fileID: 0}
---- !u!54 &8680301498862048147
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3603153100877640036}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  animator: {fileID: 5279909123649035592}
 --- !u!1 &5650063544178312491
 GameObject:
   m_ObjectHideFlags: 0
