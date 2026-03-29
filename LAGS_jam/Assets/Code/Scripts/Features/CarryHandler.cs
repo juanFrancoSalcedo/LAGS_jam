@@ -7,6 +7,7 @@ public class CarryHandler : MonoBehaviour
 {
     [SerializeField] TriggerDetector triggerDetector;
     [SerializeField] private PlayerHandler playerHandler;
+    [SerializeField] private DialogSheet dialogSheetCarry;
 
     List<ResourceHandler> resourceHandlers = new List<ResourceHandler>();
     ResourceHandler carryElement = null;
@@ -62,7 +63,7 @@ public class CarryHandler : MonoBehaviour
             if (playerHandler.IsExhausted(3f))
             { 
                 AudioManager.Instance.PlaySigh();
-                NotificationManager.Instance.ShowNotification("No tienes suficiente energía para cargar o soltar el recurso", 4f);
+                NotificationManager.Instance.ShowNotification(dialogSheetCarry.Model.GetDialog(), 4f);
                 return;
             }
             if (carryElement)

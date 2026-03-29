@@ -94,6 +94,15 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayCollectResource() => collectResource.Play();
     public void PlaySigh() => sigh.Play();
 
-    public void PlayTickTackOne() => TickTackOne.Play();
-    public void PlayTickTackTwo() => TickTackTwo.Play();
+    public void PlayTickTackOne()
+    {
+        if (!TickTackOne.isPlaying)
+            TickTackOne.Play();
+    }
+
+    public void PlayTickTackTwo()
+    {
+        if (!TickTackTwo.isPlaying)
+            TickTackTwo.Play();
+    }
 }

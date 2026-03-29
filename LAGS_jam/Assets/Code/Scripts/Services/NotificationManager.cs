@@ -54,15 +54,15 @@ public class NotificationManager : Singleton<NotificationManager>
             return;
         }
 
-        isShowingNotification = true;
-
-        // Obtener y remover la primera notificación de la cola
         NotificationData notification = notificationQueue.Dequeue();
         DisplayNotification(notification);
     }
 
     private async void DisplayNotification(NotificationData notification)
     {
+        if (isShowingNotification)
+            return;
+        isShowingNotification = true;
         animationUI.ActiveAnimation(0);
         dialogAnimation.AnimateDefault(notification.message);
         
@@ -71,13 +71,13 @@ public class NotificationManager : Singleton<NotificationManager>
             animationUI.listAux[1].delay = notification.timeReading;
             await UniTask.Delay((int)(notification.timeReading * 1000)); 
         }
+        isShowingNotification = false;
     }
 
     private void OnNotificationEnded()
     {
         dialogAnimation.ClearText();
         ProcessNextNotification();
-        print("OOOOOIIILL");
     }
 
     public void ClearAllNotifications()
