@@ -20,12 +20,10 @@ public class PlayerHandler : MonoBehaviour
     Vector2 lastDirection;
     PlayerStamina _playerStamina;
     public PlayerStamina PlayerStamina => _playerStamina;
-    bool hasFlipX;
 
     public bool CarryWagon = false;
     private void Awake()
     {
-        hasFlipX = renderSpt.flipX;
         rb = GetComponent<Rigidbody>();
         _actions = new InputSystem_Actions();
         _playerMovement = new PlayerMovementInputs(_actions);
@@ -41,7 +39,7 @@ public class PlayerHandler : MonoBehaviour
         while (true) 
         {
             yield return new WaitForSeconds(0.1f);
-            _playerStamina.RestoreStamina(0.025f);
+            _playerStamina.RestoreStamina(0.04f);
         }
     }
 
@@ -87,10 +85,10 @@ public class PlayerHandler : MonoBehaviour
         // keep direction in x axis
         if (direction.x != 0)
         {
-            bool before = hasFlipX;
-            hasFlipX = lastDirection.x <= 0;
-            if (before != hasFlipX)
-                OnXSpriteChanged?.Invoke(hasFlipX);
+            bool before = renderSpt.flipX;
+            renderSpt.flipX = lastDirection.x <= 0;
+            if (before != renderSpt.flipX)
+                OnXSpriteChanged?.Invoke(renderSpt.flipX);
         }
         if (direction.y != 0)
         {

@@ -57,7 +57,8 @@ public class Wagon:MonoBehaviour,IEmployeeDrivable
     {
         if (collision.transform.TryGetComponent<PlayerHandler>(out var compo))
         {
-            compo.DebtStamina(0.02f);
+            print("entra compo");
+            compo.DebtStamina(0.08f);
         }
     }
 
