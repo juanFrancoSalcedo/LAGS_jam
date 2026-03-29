@@ -493,15 +493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3709094409602296080, guid: 6fe97414a4a5253428ca8a9cdbc9ed65, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466040740820832682, guid: 6fe97414a4a5253428ca8a9cdbc9ed65, type: 3}
-      propertyPath: reference.UniqueId
-      value: D7YOG8470FGM
-      objectReference: {fileID: 0}
-    - target: {fileID: 5096097019004693041, guid: 6fe97414a4a5253428ca8a9cdbc9ed65, type: 3}
-      propertyPath: freeze
-      value: 1
+      value: 0.684
       objectReference: {fileID: 0}
     - target: {fileID: 5577021861000719788, guid: 6fe97414a4a5253428ca8a9cdbc9ed65, type: 3}
       propertyPath: m_LocalPosition.x
