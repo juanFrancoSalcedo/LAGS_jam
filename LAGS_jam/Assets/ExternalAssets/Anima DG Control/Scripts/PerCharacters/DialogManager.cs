@@ -46,18 +46,13 @@ public class DialogManager:Singleton<DialogManager>
 #endif
     }
 
-    private void OnEnable()
-    {
-        GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay,ReleaseChat);
-    }
+    private void OnEnable() => GameStateContext.GameStateMediator.Subscribe(TypeGameState.EndDay, ReleaseChat);
 
-    private void OnDisable()
-    {
-        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EndDay, ReleaseChat);
-    }
+    private void OnDisable() => GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.EndDay, ReleaseChat);
 
     public void InjectDialogs(List<DialogSheet> sheets) 
     {
+        print("Injected");
         dialogs.Clear();
         sheets.ForEach(t => dialogs.Add(t.Model));
         buttonDialog.InitState();
@@ -72,6 +67,7 @@ public class DialogManager:Singleton<DialogManager>
     { 
         container.SetActive(false);
         dialogs.Clear();
+        dialogsListener.Clear();
         buttonDialog.InitState();
         IndexDialog = 0;
         panelAcceptHire.SetActive(false);
