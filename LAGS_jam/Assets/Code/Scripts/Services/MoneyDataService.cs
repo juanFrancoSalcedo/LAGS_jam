@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class MoneyDataService 
@@ -24,7 +25,12 @@ public class MoneyDataService
     }
 
     public static int GetMoney() => PlayerPrefs.GetInt(KeyStorage.Money, 0);
-
-
+    
     public static bool CanPay(int money) => GetMoney() >= money;
+
+    [MenuItem("Tools/600")]
+    private static void Quinientos() 
+    {
+        PlayerPrefs.SetInt(KeyStorage.Money, 600);
+    } 
 }

@@ -19,13 +19,28 @@ public class NPCHandler : MonoBehaviour,IDialogListener
         triggerDetector.OnTriggerEntered += AllowTalk;
         triggerDetector.OnTriggerExited += DenyTalk;
         OnDialogComplete += InvokeCustomEvents;
+        if(GameStateContext.State != TypeGameState.StartDay)
+            ActiveDeco(false);
+        GameStateContext.GameStateMediator.Subscribe(TypeGameState.StartDay,()=>ActiveDeco(true));
     }
+
+
     private void OnDisable()
     {
         triggerDetector.OnTriggerEntered -= AllowTalk;
         triggerDetector.OnTriggerExited -= DenyTalk;
         OnDialogComplete -= InvokeCustomEvents;
+        GameStateContext.GameStateMediator.Unsubscribe(TypeGameState.StartDay, () => ActiveDeco(true));
     }
+
+    private void ActiveDeco(bool value)
+    {
+        for (int i = 0;i<transform.childCount;i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(value);
+        }
+    }
+
     private void InvokeCustomEvents() => OnCompleteDialog?.Invoke();
     public void AllowTalk(Transform transform)
     {
