@@ -8,20 +8,13 @@ public class AnimCharRise : ITypingAnimaStrategy
     {
         Sequence sequence = DOTween.Sequence();
         Sequence sequence2 = DOTween.Sequence();
-        try 
+        for (int i = 0; i < animator.textInfo.characterCount; ++i)
         {
-            for (int i = 0; i < animator.textInfo.characterCount; ++i)
-            {
-                if (!animator.textInfo.characterInfo[i].isVisible)
-                    continue;
-                Vector3 currCharOffset = animator.GetCharOffset(i);
-                sequence.Append(animator.DOOffsetChar(i, currCharOffset + new Vector3(0, 30, 0), timePerChar));
-                sequence2.Append(animator.DOFadeChar(i, 1, timePerChar));
-            }
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError(e.Message);
+            if (!animator.textInfo.characterInfo[i].isVisible)
+                continue;
+            Vector3 currCharOffset = animator.GetCharOffset(i);
+            sequence.Append(animator.DOOffsetChar(i, currCharOffset + new Vector3(0, 30, 0), timePerChar));
+            sequence2.Append(animator.DOFadeChar(i, 1, timePerChar));
         }
         await sequence.AsyncWaitForCompletion();
     }

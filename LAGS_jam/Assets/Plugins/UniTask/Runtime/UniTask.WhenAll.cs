@@ -218,15 +218,9 @@ namespace Cysharp.Threading.Tasks
                 core.GetResult(token);
             }
 
-            public UniTaskStatus GetStatus(short token)
-            {
-                return core.GetStatus(token);
-            }
+            public UniTaskStatus GetStatus(short token) => core.GetStatus(token);
 
-            public UniTaskStatus UnsafeGetStatus()
-            {
-                return core.UnsafeGetStatus();
-            }
+            public UniTaskStatus UnsafeGetStatus() => core.UnsafeGetStatus();
 
             public void OnCompleted(Action<object> continuation, object state, short token)
             {

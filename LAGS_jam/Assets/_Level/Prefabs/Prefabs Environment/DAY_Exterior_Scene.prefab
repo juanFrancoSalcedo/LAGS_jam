@@ -604,7 +604,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: CEVMX2QN28D2
+    UniqueId: 0I18TYVGOM53
     handler: {fileID: 3826693651367950675}
     sceneName: White_Box_Juancho_00
 --- !u!1 &598764491940855492
@@ -966,6 +966,7 @@ GameObject:
   - component: {fileID: 3439101630435203534}
   - component: {fileID: 5079625613830982838}
   - component: {fileID: 5637945568312340863}
+  - component: {fileID: 1965121177148133832}
   m_Layer: 0
   m_Name: Exterior_Ground (1)
   m_TagString: Untagged
@@ -1045,6 +1046,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1965121177148133832
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652865416920137675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5868706045050942083, guid: e259dec140dfdfe4c8e5e3f2908fd456, type: 3}
 --- !u!1 &783937322765058745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,7 +2589,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 6AE5XMPOUYZ2
+    UniqueId: KNUGXQKJS8M0
     handler: {fileID: 2531601744354013875}
     sceneName: White_Box_Juancho_00
 --- !u!1 &1738223735473719239
@@ -11415,7 +11438,7 @@ ParticleSystem:
   UVModule:
     serializedVersion: 2
     enabled: 1
-    mode: 1
+    mode: 0
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -11525,18 +11548,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 1
-    tilesY: 1
+    tilesX: 2
+    tilesY: 2
     animationType: 0
     rowIndex: 0
     cycles: 0.01
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 649019319, guid: 13fb133a43355594c9aa3ae1722a0b61, type: 3}
-    - sprite: {fileID: 969403902, guid: 13fb133a43355594c9aa3ae1722a0b61, type: 3}
-    - sprite: {fileID: 879629628, guid: 13fb133a43355594c9aa3ae1722a0b61, type: 3}
-    - sprite: {fileID: -925729569, guid: 13fb133a43355594c9aa3ae1722a0b61, type: 3}
+    - sprite: {fileID: 21300000, guid: 096cb9bb8dcd2e9438da491f87259472, type: 3}
+    - sprite: {fileID: 21300000, guid: b5bd7e03240078b478f20c286c824c8b, type: 3}
+    - sprite: {fileID: 21300000, guid: f409e96cb1583014c994235f43ad7247, type: 3}
+    - sprite: {fileID: 21300000, guid: 3bd0235b4a9dd7a4aa0141ed92819a65, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -18291,6 +18314,7 @@ GameObject:
   - component: {fileID: 383474931354307552}
   - component: {fileID: 5100277724170192128}
   - component: {fileID: 4848097457194344048}
+  - component: {fileID: 2109863157647903810}
   m_Layer: 0
   m_Name: Exterior_Ground
   m_TagString: Untagged
@@ -18370,6 +18394,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2109863157647903810
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6715289725147714243}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5868706045050942083, guid: e259dec140dfdfe4c8e5e3f2908fd456, type: 3}
 --- !u!1 &6777051729519218990
 GameObject:
   m_ObjectHideFlags: 0
@@ -18498,7 +18544,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: 4BEMSNC1BMIO
+    UniqueId: F8I19HOPRYAQ
     handler: {fileID: 929598913521960764}
     sceneName: White_Box_Juancho_00
 --- !u!1 &6838043830892603916
@@ -30472,7 +30518,7 @@ MonoBehaviour:
   stateEnable: 0
   timeDelay: 0
   reference:
-    UniqueId: DNG2LBZA5ESK
+    UniqueId: G0O1J4TCT3AV
     handler: {fileID: 7972392053999941721}
     sceneName: White_Box_Juancho_00
 --- !u!1 &8485445196764819634
@@ -30607,13 +30653,13 @@ AudioSource:
   m_GameObject: {fileID: 8490210985857503478}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5665694905658640897, guid: 61c514ea2da416e45aff2687536f669a, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 83c0eb2b46605ce45aa62ecb035b6e4c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -30655,7 +30701,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -30670,7 +30716,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.16666667
       inSlope: 0
       outSlope: 0
       tangentMode: 0

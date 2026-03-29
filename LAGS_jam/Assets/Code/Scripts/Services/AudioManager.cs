@@ -105,4 +105,7 @@ public class AudioManager : Singleton<AudioManager>
         if (!TickTackTwo.isPlaying)
             TickTackTwo.Play();
     }
+
+    public void StopTickTackOne() => TickTackOne.Stop();
+    public void StopTickTackTwo() => TickTackTwo.Stop();
 }
