@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 0
   model:
-    Dialog: "\xBFVes esa roca al fondo? \xDAsala para practicar. No muerde, te lo
-      juro"
-    DialogEN: Do you see that rock at the back? Use it to practice. It won't bite,
+    Dialog: "\xBFVes esa roca al fondo? \xDAsala para practicar. No muerde... Te
+      lo juro"
+    DialogEN: Do you see that rock at the back? Use it to practice. It won't bite...
       I swear.
-    DialogPO: "V\xEA aquela rocha l\xE1 no fundo? Usa para treinar. N\xE3o morde,
-      te prometo."
+    DialogPO: "V\xEA aquela rocha l\xE1 no fundo? Usa para treinar. N\xE3o morde...
+      Te prometo."
     useWildCards: 0

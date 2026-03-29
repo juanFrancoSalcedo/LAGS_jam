@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 0
   model:
-    Dialog: "Un placer hacer negocios contigo. Vuelve pronto con m\xE1s."
-    DialogEN: Pleasure doing business with you. Come back soon with more.
-    DialogPO: "Prazer em negociar com voc\xEA. Volte logo com mais."
+    Dialog: "Bien. Trato hecho. Vuelve cuando tengas m\xE1s."
+    DialogEN: Good. Deal done. Come back when you have more.
+    DialogPO: "Certo. Neg\xF3cio fechado. Volte quando tiver mais."
     useWildCards: 0

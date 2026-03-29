@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 0
   model:
-    Dialog: "Aqu\xED no se regala nada, pero tampoco se estafa a nadie."
-    DialogEN: Nothing is given away for free here, but no one is cheated either.
-    DialogPO: "Nada \xE9 dado gratuitamente aqui, mas ningu\xE9m \xE9 enganado tamb\xE9m."
+    Dialog: "A ver qu\xE9 traes\u2026 pero no esperes que pague de m\xE1s."
+    DialogEN: "Let\u2019s see what you\u2019ve got\u2026 but don\u2019t expect me
+      to pay extra."
+    DialogPO: "Vamos ver o que voc\xEA trouxe\u2026 mas n\xE3o espere que eu pague
+      mais."
     useWildCards: 0

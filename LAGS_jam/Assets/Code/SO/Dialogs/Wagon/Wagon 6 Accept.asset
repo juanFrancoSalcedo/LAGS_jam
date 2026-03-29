@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
   timeReading: 5
   model:
-    Dialog: "Bien. Este trabajo ser\xE1 pan comido"
-    DialogEN: Well. This job will be a piece of cake.
-    DialogPO: "Bem. Este trabalho ser\xE1 f\xE1cil."
+    Dialog: "Bien. Me encargo de la vagoneta.\nFausto. Mu\xE9vete, que yo empujo."
+    DialogEN: "Good. I\u2019ll handle the cart.\nFausto. You move, I push."
+    DialogPO: "Certo. Eu cuido da vagoneta.\nFausto. Voc\xEA anda, eu empurro."
     useWildCards: 0
