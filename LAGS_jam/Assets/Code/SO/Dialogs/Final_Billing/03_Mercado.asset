@@ -15,7 +15,7 @@ MonoBehaviour:
   sptFace: {fileID: 0}
   timeReading: 0
   model:
-    Dialog: Mercado :$#
-    DialogEN: Grocery Store :$#
-    DialogPO: Mercado :$#
+    Dialog: Mercado
+    DialogEN: Grocery Store
+    DialogPO: Mercado
     useWildCards: 0

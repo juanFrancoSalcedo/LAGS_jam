@@ -87,7 +87,7 @@ public class PlayerHandler : MonoBehaviour
         if (direction.x != 0)
         {
             bool before = hasFlipX;
-            hasFlipX = rb.linearVelocity.x <= 0;
+            hasFlipX = rb.linearVelocity.x >= 0;
             if (before != hasFlipX)
                 OnXSpriteChanged?.Invoke(hasFlipX);
         }

@@ -15,7 +15,7 @@ MonoBehaviour:
   sptFace: {fileID: 0}
   timeReading: 0
   model:
-    Dialog: Transporte :$#
-    DialogEN: Transport :$#
-    DialogPO: Transporte :$#
+    Dialog: Transporte
+    DialogEN: Transport
+    DialogPO: Transporte
     useWildCards: 0
