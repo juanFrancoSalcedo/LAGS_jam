@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c13e229c1505447976c17eb0763d7f, type: 3}
   m_Name: Wagon 2
   m_EditorClassIdentifier: Assembly-CSharp::DialogSheet
+  sptFace: {fileID: -438116015, guid: 712c7f6ae57b63c4cb83057fb1beb29b, type: 3}
   timeReading: 5
   model:
     Dialog: 'Si esa vagoneta se queda corta, yo la llevo hasta el final.
