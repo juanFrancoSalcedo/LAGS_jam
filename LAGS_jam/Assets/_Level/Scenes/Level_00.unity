@@ -2927,7 +2927,8 @@ PrefabInstance:
       value: DAY_Exterior_Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1848141330814299, guid: 1a3eacf0339184c45a89309600239445, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6605421094006284635, guid: 1a3eacf0339184c45a89309600239445, type: 3}
