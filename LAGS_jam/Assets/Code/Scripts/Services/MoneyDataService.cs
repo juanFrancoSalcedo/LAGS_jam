@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEditor.Overlays;
 using UnityEditor.ShaderGraph.Legacy;
 using UnityEngine;
 
@@ -15,10 +16,12 @@ public class MoneyDataService
         int before = 0;
         var buffer = before = money;
         money += plus;
-        PlayerPrefs.SetInt(KeyStorage.Money, buffer);
         OnMoneyChanged?.Invoke(before,buffer);
+        SaveData();
     }
 
+
+    public static void SaveData() => PlayerPrefs.SetInt(KeyStorage.Money, money);
     public static void RemoveMoney(int less) 
     {
         money -= less;

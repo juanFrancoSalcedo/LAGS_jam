@@ -5,7 +5,7 @@ public static class DayDataService
     static int currentDay = 1;
     public static event System.Action<int,int> OnDayChanged;
 
-    public static bool IsLastDay() => currentDay == 4;
+    public static bool IsLastDay() => currentDay >= 4;
 
     public static int GetCurrentDay()
     {
