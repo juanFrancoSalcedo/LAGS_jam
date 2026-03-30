@@ -12,7 +12,7 @@ public class TextMoney : MonoBehaviour
     private void Awake()
     {
         textComponent = GetComponent<TMP_Text>();
-        OnMoneyChanged(0, MoneyDataService.GetMoney());
+        OnMoneyChanged(0, MoneyDataService.Money);
     }
 
     private void OnEnable() => MoneyDataService.OnMoneyChanged += OnMoneyChanged;
@@ -25,6 +25,6 @@ public class TextMoney : MonoBehaviour
 
     private void ShowMoney() 
     {
-        textComponent.text = label.Replace("@", MoneyDataService.GetMoney().ToString());
+        textComponent.text = label.Replace("@", MoneyDataService.Money.ToString());
     }
 }

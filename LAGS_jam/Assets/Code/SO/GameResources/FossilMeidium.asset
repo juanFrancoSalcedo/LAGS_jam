@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FossilMeidium
   m_EditorClassIdentifier: Assembly-CSharp::ResourceSheet
   path: Fossil Medium UI
-  spt: {fileID: -1838856432, guid: 45edb64d9cc56bf43bf8e9177b536eeb, type: 3}
+  spt: {fileID: -2087123166, guid: 45edb64d9cc56bf43bf8e9177b536eeb, type: 3}
   model:
     Name: "F\xF3sil"
     Quality: 2

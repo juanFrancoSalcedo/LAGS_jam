@@ -65,7 +65,7 @@ public class FinalDayHandler : MonoBehaviour
         textMiDinero.transform.DOScaleY(1, 0.5f).From(0).SetEase(Ease.OutBack);
         MoneyDataService.RemoveMoney(40);
         yield return new WaitForSeconds(1.2f);
-        textResult.text = MoneyDataService.GetMoney().ToString();
+        textResult.text = MoneyDataService.Money.ToString();
         DayDataService.AddDay();
     }
 

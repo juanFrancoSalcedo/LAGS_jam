@@ -8,5 +8,6 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         LanguageService.StartLanguage();
+        MoneyDataService.FirstGet();
     }
 }

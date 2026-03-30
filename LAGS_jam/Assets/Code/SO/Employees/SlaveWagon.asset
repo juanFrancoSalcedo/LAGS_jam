@@ -19,7 +19,7 @@ MonoBehaviour:
     UID: hjaksjdj12-asdasdasd-123sd43aed-asda122
     Pricing: 40
     DialogCVModel:
-      Dialog: "Deacuerdo, movere el vag\xF3n por 40$"
-      DialogEN: 
-      DialogPO: 
+      Dialog: "De acuerdo, mover\xE9 el vag\xF3n por 40$"
+      DialogEN: Agreed, I will move the wagon for $40
+      DialogPO: "Combinado, moverei o vag\xE3o por 40$"
       useWildCards: 0

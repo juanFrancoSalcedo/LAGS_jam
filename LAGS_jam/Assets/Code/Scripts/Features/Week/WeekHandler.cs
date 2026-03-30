@@ -19,7 +19,7 @@ public class WeekHandler : MonoBehaviour
     private void OpenWeekPanel()
     {
         panel.gameObject.SetActive(true);
-        if(MoneyDataService.GetMoney()>=500)
+        if(MoneyDataService.Money>=500)
             passGameText.gameObject.SetActive(true);
         else
             dontPassGameText.gameObject.SetActive(true);

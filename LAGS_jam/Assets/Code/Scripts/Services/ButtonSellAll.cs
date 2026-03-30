@@ -18,8 +18,8 @@ public class ButtonSellAll : BaseButtonAttendant
 
     private void SellAll()
     {
-        InventoryDataService.RemoveAll();
         MoneyDataService.AddMoney(CalculateTotalPrice());
+        InventoryDataService.RemoveAll();
         dialogManager.ReleaseChat();
     }
 
