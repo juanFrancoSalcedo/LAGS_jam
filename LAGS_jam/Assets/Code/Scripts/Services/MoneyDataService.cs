@@ -1,32 +1,38 @@
 using System;
 using UnityEditor;
+using UnityEditor.ShaderGraph.Legacy;
 using UnityEngine;
 
 public class MoneyDataService 
 {
     public static event Action<int, int> OnMoneyChanged;
 
+    private static int money;
+    public static int Money => money;
+
     public static void AddMoney(int plus) 
     {
         int before = 0;
-        var buffer = before = PlayerPrefs.GetInt(KeyStorage.Money,0);
-        buffer += plus;
+        var buffer = before = money;
+        money += plus;
         PlayerPrefs.SetInt(KeyStorage.Money, buffer);
         OnMoneyChanged?.Invoke(before,buffer);
     }
 
     public static void RemoveMoney(int less) 
     {
-        int before = 0;
-        var buffer = before = PlayerPrefs.GetInt(KeyStorage.Money, 0);
-        buffer -= less;
-        PlayerPrefs.SetInt(KeyStorage.Money, buffer);
+        money -= less;
+        PlayerPrefs.SetInt(KeyStorage.Money, money);
         //OnMoneyChanged?.Invoke(before, buffer);
     }
 
-    public static int GetMoney() => PlayerPrefs.GetInt(KeyStorage.Money, 0);
-    
-    public static bool CanPay(int money) => GetMoney() >= money;
+    public static int FirstGet()
+    {
+        money = PlayerPrefs.GetInt(KeyStorage.Money, 0);
+        return money;
+    }
+
+    public static bool CanPay(int _money) => money >= _money;
 
 #if UNITY_EDITOR
     [MenuItem("Tools/600")]

@@ -20,6 +20,6 @@ MonoBehaviour:
     Pricing: 50
     DialogCVModel:
       Dialog: Son 50$
-      DialogEN: 
-      DialogPO: 
+      DialogEN: They are $50
+      DialogPO: "S\xE3o 50$"
       useWildCards: 0

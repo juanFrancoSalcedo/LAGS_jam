@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharcoalUltra
   m_EditorClassIdentifier: Assembly-CSharp::ResourceSheet
   path: Coal High UI
-  spt: {fileID: 352324342, guid: 45edb64d9cc56bf43bf8e9177b536eeb, type: 3}
+  spt: {fileID: 97752666, guid: 45edb64d9cc56bf43bf8e9177b536eeb, type: 3}
   model:
     Name: "Carb\xF3n"
     Quality: 1
