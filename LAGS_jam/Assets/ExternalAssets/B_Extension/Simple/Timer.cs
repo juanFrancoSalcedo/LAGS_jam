@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private bool reduce = false;
     public event Action<string> OnUpdateTime;
     public event Action OnTimeCompleted;
+    public event Action OnTimeStarted;
+    public event Action OnTimePaused;
     Coroutine coroutineTimer;
     [SerializeField] private UnityEvent onStartTimer;
     [SerializeField] private UnityEvent onStopTimer;
@@ -21,7 +23,7 @@ public class Timer : MonoBehaviour
     {
         if(coroutineTimer != null)
             StopCoroutine(coroutineTimer);
-        onStopTimer?.Invoke();
+        onStopTimer?.Invoke();   
     }
 
     public void StartTimer() 
@@ -34,15 +36,23 @@ public class Timer : MonoBehaviour
         if (coroutineTimer == null)
             coroutineTimer = StartCoroutine(DoTimer());
         onStartTimer?.Invoke();
+        OnTimeStarted?.Invoke();
     }
 
-    public void PauseTime() => pause = true;
+    public void PauseTime() 
+    {
+        if (coroutineTimer != null)
+            StopCoroutine(coroutineTimer);
+        //OnTimePaused
+    }
+
     public void UnpauseTime() => pause = false;
 
     bool pause = false;
 
     public void RestartTimer() 
     {
+        timeRemaing = targetTime;
         coroutineTimer = null;
         StartTimer();
     }
@@ -53,8 +63,6 @@ public class Timer : MonoBehaviour
 
         while (!ReachTime())
         {
-            if (pause)
-                amount = 0;
             var secs = TimeSpan.FromSeconds(timeRemaing);
             timeRemaing += (amount *Time.deltaTime);
             OnUpdateTime?.Invoke(secs.ToString("mm\\:ss"));
