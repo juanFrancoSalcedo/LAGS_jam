@@ -18,7 +18,6 @@ public class MoneyDataService
         SaveData();
     }
 
-
     public static void SaveData() => PlayerPrefs.SetInt(KeyStorage.Money, money);
     public static void RemoveMoney(int less) 
     {

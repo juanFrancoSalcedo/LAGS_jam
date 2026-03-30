@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class TimerHandler:MonoBehaviour
@@ -17,7 +18,7 @@ public class TimerHandler:MonoBehaviour
         timer.OnUpdateTime += CheckTimerEvents;
     }
 
-    private void StartTimer() => timer.StartTimer();
+    private void StartTimer() => timer.RestartTimer();
 
     private void StopTimer() 
     {
