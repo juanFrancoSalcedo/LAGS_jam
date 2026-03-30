@@ -459,8 +459,8 @@ MonoBehaviour:
   dialogs:
   - {fileID: 11400000, guid: 3fc552a28c445654f9f5f57295bb1044, type: 2}
   - {fileID: 11400000, guid: d946db0e993c1644993644356bb3c7a1, type: 2}
-  - {fileID: 11400000, guid: 359aa6c55b948bf43adf394c00d1dc63, type: 2}
-  - {fileID: 11400000, guid: a9aae272ae6846a4184d83f81414e301, type: 2}
+  - {fileID: 11400000, guid: e447a1a5d10645648ad50a9eebfb8255, type: 2}
+  - {fileID: 11400000, guid: 00ff93a3bcf97bc4ab200b5527453749, type: 2}
   - {fileID: 11400000, guid: 424814cd051b2ae46b4089c76ad518a1, type: 2}
   OnCompleteDialog:
     m_PersistentCalls:

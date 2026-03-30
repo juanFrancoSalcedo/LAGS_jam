@@ -205,7 +205,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 5.86, y: 2.28}
+  m_Size: {x: 6, y: 2.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -317,9 +317,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Victor
+  m_text: 'Dario
 
-    (Maestro)'
+    (Mercader)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a621a420c8fcaa47b338144e40c5f9b, type: 2}
   m_sharedMaterial: {fileID: -7876114807554302207, guid: 5a621a420c8fcaa47b338144e40c5f9b, type: 2}
@@ -406,9 +406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50501a2b6751b7648bf0f5082db14ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextRawLanguage
-  spanish: Victor (Maestro)
-  english: Victor (Teacher)
-  portuguese: Victor (Mestre)
+  spanish: Dario (Mercader)
+  english: Dario (Merchant)
+  portuguese: Dario (Mercador)
 --- !u!1 &8664267525480127750
 GameObject:
   m_ObjectHideFlags: 0
