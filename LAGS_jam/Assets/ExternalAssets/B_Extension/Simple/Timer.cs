@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
 
     public void StartTimer() 
     {
-        pause = false;
+        UnpauseTime();
         if (reduce)
             timeRemaing = targetTime;
         else
